@@ -2,10 +2,10 @@ import Image from "next/image";
 import Link from "next/link";
 import SpotlightCardAchiev from "@/common/components/ui/SpotlightCardAchiev";
 import { Achiv } from "../../../types/userTypes";
-import { getCardUser } from "@/hooks/getCardUser";
+import { getInfo } from "@/lib/data";
 
 async function CardAchiv() {
-  const { userAchievements } = await getCardUser();
+  const { userAchievements } = await getInfo();
 
   return (
     <div className='grid grid-cols-1 py-6 gap-4 sm:grid-cols-2 md:grid-cols-3'>

@@ -1,4 +1,5 @@
 
+import { createSlug } from "@/lib/utils";
 import { PrismaPg } from "@prisma/adapter-pg";
 import { PrismaClient } from "@prisma/client";
 
@@ -34,6 +35,7 @@ async function main() {
             url: "https://akmaldev.my.id",
             description: "Personal website & portfolio, built from scratch using Next.js, TypeScript, Tailwind",
             image: "https://res.cloudinary.com/drldcq7wa/image/upload/Screenshot_2025-11-21_110728_dglyag",
+            slug: createSlug("akmaldev-my-id"),
             stack: {
               create: [
                 { name: "TailwindCSS" },
