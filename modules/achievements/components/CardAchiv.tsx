@@ -2,13 +2,14 @@ import Image from "next/image";
 import Link from "next/link";
 import SpotlightCardAchiev from "@/common/components/ui/SpotlightCardAchiev";
 import { getCardAchievements } from "./getCardAchievements";
+import { Achiv } from "../types/Achiv";
 
 async function CardAchiv() {
   const { userAchievements } = await getCardAchievements();
 
   return (
     <div className='grid grid-cols-1 py-6 gap-4 sm:grid-cols-2 md:grid-cols-3'>
-      {userAchievements.map((achiev) => (
+      {userAchievements.map((achiev: Achiv) => (
         <Link
           key={achiev.id}
           href={achiev.url}
