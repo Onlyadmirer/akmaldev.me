@@ -23,7 +23,7 @@ function Navbar() {
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: 10 }}
         transition={{ duration: 0.3, ease: "easeInOut" }}
-        className='hidden lg:block sticky top-10 h-160'
+        className='hidden lg:block sticky top-10 h-170'
       >
         <DekstopNav />
       </motion.div>
