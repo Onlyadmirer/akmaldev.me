@@ -26,6 +26,7 @@ model User {
   // Data aplikasi Anda
   achievements  Achievements[]
   chat          Chat[]
+  projects      Projects[]
 }
 
 model Account {
@@ -72,7 +73,7 @@ model Chat {
   id       Int    @id @default(autoincrement())
   message  String
   authorId Int
-  author   User   @relation(fields: [authorId], references: [id])
+  author   User   @relation(fields: [authorId], references: [id], onDelete: Cascade)
 }
 
 enum Role {
@@ -87,19 +88,23 @@ model Achievements {
   publisher String
   issuedOn  String
   authorId  Int
-  author    User    @relation(fields: [authorId], references: [id])
+  author    User    @relation(fields: [authorId], references: [id], onDelete: Cascade)
 }
 
 model Projects {
   id    Int          @id @default(autoincrement())
   title String
+  description String  @db.Text
+  image String
   url   String
   stack TechStacks[]
-  role  Role         @default(User)
+  authorId  Int
+  author    User    @relation(fields: [authorId], references: [id], onDelete: Cascade)
 }
 
 model TechStacks {
   id       Int        @id @default(autoincrement())
-  name     String     @unique
-  projects Projects[]
+  name     String   
+  projectId Int      
+  project   Projects @relation(fields: [projectId], references: [id], onDelete: Cascade)
 }

@@ -1,25 +1,24 @@
+import SpotlightCardAchiev from "@/common/components/ui/SpotlightCardAchiev";
+import { getCardUser } from "@/hooks/getCardUser";
+import { Projects } from "@/types/userTypes";
 import Image from "next/image";
 import Link from "next/link";
-import SpotlightCardAchiev from "@/common/components/ui/SpotlightCardAchiev";
-import { Achiv } from "../../../types/userTypes";
-import { getCardUser } from "@/hooks/getCardUser";
 
-async function CardAchiv() {
-  const { userAchievements } = await getCardUser();
-
+async function ProjectCards() {
+  const { userProjects } = await getCardUser();
   return (
-    <div className='grid grid-cols-1 py-6 gap-4 sm:grid-cols-2 md:grid-cols-3'>
-      {userAchievements.map((achiev: Achiv) => (
+    <div className='grid grid-cols-1 py-6 gap-4 md:grid-cols-2 '>
+      {userProjects.map((project: Projects) => (
         <Link
-          key={achiev.id}
-          href={achiev.url}
+          key={project.id}
+          href={project.url}
           className='h-full'
           target='_blank'
         >
           <SpotlightCardAchiev className='flex flex-col justify-between overflow-hidden group'>
             <div className='relative h-46'>
               <Image
-                src={achiev.url}
+                src={project.image}
                 alt='sertification'
                 className='object-cover w-full h-full'
                 fill
@@ -29,14 +28,10 @@ async function CardAchiv() {
                 <p className='font-semibold text-gray-100'>Show Credential →</p>
               </div>
             </div>
-            <div className='flex flex-col px-4 py-6 space-y-2 h-1/2'>
-              <h1 className='text-primary'>{achiev.title}</h1>
-              <p className='text-sm font-semibold text-muted-foreground/90'>
-                {achiev.publisher}
-              </p>
-              <p className='text-xs text-muted-foreground/80 '>Issued on</p>
-              <p className='text-sm text-muted-foreground/90 '>
-                {achiev.issuedOn}
+            <div className='p-4 space-y-2'>
+              <h1 className='text-primary text-lg'>{project.title}</h1>
+              <p className='text-sm text-muted-foreground'>
+                {project.description}
               </p>
             </div>
           </SpotlightCardAchiev>
@@ -46,4 +41,4 @@ async function CardAchiv() {
   );
 }
 
-export default CardAchiv;
+export default ProjectCards;

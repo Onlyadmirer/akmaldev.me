@@ -5,3 +5,11 @@ export type Achiv = {
   publisher: string;
   issuedOn: string;
 }
+
+export type Projects = {
+  id: number
+  title: string;
+  image: string
+  description: string
+  url: string
+}

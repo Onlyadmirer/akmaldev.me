@@ -16,6 +16,18 @@ const nextConfig: NextConfig = {
         port: '',  // Opsional, kosongkan jika standar
         pathname: '/**',  // Allow semua path di hostname ini
       },
+      {
+        protocol: 'https',
+        hostname: 'learn.wpucourse.id',  // Tambah ini untuk GitHub
+        port: '',  // Opsional, kosongkan jika standar
+        pathname: '/**',  // Allow semua path di hostname ini
+      },
+      {
+        protocol: 'https',
+        hostname: 'akmaldev.my.id',  // Tambah ini untuk GitHub
+        port: '',  // Opsional, kosongkan jika standar
+        pathname: '/**',  // Allow semua path di hostname ini
+      },
     ],
   },
 };

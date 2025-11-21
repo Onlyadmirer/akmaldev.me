@@ -16,19 +16,35 @@ async function main() {
     data: {
       name: 'Akmal',
       email: 'akmalrbc6@gmail.com',
+      role: "Admin",
       achievements: {
         create: [
           {
             title: "Bootcamp: Belajar React.js dari Dasar Hingga Mahir",
-            url: "https://learn.wpucourse.id/certificate/9TR92KAN",
+            url: "https://res.cloudinary.com/drldcq7wa/image/upload/wpucourse-certificate-9TR92KAN_xv5ucz",
             issuedOn: "25 July 2025",
             publisher: "WPU Course"
+          }
+        ]
+      },
+      projects: {
+        create: [
+          {
+            title: "akmaldev.my.id",
+            url: "https://akmaldev.my.id",
+            description: "Personal website & portfolio, built from scratch using Next.js, TypeScript, Tailwind",
+            image: "https://res.cloudinary.com/drldcq7wa/image/upload/Screenshot_2025-11-21_110728_dglyag",
+            stack: {
+              create: [
+                { name: "TailwindCSS" },
+                { name: "Nextjs" }
+              ]
+            }
           }
         ]
       }
     },
   });
-
   console.log('Seeding done!');
 }
 
