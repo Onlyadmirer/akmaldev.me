@@ -13,21 +13,67 @@ datasource db {
   provider = "postgresql"
 }
 
-
 model User {
-  id    Int      @id @default(autoincrement())
-  email String   @unique
-  name  String?
-  role  Role    @default(User)
-  achievements Achievements[]
-  chat  Chat[]
+  id            Int            @id @default(autoincrement())
+  name          String?
+  email         String         @unique
+  emailVerified DateTime?      // Tambahan: Mencatat kapan email diverifikasi
+  image         String?        // Tambahan: Foto profil dari Google/GitHub
+  role          Role           @default(User)
+  
+  accounts      Account[]      // Relasi ke OAuth providers
+  sessions      Session[]      // Relasi ke sesi login
+  
+  // Data aplikasi Anda
+  achievements  Achievements[]
+  chat          Chat[]
 }
 
+model Account {
+  id                 Int     @id @default(autoincrement())
+  userId             Int
+  type               String
+  provider           String
+  providerAccountId  String
+  refresh_token      String? @db.Text
+  access_token       String? @db.Text
+  expires_at         Int?
+  token_type         String?
+  scope              String?
+  id_token           String? @db.Text
+  session_state      String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId]) // Mencegah duplikasi akun dari provider yang sama
+}
+
+model Session {
+  id           Int      @id @default(autoincrement())
+  sessionToken String   @unique
+  userId       Int
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+}
+
+// --- END AUTH MODELS ---
+
+
+// --- MODEL APLIKASI ANDA (Tidak Berubah) ---
+
 model Chat {
-  id    Int      @id @default(autoincrement())
-  message String
-  authorId  Int
-  author    User  @relation(fields: [authorId], references: [id])
+  id       Int    @id @default(autoincrement())
+  message  String
+  authorId Int
+  author   User   @relation(fields: [authorId], references: [id])
 }
 
 enum Role {
@@ -36,25 +82,25 @@ enum Role {
 }
 
 model Achievements {
-  id        Int      @id @default(autoincrement())
+  id        Int     @id @default(autoincrement())
   title     String?
   url       String
   publisher String
   issuedOn  String
   authorId  Int
-  author    User     @relation(fields: [authorId], references: [id])
+  author    User    @relation(fields: [authorId], references: [id])
 }
 
 model Projects {
-  id    Int     @id @default(autoincrement())
+  id    Int          @id @default(autoincrement())
   title String
   url   String
   stack TechStacks[]
-  role  Role  @default(User)
+  role  Role         @default(User)
 }
 
 model TechStacks {
-  id    Int     @id @default(autoincrement())
-  name  String  @unique
-  projects  Projects[]
+  id       Int        @id @default(autoincrement())
+  name     String     @unique
+  projects Projects[]
 }
