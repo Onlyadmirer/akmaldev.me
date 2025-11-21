@@ -14,7 +14,7 @@ function MobileNav() {
 
   return (
     <div
-      className={`py-4 flex flex-col px-4 fixed inset-x-0 top-0 z-50 bg-transparent border-b border-primary/20 w-full backdrop-blur-2xl ${
+      className={`py-4 flex flex-col px-4 fixed inset-x-0 top-0 z-50 bg-transparent border-b border-primary/20 w-full backdrop-blur-3xl ${
         showMenu ? "h-screen" : "h-auto"
       }`}
     >
