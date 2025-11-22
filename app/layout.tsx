@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { Onest } from "next/font/google";
 import "./globals.css";
-import Layouts from "@/common/components/layouts/Layouts";
+import Layouts from "@/common/layouts/Layouts";
 import { ThemeProvider } from "@/providers/ThemeProvider";
-import Background from "@/common/components/layouts/background/Background";
+import Background from "@/common/layouts/background/Background";
 import TopLoader from "@/common/components/elements/TopLoader";
 import { Toaster } from "@/common/components/ui/sonner";
 

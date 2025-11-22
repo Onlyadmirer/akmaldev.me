@@ -17,7 +17,7 @@ function Featured() {
   return (
     <div className='py-6 '>
       <SubHeaderSection
-        icon={<MdBackupTable size={24} />}
+        icon={<MdBackupTable size={26} />}
         title='Featured Section'
         description='Explore everything I’ve crafted, contributed, and accomplished.'
       />
@@ -35,8 +35,8 @@ function Featured() {
               />
             </div>
             <div>
-              <h2 className='text-sm font-medium'>Projects</h2>
-              <p className='text-xs text-muted-foreground'>
+              <h2 className='text-base font-medium'>Projects</h2>
+              <p className='text-sm text-muted-foreground'>
                 Discover the works I’ve built and crafted with passion.
               </p>
             </div>
@@ -53,8 +53,8 @@ function Featured() {
                 <LuUser size={24} className='object-cover w-full h-full' />
               </div>
               <div className='text-center'>
-                <h2 className='text-sm font-medium'>About me</h2>
-                <p className='text-xs text-muted-foreground max-w-58'>
+                <h2 className='text-base font-medium'>About me</h2>
+                <p className='text-sm text-muted-foreground max-w-58'>
                   Learn more about who I am and what drives me.
                 </p>
               </div>
@@ -75,8 +75,8 @@ function Featured() {
                 />
               </div>
               <div className='text-center'>
-                <h2 className='text-sm font-medium'>Skills</h2>
-                <p className='text-xs text-muted-foreground max-w-58'>
+                <h2 className='text-base font-medium'>Skills</h2>
+                <p className='text-sm text-muted-foreground max-w-58'>
                   Expertise across web and UI/UX technologies.
                 </p>
               </div>
@@ -97,8 +97,8 @@ function Featured() {
                 />
               </div>
               <div className='text-center'>
-                <h2 className='text-sm font-medium'>Achievements</h2>
-                <p className='text-xs text-muted-foreground max-w-58'>
+                <h2 className='text-base font-medium'>Achievements</h2>
+                <p className='text-sm text-muted-foreground max-w-58'>
                   Highlights from projects, programs, and community
                   contributions.
                 </p>
@@ -117,8 +117,8 @@ function Featured() {
                 <LuBookUser size={24} className='object-cover w-full h-full' />
               </div>
               <div className='text-center'>
-                <h2 className='text-sm font-medium'>Contact</h2>
-                <p className='text-xs text-muted-foreground '>
+                <h2 className='text-base font-medium'>Contact</h2>
+                <p className='text-sm text-muted-foreground '>
                   Get in touch or collaborate with me.
                 </p>
               </div>
@@ -139,8 +139,8 @@ function Featured() {
                 />
               </div>
               <div>
-                <h2 className='text-sm font-medium'>Dashboard</h2>
-                <p className='text-xs text-muted-foreground'>
+                <h2 className='text-base font-medium'>Dashboard</h2>
+                <p className='text-sm text-muted-foreground'>
                   Personal insights and data-driven portfolio view.
                 </p>
               </div>

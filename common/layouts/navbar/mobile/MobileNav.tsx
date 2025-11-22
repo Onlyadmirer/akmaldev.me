@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { RiMenu3Fill, RiVerifiedBadgeFill } from "react-icons/ri";
-import ThemeToggle from "../../../ui/ThemeToggle";
+import ThemeToggle from "../../../components/ui/ThemeToggle";
 import Link from "next/link";
 import { useNavbar } from "@/hooks/useNavbar";
 import { BsArrowRight } from "react-icons/bs";
@@ -41,13 +41,13 @@ function MobileNav() {
             ></Image>
           </div>
           <div className='flex flex-row gap-2 items-center'>
-            <h1 className='text-xl font-semibold '>Akmal</h1>
+            <h1 className='text-2xl font-semibold '>Akmal</h1>
             <RiVerifiedBadgeFill className='text-cyan-400' size={20} />
           </div>
         </div>
         <div
           className={`grid place-items-center gap-4 ${
-            showMenu ? "grid-rows-2" : "grid-cols-2"
+            showMenu ? "grid-rows-2 px-2 justify-items-end " : "grid-cols-2"
           }`}
         >
           <ThemeToggle />
@@ -55,7 +55,7 @@ function MobileNav() {
             <IoMdClose
               size={26}
               onClick={() => toggleMenu()}
-              className={` transition-all duration-500 cursor-pointer ease-in-out ${
+              className={` transition-all duration-500  cursor-pointer ease-in-out ${
                 showMenu && "row-start-1"
               }`}
             />
@@ -88,7 +88,7 @@ function MobileNav() {
           >
             <div className='flex flex-row items-center gap-2'>
               {item.icon}
-              <span className='text-base'>{item.label}</span>
+              <span className='text-lg'>{item.label}</span>
             </div>
             {pathName === item.href ? <BsArrowRight /> : ""}
           </Link>

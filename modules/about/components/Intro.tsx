@@ -3,7 +3,7 @@ import Image from "next/image";
 function Intro() {
   return (
     <div className='py-6 space-y-4 border-b border-dashed border-primary/50'>
-      <div className='leading-loose text-primary space-y-4'>
+      <div className='leading-loose text-primary text-lg space-y-4'>
         <p>
           Hello there! Thank you for visiting my personal website. I’m Akmal, a
           student majoring in Information Systems at Hasanuddin University,
@@ -27,7 +27,9 @@ function Intro() {
         </p>
       </div>
       <div className='space-y-4'>
-        <p className='leading-loose font-medium text-primary'>All the best,</p>
+        <p className='leading-loose font-medium text-lg text-primary'>
+          All the best,
+        </p>
         <Image
           src={"/signature/Akmal.svg"}
           alt='signature'

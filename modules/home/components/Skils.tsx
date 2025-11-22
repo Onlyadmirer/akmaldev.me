@@ -15,7 +15,7 @@ function Skils() {
   return (
     <div className='py-6 border-b border-muted-foreground/50'>
       <SubSectionHeader
-        icon={<GrTechnology size={24} />}
+        icon={<GrTechnology size={26} />}
         title='skills & tools'
         description='My professional Skills & Tools.'
       />

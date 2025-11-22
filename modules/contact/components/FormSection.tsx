@@ -9,7 +9,7 @@ function FormSection() {
 
   return (
     <div className='py-6 space-y-4'>
-      <h1 className='font-medium text-primary'>Or send me a message</h1>
+      <h1 className='font-medium text-lg text-primary'>Or send me a message</h1>
       <div>
         <form
           onSubmit={handleSubmit(onSubmit)}

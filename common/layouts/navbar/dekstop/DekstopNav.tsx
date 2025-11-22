@@ -1,5 +1,5 @@
 import Image from "next/image";
-import ThemeToggle from "../../../ui/ThemeToggle";
+import ThemeToggle from "../../../components/ui/ThemeToggle";
 import { RiVerifiedBadgeFill } from "react-icons/ri";
 import Link from "next/link";
 import { BsArrowRight } from "react-icons/bs";

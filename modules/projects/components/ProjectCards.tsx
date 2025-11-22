@@ -18,7 +18,7 @@ async function ProjectCards() {
             <div className='relative h-46'>
               <Image
                 src={project.image}
-                alt='sertification'
+                alt='project'
                 className='object-cover w-full h-full'
                 fill
                 priority
