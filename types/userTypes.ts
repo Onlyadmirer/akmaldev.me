@@ -13,4 +13,5 @@ export type Projects = {
   slug: string
   description: string
   url: string
+  stack: string[]
 }

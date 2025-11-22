@@ -1,4 +1,10 @@
 import SpotlightCardAchiev from "@/common/components/ui/SpotlightCardAchiev";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/common/components/ui/tooltip";
+import { STACK } from "@/common/constants/TechStack";
 import { getInfo } from "@/lib/data";
 import { Projects } from "@/types/userTypes";
 import Image from "next/image";
@@ -27,11 +33,32 @@ async function ProjectCards() {
                 <p className='font-semibold text-gray-100'>View Project →</p>
               </div>
             </div>
-            <div className='px-4 py-6 space-y-2'>
+            <div className='px-4 py-6 space-y-3'>
               <h1 className='text-primary text-lg'>{project.title}</h1>
-              <p className='text-sm text-muted-foreground'>
+              <p className='text-sm text-muted-foreground pb-1'>
                 {project.description}
               </p>
+              <div className='flex flex-row gap-2'>
+                {project.stack.map((stackName) => {
+                  const stackData = STACK[stackName];
+                  if (!stackData) {
+                    return null;
+                  }
+                  return (
+                    <div key={stackData.key}>
+                      <div className=' relative overflow-hidden h-8 w-8 '>
+                        <Image
+                          src={stackData.icon}
+                          alt={stackData.key}
+                          fill
+                          priority
+                          className='h-full w-full p-2 lg:p-0 object-cover'
+                        />
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
             </div>
           </SpotlightCardAchiev>
         </Link>
