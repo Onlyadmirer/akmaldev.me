@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     description:
       "Reach out to Akmal for web development projects, collaborations, or creative discussions.",
     url: "/contact",
-    images: ["/pp.jpeg"],
+    images: ["/akmal.jpg"],
   },
 };
 

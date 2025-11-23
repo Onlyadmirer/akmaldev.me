@@ -42,7 +42,7 @@ export const metadata: Metadata = {
       "Explore Akmal’s portfolio showcasing projects, achievements, and creative work in web development.",
     images: [
       {
-        url: `${process.env.NEXT_PUBLIC_DOMAIN}/pp.jpeg`,
+        url: `${process.env.NEXT_PUBLIC_DOMAIN}/akmal.jpg`,
         width: 1200,
         height: 630,
         alt: "Akmaldev Portfolio Preview",

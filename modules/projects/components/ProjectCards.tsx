@@ -26,6 +26,7 @@ async function ProjectCards() {
                 src={project.image}
                 alt='project'
                 className='object-cover w-full h-full'
+                sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
                 fill
                 priority
               ></Image>
@@ -35,10 +36,10 @@ async function ProjectCards() {
             </div>
             <div className='px-4 py-6 space-y-3'>
               <h1 className='text-primary text-lg'>{project.title}</h1>
-              <p className='text-sm text-muted-foreground pb-1'>
+              <p className='text-sm text-muted-foreground/90 pb-1'>
                 {project.description}
               </p>
-              <div className='flex flex-row gap-2'>
+              <div className='flex  flex-row gap-0 lg:gap-2'>
                 {project.stack.map((stackName) => {
                   const stackData = STACK[stackName];
                   if (!stackData) {
@@ -46,13 +47,14 @@ async function ProjectCards() {
                   }
                   return (
                     <div key={stackData.key}>
-                      <div className=' relative overflow-hidden h-8 w-8 '>
+                      <div className=' relative overflow-hidden w-14 h-14 lg:h-9 lg:w-9 '>
                         <Image
                           src={stackData.icon}
                           alt={stackData.key}
                           fill
                           priority
-                          className='h-full w-full p-2 lg:p-0 object-cover'
+                          sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+                          className='p-2 lg:p-0 object-cover'
                         />
                       </div>
                     </div>

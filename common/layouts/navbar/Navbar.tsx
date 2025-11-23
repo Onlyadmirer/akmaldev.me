@@ -9,9 +9,9 @@ function Navbar() {
     <AnimatePresence>
       <motion.div
         key='mobile'
-        initial={{ opacity: 0, y: -10 }} // Mulai dari atas, transparan
+        initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: 10 }} // Keluar ke bawah
+        exit={{ opacity: 0, y: 10 }}
         transition={{ duration: 0.3, ease: "easeInOut" }}
         className='lg:hidden'
       >
@@ -23,7 +23,7 @@ function Navbar() {
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: 10 }}
         transition={{ duration: 0.3, ease: "easeInOut" }}
-        className='hidden lg:block sticky top-10 h-170'
+        className='hidden lg:block sticky top-0 max-h-screen pt-12'
       >
         <DekstopNav />
       </motion.div>

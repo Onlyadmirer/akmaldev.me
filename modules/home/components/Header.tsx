@@ -11,7 +11,7 @@ function Header() {
       <div>
         <p className='leading-loose text-lg text-primary'>
           I’m an experienced and dedicated Fullstack Developer with a strong
-          focus on building scalable and high-quality digital products. I craft
+          focus on building scalable and high quality digital products. I craft
           responsive and accessible user interfaces using Next.js, TypeScript,
           and Tailwind CSS, while developing reliable backend services with Node
           js. I’m a collaborative engineer with attention to detail, committed

@@ -17,4 +17,14 @@ export const STACK: StackProps = {
     link: "https://nextjs.org",
     key: "nextjs",
   },
+  Postgree: {
+    icon: "/skillsIcon/postgresql.svg",
+    link: "https://www.postgresql.org/",
+    key: "postgreesql",
+  },
+  Prisma: {
+    icon: "/skillsIcon/prisma.svg",
+    link: "https://www.prisma.io/",
+    key: "prisma",
+  },
 };

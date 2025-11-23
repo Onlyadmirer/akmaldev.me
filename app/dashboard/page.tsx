@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     description:
       "Discover Akmal’s web projects, development journey, and creative highlights in one place.",
     url: "/dashboard",
-    images: ["/pp.jpeg"],
+    images: ["/akmal.jpg"],
   },
 };
 

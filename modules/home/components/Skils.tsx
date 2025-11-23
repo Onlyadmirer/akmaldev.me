@@ -22,14 +22,19 @@ function Skils() {
       <div className='grid grid-cols-5 md:grid-cols-7 lg:grid-cols-11 items-start pt-6 space-y-3 lg:space-y-4'>
         {skills.map((skill) => (
           <Tooltip key={skill.key}>
-            <TooltipTrigger className='hover:scale-105 relative overflow-hidden h-16 w-16 lg:h-13 lg:w-13 transition-all duration-300 ease-in-out'>
-              <Link href={skill.link} target='_blank' rel='noopener noreferrer'>
+            <TooltipTrigger className='hover:scale-105 transition-all duration-300 ease-in-out'>
+              <Link
+                href={skill.link}
+                target='_blank'
+                rel='noopener noreferrer'
+                className=' relative block overflow-hidden h-16 w-16 lg:h-13 lg:w-13'
+              >
                 <Image
                   src={skill.icon}
                   alt={skill.key}
                   fill
                   priority
-                  className='h-full w-full p-2 lg:p-0 object-cover'
+                  className='p-2 lg:p-0 object-cover'
                 />
               </Link>
             </TooltipTrigger>

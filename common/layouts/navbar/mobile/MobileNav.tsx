@@ -34,9 +34,12 @@ function MobileNav() {
             }`}
           >
             <Image
-              src={"/pp.jpeg"}
-              alt='foto profile'
+              src={"/akmal.jpg"}
+              alt='Akmal'
               fill
+              blurDataURL='...'
+              placeholder='blur'
+              sizes='(max-width: 768px) 100vw'
               className='w-full h-full object-cover'
             ></Image>
           </div>

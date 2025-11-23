@@ -21,8 +21,9 @@ async function CardAchiv() {
               <Image
                 src={achiev.url}
                 alt='sertification'
-                className='object-cover w-full h-full'
+                className='object-cover '
                 fill
+                sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
                 priority
               ></Image>
               <div className='absolute inset-0 flex items-center justify-center w-full h-full transition-opacity duration-300 ease-in-out opacity-0 group-hover:bg-gray-800/60 group-hover:opacity-100'>

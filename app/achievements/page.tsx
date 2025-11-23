@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     description:
       "See the achievements and milestones that reflect Akmal’s dedication and growth as a web developer.",
     url: "/achievements",
-    images: ["/pp.jpeg"],
+    images: ["/akmal.jpg"],
   },
 };
 

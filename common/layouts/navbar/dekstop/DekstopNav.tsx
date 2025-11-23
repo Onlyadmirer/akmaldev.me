@@ -13,10 +13,13 @@ function DekstopNav() {
       <div className='flex-3 flex flex-col pb-2 items-center gap-3 border-b border-primary/50'>
         <div className='overflow-hidden w-22 h-22 rounded-full border-2 border-primary/50 relative'>
           <Image
-            src={"/pp.jpeg"}
-            alt='foto profile'
+            src={"/akmal.jpg"}
+            alt='Akmal'
             fill
-            className='w-full h-full object-cover'
+            sizes='(max-width: 1200px) 50vw, 33vw'
+            blurDataURL='...'
+            placeholder='blur'
+            className='object-cover'
           ></Image>
         </div>
         <div className='text-center'>

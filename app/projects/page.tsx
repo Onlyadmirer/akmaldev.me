@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     description:
       "Explore Akmal’s curated selection of web projects showcasing innovation, design, and performance.",
     url: "/projects",
-    images: ["/pp.jpeg"],
+    images: ["/akmal.jpg"],
   },
 };
 
