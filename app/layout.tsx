@@ -24,6 +24,8 @@ export const metadata: Metadata = {
     "The personal portfolio of Akmal — a web developer passionate about building clean, modern, and efficient web experiences.",
   keywords: [
     "akmal",
+    "Akmal",
+    "Akmaldev",
     "akmaldev",
     "akmal dev",
     "web developer",
