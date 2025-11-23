@@ -34,23 +34,29 @@ function DekstopNav() {
         </div>
       </div>
       <div className='flex-4 py-4 flex flex-col gap-1 border-b border-primary/50'>
-        {menuItems.map((item) => (
-          <Link
-            href={item.href}
-            key={item.label}
-            className={`flex flex-row justify-between py-2 rounded-lg px-4 items-center hover:scale-105 hover:text-primary transition-all duration-200 ease-in-out hover:bg-muted-foreground/20 ${
-              pathName === item.href
-                ? "bg-muted-foreground/20 text-primary scale-105"
-                : "bg-transparent text-muted-foreground"
-            }`}
-          >
-            <div className='flex flex-row items-center gap-2'>
-              {item.icon}
-              <span className='text-base'>{item.label}</span>
-            </div>
-            {pathName === item.href ? <BsArrowRight /> : ""}
-          </Link>
-        ))}
+        {menuItems.map((item) => {
+          const isActive =
+            item.href === "/"
+              ? pathName === "/"
+              : pathName.startsWith(item.href);
+          return (
+            <Link
+              href={item.href}
+              key={item.label}
+              className={`flex flex-row justify-between py-2 rounded-lg px-4 items-center hover:scale-105 hover:text-primary transition-all duration-200 ease-in-out hover:bg-muted-foreground/20 ${
+                isActive
+                  ? "bg-muted-foreground/20 text-primary scale-105"
+                  : "bg-transparent text-muted-foreground"
+              }`}
+            >
+              <div className='flex flex-row items-center gap-2'>
+                {item.icon}
+                <span className='text-base'>{item.label}</span>
+              </div>
+              {isActive ? <BsArrowRight /> : ""}
+            </Link>
+          );
+        })}
       </div>
       <div className='flex-1 py-4'>
         <h1 className='text-center text-lg'>

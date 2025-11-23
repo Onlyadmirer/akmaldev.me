@@ -36,6 +36,7 @@ async function main() {
             description: "Personal website & portfolio, built from scratch using Next.js, TypeScript, Tailwind",
             image: "https://res.cloudinary.com/drldcq7wa/image/upload/Screenshot_2025-11-21_110728_dglyag",
             slug: createSlug("akmaldev-my-id"),
+            github: "https://github.com/onlyadmirer",
             stack: {
               create: [
                 { name: "TailwindCSS" },
