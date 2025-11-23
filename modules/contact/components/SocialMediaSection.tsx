@@ -4,6 +4,7 @@ import Button from "@/common/components/ui/Button";
 import { useContact } from "./useContact";
 import { SiGmail } from "react-icons/si";
 import Link from "next/link";
+import { MdOutlineArrowOutward } from "react-icons/md";
 
 function SocialMediaSection() {
   const { items } = useContact();
@@ -28,7 +29,9 @@ function SocialMediaSection() {
               target='_blank'
               rel='noopener noreferrer'
             >
-              <Button>Send Email</Button>
+              <Button>
+                Send Email <MdOutlineArrowOutward size={18} />
+              </Button>
             </a>
           </div>
           <div className='rounded-2xl p-2 border-4 flex items-center justify-center w-16 h-16 border-neutral-200/60'>
@@ -54,7 +57,9 @@ function SocialMediaSection() {
                 target='_blank'
                 rel='noopener noreferrer'
               >
-                <Button>{item.action}</Button>
+                <Button>
+                  {item.action} <MdOutlineArrowOutward size={18} />
+                </Button>
               </Link>
             </div>
             <div className='rounded-2xl p-2 border-4 flex items-center justify-center w-16 h-16 border-neutral-200/60'>

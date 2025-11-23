@@ -97,6 +97,7 @@ model Projects {
   description String  @db.Text
   image String
   url   String
+  github  String?
   slug  String      @unique
   stack TechStacks[]
   authorId  Int

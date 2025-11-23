@@ -10,9 +10,7 @@ function SubHeaderSection({ icon, title, description }: sectionHeaderProps) {
     <div className='space-y-2'>
       <div className='flex flex-row items-center gap-2'>
         {icon ? <i>{icon}</i> : null}
-        <h1 className='text-2xl font-medium text-primary capitalize'>
-          {title}
-        </h1>
+        <h1 className='text-xl font-medium text-primary capitalize'>{title}</h1>
       </div>
       <p className='text-muted-foreground font-medium'>{description}</p>
     </div>

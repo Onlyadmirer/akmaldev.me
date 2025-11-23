@@ -1,9 +1,4 @@
 import SpotlightCardAchiev from "@/common/components/ui/SpotlightCardAchiev";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipTrigger,
-} from "@/common/components/ui/tooltip";
 import { STACK } from "@/common/constants/TechStack";
 import { getInfo } from "@/lib/data";
 import { Projects } from "@/types/userTypes";
@@ -21,11 +16,11 @@ async function ProjectCards() {
           className='h-full'
         >
           <SpotlightCardAchiev className='flex flex-col justify-between overflow-hidden group'>
-            <div className='relative h-46'>
+            <div className='relative overflow-hidden h-46'>
               <Image
                 src={project.image}
                 alt='project'
-                className='object-cover w-full h-full'
+                className='object-cover'
                 sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
                 fill
                 priority

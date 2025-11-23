@@ -24,7 +24,6 @@ export const getInfo = async () => {
     throw new Error('User not found');  // Atau return empty + log
   }
 
-
   return { userAchievements, userProjects }
 }
 
@@ -37,6 +36,7 @@ export default async function getProjectDetail(slug: string) {
       author: true
     }
   })
+
 
   if (!project) return null
   return project

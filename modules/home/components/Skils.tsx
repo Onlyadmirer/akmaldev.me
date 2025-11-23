@@ -15,19 +15,19 @@ function Skils() {
   return (
     <div className='py-6 border-b border-muted-foreground/50'>
       <SubSectionHeader
-        icon={<GrTechnology size={26} />}
+        icon={<GrTechnology size={24} />}
         title='skills & tools'
         description='My professional Skills & Tools.'
       />
-      <div className='grid grid-cols-5 md:grid-cols-7 lg:grid-cols-11 items-start pt-6 space-y-3 lg:space-y-4'>
+      <div className='grid grid-cols-5 md:grid-cols-7 lg:grid-cols-11 pt-6 space-y-3 lg:space-y-4'>
         {skills.map((skill) => (
           <Tooltip key={skill.key}>
-            <TooltipTrigger className='hover:scale-105 transition-all duration-300 ease-in-out'>
+            <TooltipTrigger className='hover:scale-105 transition-all h-16 w-16 lg:h-12 lg:w-12 duration-300 ease-in-out'>
               <Link
                 href={skill.link}
                 target='_blank'
                 rel='noopener noreferrer'
-                className=' relative block overflow-hidden h-16 w-16 lg:h-13 lg:w-13'
+                className='relative block h-16 w-16 lg:h-12 lg:w-12 overflow-hidden'
               >
                 <Image
                   src={skill.icon}

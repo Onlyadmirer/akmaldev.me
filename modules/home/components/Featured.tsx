@@ -17,7 +17,7 @@ function Featured() {
   return (
     <div className='py-6 '>
       <SubHeaderSection
-        icon={<MdBackupTable size={26} />}
+        icon={<MdBackupTable size={24} />}
         title='Featured Section'
         description='Explore everything I’ve crafted, contributed, and accomplished.'
       />
