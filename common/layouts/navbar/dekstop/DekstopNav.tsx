@@ -19,7 +19,7 @@ function DekstopNav() {
             sizes='(max-width: 1200px) 50vw, 33vw'
             blurDataURL='...'
             placeholder='blur'
-            className='object-cover'
+            className='object-cover object-center scale-155'
           ></Image>
         </div>
         <div className='text-center'>
