@@ -59,7 +59,7 @@ function DekstopNav() {
         })}
       </div>
       <div className='flex-1 py-4'>
-        <h1 className='text-center text-lg'>
+        <h1 className='text-center'>
           © {new Date().getFullYear()} Akmal. All rights reserved.
         </h1>
       </div>
