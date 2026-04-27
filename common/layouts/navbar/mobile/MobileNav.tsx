@@ -40,7 +40,7 @@ function MobileNav() {
               blurDataURL='...'
               placeholder='blur'
               sizes='(max-width: 768px) 100vw'
-              className='w-full h-full object-cover'
+              className='object-cover scale-155'
             ></Image>
           </div>
           <div className='flex flex-row gap-2 items-center'>
