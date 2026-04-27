@@ -14,7 +14,7 @@ export const useContact = () => {
       description: "Follow my latest activities and visual works on Instagram.",
       action: "View Profile",
       icon: <BsInstagram size={38} />,
-      background: "bg-[url(/backgroundSocialMedia/instagram.svg))]",
+      background: "bg-[url(/backgroundSocialMedia/instagram.png))]",
       url: "https://www.instagram.com/akmal_2yu",
     },
     {
@@ -23,7 +23,7 @@ export const useContact = () => {
         "Connect with me professionally and view my work history and career path.",
       action: "View Profile",
       icon: <FaLinkedin size={38} />,
-      background: "bg-[url(/backgroundSocialMedia/linkedin.svg))]",
+      background: "bg-[url(/backgroundSocialMedia/linkedin.png))]",
       url: "https://www.linkedin.com/in/akmal-l-0365ab2b5/",
     },
     {
@@ -32,7 +32,7 @@ export const useContact = () => {
         "Explore my coding projects, contributions, and public repositories.",
       action: "View Repositories",
       icon: <SiGithub size={38} />,
-      background: "bg-[url(/backgroundSocialMedia/github.svg))]",
+      background: "bg-[url(/backgroundSocialMedia/github.png))]",
       github: "https://github.com/Onlyadmirer",
     },
     {
@@ -40,7 +40,7 @@ export const useContact = () => {
       description: "Watch short videos, creative content, or quick tutorials.",
       action: "Watch Content",
       icon: <FaTiktok size={38} />,
-      background: "bg-[url(/backgroundSocialMedia/tiktok.svg))]",
+      background: "bg-[url(/backgroundSocialMedia/tiktok.png))]",
       url: "https://www.tiktok.com/@akmalrbc2",
     },
   ];
