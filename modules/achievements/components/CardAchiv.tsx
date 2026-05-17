@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import SpotlightCardAchiev from "@/common/components/ui/SpotlightCardAchiev";
 import { Achiv } from "../../../types/userTypes";
-import { getInfo } from "@/lib/data";
+import { getInfo } from "@/modules/projects/services/getProjectDetail";
 
 async function CardAchiv() {
   const { userAchievements } = await getInfo();

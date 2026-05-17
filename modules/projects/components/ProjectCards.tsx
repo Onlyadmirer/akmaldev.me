@@ -1,6 +1,6 @@
 import SpotlightCardAchiev from "@/common/components/ui/SpotlightCardAchiev";
 import { STACK } from "@/common/constants/TechStack";
-import { getInfo } from "@/lib/data";
+import { getInfo } from "@/modules/projects/services/getProjectDetail";
 import { Projects } from "@/types/userTypes";
 import Image from "next/image";
 import Link from "next/link";

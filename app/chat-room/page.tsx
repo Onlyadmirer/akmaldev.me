@@ -1,4 +1,4 @@
-import ChatRoom from "@/modules/chatRoom/ChatRoom";
+import ChatRoom from "@/modules/chat-room/ChatRoom";
 
 function page() {
   return <ChatRoom />;

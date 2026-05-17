@@ -1,4 +1,4 @@
-import { prisma } from "@/lib/prisma"
+import { prisma } from "@/lib/prisma";
 
 export const getInfo = async () => {
   const user = await prisma.user.findUnique({
@@ -25,19 +25,4 @@ export const getInfo = async () => {
   }
 
   return { userAchievements, userProjects }
-}
-
-
-export default async function getProjectDetail(slug: string) {
-  const project = await prisma.projects.findUnique({
-    where: { slug: slug },
-    include: {
-      stack: true,
-      author: true
-    }
-  })
-
-
-  if (!project) return null
-  return project
 }

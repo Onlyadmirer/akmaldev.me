@@ -1,7 +1,7 @@
 "use client";
 
-import { submitForm } from "@/lib/action";
-import { ContactType } from "@/lib/ContactFormSchema";
+import { submitForm } from "@/modules/contact/action";
+import { ContactType } from "@/modules/contact/schema/ContactFormSchema";
 import { toast } from "sonner";
 
 export const useFormSection = () => {
