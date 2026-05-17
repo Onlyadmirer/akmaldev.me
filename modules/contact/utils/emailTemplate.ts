@@ -1,9 +1,9 @@
-import { ContactType } from "./ContactFormSchema";
+import { ContactType } from "@/modules/contact/schema/ContactFormSchema";
 
 export function emailTemplate(data: ContactType): string {
-  const { name, email, message } = data;
+    const { name, email, message } = data;
 
-  return `
+    return `
         <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #333333; padding: 20px; border: 1px solid #dddddd; border-radius: 8px;">
             
             <h2 style="color: #0056b3; border-bottom: 2px solid #eeeeee; padding-bottom: 10px;">

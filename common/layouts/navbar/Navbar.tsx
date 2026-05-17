@@ -1,6 +1,6 @@
 "use client";
 
-import DekstopNav from "./dekstop/DekstopNav";
+import DekstopNav from "./desktop/DesktopNav";
 import MobileNav from "./mobile/MobileNav";
 import { AnimatePresence, motion } from "motion/react";
 

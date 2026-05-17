@@ -1,8 +1,8 @@
 'use server'
 
-import { ContactFormSchema, ContactType } from "./ContactFormSchema";
+import { ContactFormSchema, ContactType } from "./schema/ContactFormSchema";
 import { Resend } from "resend"
-import { emailTemplate } from "./emailTemplate";
+import { emailTemplate } from "./utils/emailTemplate";
 
 
 export async function submitForm(data: ContactType) {

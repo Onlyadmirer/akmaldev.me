@@ -5,7 +5,7 @@ import Link from "next/link";
 import { BsArrowRight } from "react-icons/bs";
 import { useNavbar } from "@/hooks/useNavbar";
 
-function DekstopNav() {
+function DesktopNav() {
   const { pathName, menuItems } = useNavbar();
 
   return (
@@ -67,4 +67,4 @@ function DekstopNav() {
   );
 }
 
-export default DekstopNav;
+export default DesktopNav;

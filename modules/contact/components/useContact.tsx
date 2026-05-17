@@ -4,7 +4,10 @@ import { BsInstagram } from "react-icons/bs";
 import { FaLinkedin, FaTiktok } from "react-icons/fa";
 import { SiGithub } from "react-icons/si";
 import { useForm } from "react-hook-form";
-import { ContactFormSchema, ContactType } from "@/lib/ContactFormSchema";
+import {
+  ContactFormSchema,
+  ContactType,
+} from "@/modules/contact/schema/ContactFormSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
 
 export const useContact = () => {
