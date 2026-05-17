@@ -1,8 +1,10 @@
+export const dynamic = "force-dynamic";
+
 import Image from "next/image";
 import Link from "next/link";
 import SpotlightCardAchiev from "@/common/components/ui/SpotlightCardAchiev";
 import { Achiv } from "../../../types/userTypes";
-import { getAchievements } from "../services/homeServices";
+import { getAchievements } from "../services/getAchievements";
 
 async function CardAchiv() {
   const { achievements } = await getAchievements();
