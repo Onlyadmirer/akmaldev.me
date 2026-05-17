@@ -1,77 +1,77 @@
 export const useSkill = () => {
   const skills = [
     {
-      icon: "/skillsIcon/html.svg",
+      icon: "/images/skills/html.svg",
       key: "html5",
       link: "https://www.w3schools.com/html/",
     },
     {
-      icon: "/skillsIcon/css.svg",
+      icon: "/images/skills/css.svg",
       key: "css3",
       link: "https://www.w3schools.com/css/",
     },
     {
-      icon: "/skillsIcon/tailwindcss.svg",
+      icon: "/images/skills/tailwindcss.svg",
       key: "tailwindcss",
       link: "https://tailwindcss.com/docs/installation/using-vite",
     },
     {
-      icon: "/skillsIcon/javascript.svg",
+      icon: "/images/skills/javascript.svg",
       key: "javascript",
       link: "https://www.w3schools.com/js/",
     },
     {
-      icon: "/skillsIcon/typescript.svg",
+      icon: "/images/skills/typescript.svg",
       key: "typescript",
       link: "https://www.typescriptlang.org/",
     },
     {
-      icon: "/skillsIcon/react.svg",
+      icon: "/images/skills/react.svg",
       key: "react",
       link: "https://react.dev/",
     },
     {
-      icon: "/skillsIcon/vite.svg",
+      icon: "/images/skills/vite.svg",
       key: "vite",
       link: "https://vite.dev/",
     },
     {
-      icon: "/skillsIcon/nextjs.svg",
+      icon: "/images/skills/nextjs.svg",
       key: "nextjs",
       link: "https://nextjs.org/",
     },
     {
-      icon: "/skillsIcon/nodejs.svg",
+      icon: "/images/skills/nodejs.svg",
       key: "nodejs",
       link: "https://nodejs.org/en",
     },
     {
-      icon: "/skillsIcon/express.svg",
+      icon: "/images/skills/express.svg",
       key: "express",
       link: "https://expressjs.com/",
     },
     {
-      icon: "/skillsIcon/prisma.svg",
+      icon: "/images/skills/prisma.svg",
       key: "prisma",
       link: "https://www.prisma.io/",
     },
     {
-      icon: "/skillsIcon/postgresql.svg",
+      icon: "/images/skills/postgresql.svg",
       key: "postgresql",
       link: "https://www.postgresql.org/",
     },
     {
-      icon: "/skillsIcon/bun.svg",
+      icon: "/images/skills/bun.svg",
       key: "bun",
       link: "https://bun.com/",
     },
     {
-      icon: "/skillsIcon/git.svg",
+      icon: "/images/skills/git.svg",
       key: "git",
       link: "https://git-scm.com/",
     },
     {
-      icon: "/skillsIcon/github.svg",
+      icon: "/images/skills/github.svg",
       key: "github",
       link: "https://github.com/",
     },

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import signature from "@/public/images/profile/Akmal.svg";
 
 function Intro() {
   return (
@@ -29,7 +30,7 @@ function Intro() {
       <div className='space-y-4'>
         <p className='leading-loose font-medium text-primary'>All the best,</p>
         <Image
-          src={"/signature/Akmal.svg"}
+          src={signature}
           alt='signature'
           width={100}
           height={100}
