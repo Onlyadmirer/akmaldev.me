@@ -13,7 +13,7 @@ function DesktopNav() {
       <div className='flex-3 flex flex-col pb-2 items-center gap-3 border-b border-primary/50'>
         <div className='overflow-hidden w-22 h-22 rounded-full border-2 border-primary/50 relative'>
           <Image
-            src={"/akmal.jpg"}
+            src={"/images/profile/akmal.jpg"}
             alt='Akmal'
             fill
             sizes='(max-width: 1200px) 50vw, 33vw'
