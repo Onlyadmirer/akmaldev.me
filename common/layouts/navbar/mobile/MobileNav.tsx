@@ -34,7 +34,7 @@ function MobileNav() {
             }`}
           >
             <Image
-              src={"/akmal.jpg"}
+              src={"/images/profile/akmal.jpg"}
               alt='Akmal'
               fill
               blurDataURL='...'
