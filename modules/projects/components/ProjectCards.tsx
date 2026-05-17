@@ -1,12 +1,12 @@
 import SpotlightCardAchiev from "@/common/components/ui/SpotlightCardAchiev";
 import { STACK } from "@/common/constants/TechStack";
-import { getInfo } from "@/modules/projects/services/getProjectDetail";
+import getProject from "@/modules/projects/services/getProject";
 import { Projects } from "@/types/userTypes";
 import Image from "next/image";
 import Link from "next/link";
 
 async function ProjectCards() {
-  const { userProjects } = await getInfo();
+  const { userProjects } = await getProject();
   return (
     <div className='grid grid-cols-1 py-6 gap-4 md:grid-cols-2 '>
       {userProjects.map((project: Projects) => (
