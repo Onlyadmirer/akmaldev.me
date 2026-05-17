@@ -13,7 +13,7 @@ function SocialMediaSection() {
     <div className='py-6 space-y-4 border-b border-primary/50'>
       <h1 className='text-primary'>Find me on social media</h1>
       <div className='grid lg:grid-cols-2 gap-4 grid-rows-3'>
-        <div className='rounded-md lg:col-span-2 flex flex-row justify-between items-center py-4 px-6 bg-[url(/backgroundSocialMedia/gmail.svg)]'>
+        <div className='rounded-md lg:col-span-2 flex flex-row justify-between items-center py-4 px-6 bg-[url(/images/backgroundSocialMedia/gmail.png)]'>
           <div className='space-y-3'>
             <div className='space-y-2'>
               <h1 className='text-xl font-semibold text-neutral-200'>

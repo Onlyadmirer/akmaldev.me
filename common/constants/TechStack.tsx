@@ -8,22 +8,22 @@ type StackProps = {
 
 export const STACK: StackProps = {
   TailwindCSS: {
-    icon: "/skillsIcon/tailwindcss.svg",
+    icon: "/images/skills/tailwindcss.svg",
     link: "https://tailwindcss.com/docs/installation/using-vite",
     key: "tailwindcss",
   },
   Nextjs: {
-    icon: "/skillsIcon/nextjs.svg",
+    icon: "/images/skills/nextjs.svg",
     link: "https://nextjs.org",
     key: "nextjs",
   },
   Postgree: {
-    icon: "/skillsIcon/postgresql.svg",
+    icon: "/images/skills/postgresql.svg",
     link: "https://www.postgresql.org/",
     key: "postgreesql",
   },
   Prisma: {
-    icon: "/skillsIcon/prisma.svg",
+    icon: "/images/skills/prisma.svg",
     link: "https://www.prisma.io/",
     key: "prisma",
   },
