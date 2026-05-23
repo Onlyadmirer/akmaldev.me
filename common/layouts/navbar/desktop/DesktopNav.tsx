@@ -24,7 +24,7 @@ function DesktopNav() {
         </div>
         <div className='text-center'>
           <div className='flex flex-row gap-2 items-center'>
-            <h1 className='text-2xl font-semibold '>Akmal</h1>
+            <h1 className='text-2xl font-medium '>Akmal</h1>
             <RiVerifiedBadgeFill className='text-cyan-400' size={20} />
           </div>
           <p className='text-sm text-muted-foreground'>@akmal</p>
