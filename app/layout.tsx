@@ -14,7 +14,7 @@ const fontOnest = Onest({
 
 export const metadata: Metadata = {
   metadataBase: new URL(
-    process.env.NEXT_PUBLIC_DOMAIN || "https://www.akmaldev.me"
+    process.env.NEXT_PUBLIC_DOMAIN || "https://www.akmaldev.me",
   ),
   title: {
     default: "Akmaldev",
@@ -65,7 +65,7 @@ export default function RootLayout({
         <Toaster position='bottom-right' />
         <ThemeProvider
           attribute='class'
-          defaultTheme='system'
+          defaultTheme='dark'
           enableSystem
           disableTransitionOnChange
         >
