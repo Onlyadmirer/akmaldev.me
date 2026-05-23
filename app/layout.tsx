@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Onest } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import Layouts from "@/common/layouts/Layouts";
 import { ThemeProvider } from "@/providers/ThemeProvider";
@@ -7,7 +7,7 @@ import Background from "@/common/layouts/background/Background";
 import TopLoader from "@/common/components/elements/TopLoader";
 import { Toaster } from "@/common/components/ui/sonner";
 
-const fontOnest = Onest({
+const fontInter = Inter({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
 });
@@ -60,7 +60,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en' suppressHydrationWarning>
-      <body className={` ${fontOnest.className} antialiased`}>
+      <body className={` ${fontInter.className} antialiased`}>
         <TopLoader />
         <Toaster position='bottom-right' />
         <ThemeProvider

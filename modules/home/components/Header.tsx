@@ -2,14 +2,14 @@ function Header() {
   return (
     <div className='pb-6 space-y-4 border-b border-primary/50'>
       <div className='space-y-2'>
-        <h1 className='text-3xl font-semibold'>Hi I{"'"}m Akmal</h1>
-        <ul className='flex flex-col ml-5 list-disc gap-1 lg:gap-12 text-muted-foreground lg:flex-row'>
+        <h1 className='text-3xl font-medium'>Hi I{"'"}m Akmal</h1>
+        <ul className='flex flex-col ml-5 list-disc gap-1 lg:gap-12 text-neutral-700 dark:text-neutral-400 lg:flex-row'>
           <li>Based in Enrekang, Indonesia ID</li>
           <li>Onsite</li>
         </ul>
       </div>
       <div>
-        <p className='leading-loose text-primary'>
+        <p className='leading-7  text-description'>
           I’m an experienced and dedicated Fullstack Developer with a strong
           focus on building scalable and high quality digital products. I craft
           responsive and accessible user interfaces using Next.js, TypeScript,

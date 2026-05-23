@@ -4,7 +4,7 @@ import signature from "@/public/images/profile/Akmal.svg";
 function Intro() {
   return (
     <div className='py-6 space-y-4 border-b border-dashed border-primary/50'>
-      <div className='leading-loose text-primary space-y-4'>
+      <div className='text-description leading-7 space-y-4'>
         <p>
           Hello there! Thank you for visiting my personal website. I’m Akmal, a
           student majoring in Information Systems at Hasanuddin University,
