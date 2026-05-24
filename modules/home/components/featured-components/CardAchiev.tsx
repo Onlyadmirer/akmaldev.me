@@ -8,24 +8,27 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { PiCertificate } from "react-icons/pi";
 
-interface Achievement {
+type Achievement = {
   id: string;
   url: string;
   title?: string;
-}
+};
 
 function CardAchiev() {
   const [achiv, setAchiv] = useState<Achievement[]>([]);
 
   useEffect(() => {
-    fetch("/api/achievements")
-      .then((res) => res.json())
-      .then((data) => {
+    async function getAchiv() {
+      try {
+        const response = await fetch("/api/achievements");
+        const data = await response.json();
         setAchiv(data);
-      })
-      .catch((err) => {
+      } catch (err) {
         console.error("Gagal mengambil data:", err);
-      });
+      }
+    }
+
+    getAchiv();
   }, []);
 
   const achivImage = achiv
