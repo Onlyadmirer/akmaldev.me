@@ -1,7 +1,6 @@
 "use client";
 
 import SubHeaderSection from "@/common/components/elements/SubHeaderSection";
-import Folder from "@/common/components/ui/Folder";
 import SpotlightCard from "@/common/components/ui/SpotlightCard";
 import Link from "next/link";
 import { GrTechnology } from "react-icons/gr";
@@ -12,7 +11,6 @@ import {
   LuUser,
 } from "react-icons/lu";
 import { MdBackupTable } from "react-icons/md";
-import { PiCertificate } from "react-icons/pi";
 import CardAchiev from "./featured-components/CardAchiev";
 
 function Featured() {
@@ -33,11 +31,11 @@ function Featured() {
             <div className='p-3 rounded-xl h-14 w-14 bg-neutral-300 dark:bg-neutral-800'>
               <LuGalleryVerticalEnd
                 size={24}
-                className='object-cover w-full h-full'
+                className='object-cover w-full h-full text-description'
               />
             </div>
             <div>
-              <h2 className='text-base font-medium'>Projects</h2>
+              <h2 className='text-description font-medium'>Projects</h2>
             </div>
           </Link>
         </SpotlightCard>
@@ -49,10 +47,13 @@ function Featured() {
           <Link href={"/about"}>
             <div className=' flex items-center flex-col gap-2'>
               <div className='p-3 rounded-xl h-14 w-14 bg-neutral-300 dark:bg-neutral-800'>
-                <LuUser size={24} className='object-cover w-full h-full' />
+                <LuUser
+                  size={24}
+                  className='object-cover w-full h-full text-description'
+                />
               </div>
               <div className='text-center'>
-                <h2 className='text-base font-medium'>About me</h2>
+                <h2 className='text-description font-medium'>About me</h2>
               </div>
             </div>
           </Link>
@@ -67,11 +68,11 @@ function Featured() {
               <div className='p-3 rounded-xl h-14 w-14 bg-neutral-300 dark:bg-neutral-800'>
                 <GrTechnology
                   size={24}
-                  className='object-cover w-full h-full'
+                  className='object-cover w-full h-full text-description'
                 />
               </div>
               <div className='text-center'>
-                <h2 className='text-base font-medium'>Skills</h2>
+                <h2 className='text-description font-medium'>Skills</h2>
               </div>
             </div>
           </Link>
@@ -86,10 +87,13 @@ function Featured() {
           <Link href={"/contact"}>
             <div className=' flex items-center flex-col gap-2'>
               <div className='p-3 rounded-xl h-14 w-14 bg-neutral-300 dark:bg-neutral-800'>
-                <LuBookUser size={24} className='object-cover w-full h-full' />
+                <LuBookUser
+                  size={24}
+                  className='object-cover w-full h-full text-description'
+                />
               </div>
               <div className='text-center'>
-                <h2 className='text-base font-medium'>Contact</h2>
+                <h2 className='text-description font-medium'>Contact</h2>
               </div>
             </div>
           </Link>
@@ -104,11 +108,11 @@ function Featured() {
               <div className='p-3 rounded-xl h-14 w-14 bg-neutral-300 dark:bg-neutral-800'>
                 <LuLayoutDashboard
                   size={24}
-                  className='object-cover w-full h-full'
+                  className='object-cover w-full h-full text-description'
                 />
               </div>
               <div>
-                <h2 className='text-base font-medium'>Dashboard</h2>
+                <h2 className='text-description font-medium'>Dashboard</h2>
               </div>
             </div>
           </Link>

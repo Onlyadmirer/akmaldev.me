@@ -50,18 +50,21 @@ function CardAchiev() {
         className=' w-full flex items-center flex-row md:flex-col gap-4 md:gap-2'
       >
         <div className='p-3 rounded-xl h-14 w-14 bg-neutral-300 dark:bg-neutral-800'>
-          <PiCertificate size={24} className='object-cover w-full h-full' />
+          <PiCertificate
+            size={24}
+            className='object-cover text-description w-full h-full'
+          />
         </div>
         <div className='text-center'>
-          <h2 className='text-base flex flex-row items-center gap-2 font-medium'>
-            Achievements <ArrowRight className='translate-y-0.5' size={14} />
+          <h2 className='text-description flex flex-row items-center gap-2 font-medium'>
+            Achievements <ArrowRight className='translate-y-0.5 ' size={14} />
           </h2>
         </div>
       </Link>
       <Folder
         size={1}
         color='#5227FF'
-        className='custom-folder scale-150 md:scale-100'
+        className='custom-folder scale-125 md:scale-100'
         items={achivImage}
       />
     </SpotlightCard>
