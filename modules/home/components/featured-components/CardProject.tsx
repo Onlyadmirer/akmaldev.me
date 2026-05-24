@@ -5,32 +5,9 @@ import CardSwap, { Card } from "@/components/CardSwap";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
 import { LuGalleryVerticalEnd } from "react-icons/lu";
 
-type Projects = {
-  id: number;
-  title: string;
-  image: string;
-};
-
 function CardProject() {
-  const [project, setProject] = useState<Projects[]>([]);
-
-  useEffect(() => {
-    async function getProjects() {
-      try {
-        const response = await fetch("/api/projects");
-        const data = await response.json();
-        setProject(data.projects);
-      } catch (error) {
-        console.error("gagal mengambil data", error);
-      }
-    }
-
-    getProjects();
-  }, []);
-
   return (
     <SpotlightCard
       className=' h-80 md:col-span-2 flex flex-col justify-between relative'
@@ -57,21 +34,40 @@ function CardProject() {
           delay={3000}
           pauseOnHover={false}
         >
-          {project.map((proj) => (
-            <Card key={proj.id} className='flex flex-col overflow-hidden'>
-              <h3 className=' border-b px-2 border-neutral-100'>
-                {proj.title}
-              </h3>
-              <div className='w-full h-full relative'>
-                <Image
-                  src={proj.image}
-                  alt={proj.title}
-                  fill
-                  className='object-cover object-top-left'
-                />
-              </div>
-            </Card>
-          ))}
+          <Card className='flex flex-col overflow-hidden'>
+            <h3 className=' border-b px-2 border-neutral-100'>akmal.me</h3>
+            <div className='w-full h-full relative'>
+              <Image
+                src={"/images/home/project1.png"}
+                alt={"akmaldev"}
+                fill
+                className='object-cover object-top-left'
+              />
+            </div>
+          </Card>
+          <Card className='flex flex-col overflow-hidden'>
+            <h3 className=' border-b px-2 border-neutral-100'>VELO</h3>
+            <div className='w-full h-full relative'>
+              <Image
+                src={"/images/home/project2.png"}
+                alt={"velo"}
+                fill
+                className='object-cover object-top-left'
+              />
+            </div>
+          </Card>
+          <Card className='flex flex-col overflow-hidden'>
+            <h3 className=' border-b px-2 border-neutral-100'>On Process</h3>
+            <div className='w-full h-full flex items-center justify-center relative'>
+              {/* <Image
+                src={"/images/home/project2.png"}
+                alt={"velo"}
+                fill
+                className='object-cover object-top-left'
+              /> */}
+              <p>Will Update</p>
+            </div>
+          </Card>
         </CardSwap>
       </div>
     </SpotlightCard>
