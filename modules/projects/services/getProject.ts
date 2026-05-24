@@ -4,7 +4,6 @@ export default async function getProjectDetail() {
   const user = await prisma.user.findUnique({
     where: { email: "akmalrbc6@gmail.com" },
     include: {
-      achievements: true,
       projects: {
         include: {
           stack: true
