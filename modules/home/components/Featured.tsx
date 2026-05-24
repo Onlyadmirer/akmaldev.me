@@ -4,14 +4,10 @@ import SubHeaderSection from "@/common/components/elements/SubHeaderSection";
 import SpotlightCard from "@/common/components/ui/SpotlightCard";
 import Link from "next/link";
 import { GrTechnology } from "react-icons/gr";
-import {
-  LuBookUser,
-  LuGalleryVerticalEnd,
-  LuLayoutDashboard,
-  LuUser,
-} from "react-icons/lu";
+import { LuBookUser, LuLayoutDashboard, LuUser } from "react-icons/lu";
 import { MdBackupTable } from "react-icons/md";
 import CardAchiev from "./featured-components/CardAchiev";
+import CardProject from "./featured-components/CardProject";
 
 function Featured() {
   return (
@@ -23,22 +19,7 @@ function Featured() {
       />
       <div className='grid grid-cols-1 pt-6 gap-2 md:grid-cols-4 md:grid-rows-2 '>
         {/* Card Projects */}
-        <SpotlightCard
-          className=' h-80 md:col-span-2'
-          spotlightColor='rgba(200, 0, 100, 0.2)'
-        >
-          <Link href={"/projects"} className='flex flex-row items-center gap-4'>
-            <div className='p-3 rounded-xl h-14 w-14 bg-neutral-300 dark:bg-neutral-800'>
-              <LuGalleryVerticalEnd
-                size={24}
-                className='object-cover w-full h-full text-description'
-              />
-            </div>
-            <div>
-              <h2 className='text-description font-medium'>Projects</h2>
-            </div>
-          </Link>
-        </SpotlightCard>
+        <CardProject />
         {/* Card About */}
         <SpotlightCard
           className=' h-80 '
