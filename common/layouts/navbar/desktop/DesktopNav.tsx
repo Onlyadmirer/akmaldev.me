@@ -3,7 +3,7 @@ import ThemeToggle from "../../../components/ui/ThemeToggle";
 import { RiVerifiedBadgeFill } from "react-icons/ri";
 import Link from "next/link";
 import { BsArrowRight } from "react-icons/bs";
-import { useNavbar } from "@/hooks/useNavbar";
+import { useNavbar } from "@/common/layouts/navbar/useNavbar";
 
 function DesktopNav() {
   const { pathName, menuItems } = useNavbar();

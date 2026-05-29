@@ -4,7 +4,7 @@ import Image from "next/image";
 import { RiMenu3Fill, RiVerifiedBadgeFill } from "react-icons/ri";
 import ThemeToggle from "../../../components/ui/ThemeToggle";
 import Link from "next/link";
-import { useNavbar } from "@/hooks/useNavbar";
+import { useNavbar } from "@/common/layouts/navbar/useNavbar";
 import { BsArrowRight } from "react-icons/bs";
 import { IoMdClose } from "react-icons/io";
 
