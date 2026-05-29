@@ -34,7 +34,12 @@ function Featured() {
                 />
               </div>
               <div className='text-center'>
-                <h2 className='text-description font-medium'>About me</h2>
+                <h2 className='text-description text-sm font-medium'>
+                  About me
+                </h2>
+                <p className='text-neutral-400 tracking-tight text-xs'>
+                  Get to know more about my background and philosophy.
+                </p>
               </div>
             </div>
           </Link>
@@ -53,7 +58,10 @@ function Featured() {
                 />
               </div>
               <div className='text-center'>
-                <h2 className='text-description font-medium'>Skills</h2>
+                <h2 className='text-description text-sm font-medium'>Skills</h2>
+                <p className='text-neutral-400 tracking-tight text-xs'>
+                  Libraries, frameworks, and tools I use to build scalable apps.
+                </p>
               </div>
             </div>
           </Link>
@@ -74,7 +82,12 @@ function Featured() {
                 />
               </div>
               <div className='text-center'>
-                <h2 className='text-description font-medium'>Contact</h2>
+                <h2 className='text-description text-sm font-medium'>
+                  Contact
+                </h2>
+                <p className='text-neutral-400 tracking-tight text-xs'>
+                  Reach out via email, GitHub, or LinkedIn.
+                </p>
               </div>
             </div>
           </Link>
@@ -93,7 +106,13 @@ function Featured() {
                 />
               </div>
               <div>
-                <h2 className='text-description font-medium'>Dashboard</h2>
+                <h2 className='text-description text-sm font-medium'>
+                  Dashboard
+                </h2>
+                <p className='text-neutral-400 tracking-tight text-xs'>
+                  Real-time insights of my coding activity, GitHub metrics, and
+                  stats.
+                </p>
               </div>
             </div>
           </Link>

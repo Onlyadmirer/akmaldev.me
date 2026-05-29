@@ -21,10 +21,14 @@ function CardProject() {
           />
         </div>
         <div>
-          <h2 className='text-description flex flex-row gap-2 items-center font-medium'>
+          <h2 className='text-description text-sm flex flex-row gap-2 items-center font-medium'>
             Projects
             <ArrowRight className='translate-y-0.5' size={14} />
           </h2>
+          <p className='text-neutral-400 tracking-tight text-xs'>
+            Exploring my recent web development and systems integration
+            projects.
+          </p>
         </div>
       </Link>
       <div className='absolute sm:scale-55 scale-125 bottom-0 right-4'>
