@@ -40,7 +40,7 @@ function CardAbout() {
           cards={images.map((src, i) => (
             <div
               key={i}
-              className='relative w-full h-full border-neutral-600 dark:border-neutral-200 border-4 rounded-xl overflow-hidden'
+              className='relative w-full h-full border-neutral-600 dark:border-neutral-200 border-2 rounded-xl overflow-hidden'
             >
               <Image
                 src={src}
