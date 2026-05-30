@@ -7,7 +7,7 @@ import Link from "next/link";
 import { useNavbar } from "@/common/layouts/navbar/useNavbar";
 import { BsArrowRight } from "react-icons/bs";
 import { IoMdClose } from "react-icons/io";
-import ShinyText from "@/components/ShinyText";
+import ShinyText from "@/common/components/ui/ShinyText";
 
 function MobileNav() {
   const { pathName, menuItems, toggleMenu, setShowMenu, showMenu } =

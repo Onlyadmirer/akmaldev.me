@@ -34,7 +34,7 @@ export const Card = forwardRef<HTMLDivElement, CardProps>(
     <div
       ref={ref}
       {...rest}
-      className={`absolute top-1/2 left-1/2 rounded-xl border border-white bg-black [transform-style:preserve-3d] [will-change:transform] [backface-visibility:hidden] ${customClass ?? ""} ${rest.className ?? ""}`.trim()}
+      className={`absolute top-1/2 left-1/2 rounded-xl border border-white bg-black transform-3d will-change-transform backface-hidden ${customClass ?? ""} ${rest.className ?? ""}`.trim()}
     />
   ),
 );
@@ -109,8 +109,8 @@ const CardSwap: React.FC<CardSwapProps> = ({
     [children],
   );
   const refs = useMemo<CardRef[]>(
-    // eslint-disable-next-line
     () => childArr.map(() => React.createRef<HTMLDivElement>()),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     [childArr.length],
   );
 
@@ -217,6 +217,7 @@ const CardSwap: React.FC<CardSwapProps> = ({
       };
     }
     return () => clearInterval(intervalRef.current);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [cardDistance, verticalDistance, delay, pauseOnHover, skewAmount, easing]);
 
   const rendered = childArr.map((child, i) =>

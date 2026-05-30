@@ -1,7 +1,7 @@
 "use client";
 
 import SpotlightCard from "@/common/components/ui/SpotlightCard";
-import CardSwap, { Card } from "@/components/CardSwap";
+import CardSwap, { Card } from "@/common/components/ui/CardSwap";
 import Image from "next/image";
 import Link from "next/link";
 import { LuGalleryVerticalEnd } from "react-icons/lu";

@@ -4,7 +4,7 @@ import { RiVerifiedBadgeFill } from "react-icons/ri";
 import Link from "next/link";
 import { BsArrowRight } from "react-icons/bs";
 import { useNavbar } from "@/common/layouts/navbar/useNavbar";
-import ShinyText from "@/components/ShinyText";
+import ShinyText from "@/common/components/ui/ShinyText";
 
 function DesktopNav() {
   const { pathName, menuItems } = useNavbar();

@@ -1,5 +1,5 @@
 import SpotlightCard from "@/common/components/ui/SpotlightCard";
-import LogoLoop from "@/components/LogoLoop";
+import LogoLoop from "@/common/components/ui/LogoLoop";
 import Link from "next/link";
 import { GrTechnology } from "react-icons/gr";
 import {
@@ -30,14 +30,14 @@ export default function CardSkills() {
   return (
     <SpotlightCard className=' h-80 ' spotlightColor='rgba(200, 0, 100, 0.2)'>
       <Link href={"/"}>
-        <div className=' flex items-center flex-col gap-2'>
+        <div className=' flex items-center flex-row md:flex-col gap-2'>
           <div className='p-3 rounded-xl h-14 w-14 bg-neutral-300 dark:bg-neutral-800'>
             <GrTechnology
               size={24}
               className='object-cover w-full h-full text-description'
             />
           </div>
-          <div className='text-center'>
+          <div className='md:text-center'>
             <h2 className='text-description text-sm font-medium'>Skills</h2>
             <p className='text-neutral-400 tracking-tight text-xs'>
               Libraries, frameworks, and tools I use to build scalable apps.
@@ -45,7 +45,7 @@ export default function CardSkills() {
           </div>
         </div>
       </Link>
-      <div className='h-40 mt-8 space-y-8 md:space-y-2 relative overflow-hidden'>
+      <div className='h-96 md:h-40 mt-8 space-y-8 md:space-y-2 relative overflow-hidden'>
         {/* Vertical loop with deceleration on hover */}
         <LogoLoop speed={50} logos={techLogos} />
         <LogoLoop speed={50} direction='right' logos={techLogos} />
