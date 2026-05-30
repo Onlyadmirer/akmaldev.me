@@ -45,7 +45,7 @@ export default function CardSkills() {
           </div>
         </div>
       </Link>
-      <div className='h-40 mt-8 space-y-2 relative overflow-hidden'>
+      <div className='h-40 mt-8 space-y-8 md:space-y-2 relative overflow-hidden'>
         {/* Vertical loop with deceleration on hover */}
         <LogoLoop speed={50} logos={techLogos} />
         <LogoLoop speed={50} direction='right' logos={techLogos} />

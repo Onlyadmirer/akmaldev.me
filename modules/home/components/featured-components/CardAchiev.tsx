@@ -57,10 +57,8 @@ function CardAchiev() {
             className='object-cover text-description w-full h-full'
           />
         </div>
-        <div className='text-center'>
-          <h2 className='text-description text-center text-sm font-medium'>
-            Achievements
-          </h2>
+        <div className='md:text-center'>
+          <h2 className='text-description text-sm font-medium'>Achievements</h2>
           <p className='text-neutral-400 text-start md:text-center tracking-tight text-xs'>
             Certificates, tech bootcamp completions, and academic milestones.
           </p>
