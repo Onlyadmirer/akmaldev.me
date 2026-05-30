@@ -2,7 +2,6 @@
 
 import SpotlightCard from "@/common/components/ui/SpotlightCard";
 import CardSwap, { Card } from "@/components/CardSwap";
-import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { LuGalleryVerticalEnd } from "react-icons/lu";
@@ -23,7 +22,6 @@ function CardProject() {
         <div>
           <h2 className='text-description text-sm flex flex-row gap-2 items-center font-medium'>
             Projects
-            <ArrowRight className='translate-y-0.5' size={14} />
           </h2>
           <p className='text-neutral-400 tracking-tight text-xs'>
             Exploring my recent web development and systems integration

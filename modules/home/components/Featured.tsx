@@ -9,6 +9,7 @@ import { MdBackupTable } from "react-icons/md";
 import CardAchiev from "./featured-components/CardAchiev";
 import CardProject from "./featured-components/CardProject";
 import CardAbout from "./featured-components/CardAbout";
+import CardSkills from "./featured-components/CardSkills";
 
 function Featured() {
   return (
@@ -24,27 +25,7 @@ function Featured() {
         {/* Card About */}
         <CardAbout />
         {/* Card Skills */}
-        <SpotlightCard
-          className=' h-80 '
-          spotlightColor='rgba(200, 0, 100, 0.2)'
-        >
-          <Link href={"/"}>
-            <div className=' flex items-center flex-col gap-2'>
-              <div className='p-3 rounded-xl h-14 w-14 bg-neutral-300 dark:bg-neutral-800'>
-                <GrTechnology
-                  size={24}
-                  className='object-cover w-full h-full text-description'
-                />
-              </div>
-              <div className='text-center'>
-                <h2 className='text-description text-sm font-medium'>Skills</h2>
-                <p className='text-neutral-400 tracking-tight text-xs'>
-                  Libraries, frameworks, and tools I use to build scalable apps.
-                </p>
-              </div>
-            </div>
-          </Link>
-        </SpotlightCard>
+        <CardSkills />
         {/* Card Achievements */}
         <CardAchiev />
         {/* Card Contact */}
