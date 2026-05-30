@@ -27,11 +27,11 @@ function CardContact() {
           </div>
         </div>
       </Link>
-      <div className='grid grid-cols-2 mt-8 space-y-8 justify-items-center m-auto w-full'>
-        <InstagramIcon className='h-10 hover:-rotate-6 hover:scale-110 transition-all duration-300 ease-in-out' />
-        <GmailDarkIcon className='h-10 hover:rotate-6 hover:scale-110 transition-all duration-300 ease-in-out' />
-        <LinkedinIcon className='h-10 hover:rotate-6 hover:scale-110 transition-all duration-300 ease-in-out' />
-        <GithubLightIcon className='h-10 hover:-rotate-6 hover:scale-110 transition-all duration-300 ease-in-out' />
+      <div className='grid grid-cols-2 mt-6 md:mt-8 md:gap-8 gap-8 justify-items-center m-auto w-full'>
+        <InstagramIcon className='md:h-10 h-14 justify-self-end hover:-rotate-6 hover:scale-110 transition-all duration-300 ease-in-out' />
+        <GmailDarkIcon className='md:h-10 h-14 justify-self-start hover:rotate-6 hover:scale-110 transition-all duration-300 ease-in-out' />
+        <LinkedinIcon className='md:h-10 h-14 justify-self-end hover:rotate-6 hover:scale-110 transition-all duration-300 ease-in-out' />
+        <GithubLightIcon className='md:h-10 justify-self-start h-14 hover:-rotate-6 hover:scale-110 transition-all duration-300 ease-in-out' />
       </div>
     </SpotlightCard>
   );
