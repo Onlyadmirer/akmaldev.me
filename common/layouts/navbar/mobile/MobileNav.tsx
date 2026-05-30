@@ -7,6 +7,7 @@ import Link from "next/link";
 import { useNavbar } from "@/common/layouts/navbar/useNavbar";
 import { BsArrowRight } from "react-icons/bs";
 import { IoMdClose } from "react-icons/io";
+import ShinyText from "@/components/ShinyText";
 
 function MobileNav() {
   const { pathName, menuItems, toggleMenu, setShowMenu, showMenu } =
@@ -44,7 +45,19 @@ function MobileNav() {
             ></Image>
           </div>
           <div className='flex flex-row gap-2 items-center'>
-            <h1 className='text-2xl font-medium tracking-tight'>Akmal</h1>
+            <ShinyText
+              text='Akmal'
+              speed={2}
+              delay={0}
+              color='#a4a4a4'
+              shineColor='#ffffff'
+              spread={120}
+              direction='left'
+              yoyo={false}
+              pauseOnHover={false}
+              disabled={false}
+              className='text-2xl font-medium'
+            />
             <RiVerifiedBadgeFill className='text-cyan-400' size={20} />
           </div>
         </div>
