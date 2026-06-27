@@ -8,10 +8,20 @@ import { useNavbar } from "@/common/layouts/navbar/useNavbar";
 import { BsArrowRight } from "react-icons/bs";
 import { IoMdClose } from "react-icons/io";
 import ShinyText from "@/common/components/ui/ShinyText";
+import { useEffect } from "react";
+import { useTheme } from "next-themes";
 
 function MobileNav() {
   const { pathName, menuItems, toggleMenu, setShowMenu, showMenu } =
     useNavbar();
+
+  const { resolvedTheme } = useTheme();
+
+  useEffect(() => {
+    clearTimeout(setTimeout(() => {}, 0));
+  });
+
+  const isDark = resolvedTheme === "dark";
 
   return (
     <div
@@ -49,8 +59,8 @@ function MobileNav() {
               text='Akmal'
               speed={2}
               delay={0}
-              color='#a4a4a4'
-              shineColor='#ffffff'
+              color={isDark ? "#a4a4a4" : "#6b6b6b"}
+              shineColor={isDark ? "#ffffff" : "#222222"}
               spread={120}
               direction='left'
               yoyo={false}
