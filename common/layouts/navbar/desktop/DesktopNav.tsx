@@ -5,18 +5,9 @@ import Link from "next/link";
 import { BsArrowRight } from "react-icons/bs";
 import { useNavbar } from "@/common/layouts/navbar/useNavbar";
 import ShinyText from "@/common/components/ui/ShinyText";
-import { useTheme } from "next-themes";
-import { useEffect } from "react";
 
 function DesktopNav() {
   const { pathName, menuItems } = useNavbar();
-  const { resolvedTheme } = useTheme();
-
-  useEffect(() => {
-    clearTimeout(setTimeout(() => {}, 0));
-  });
-
-  const isDark = resolvedTheme === "dark";
 
   return (
     <div className='flex h-full flex-col px-1'>
@@ -38,8 +29,8 @@ function DesktopNav() {
               text='Akmal'
               speed={2}
               delay={0}
-              color={isDark ? "#a4a4a4" : "#6b6b6b"}
-              shineColor={isDark ? "#ffffff" : "#222222"}
+              color={"var(--shiny-color)"}
+              shineColor={"var(--shiny-shine)"}
               spread={120}
               direction='left'
               yoyo={false}
