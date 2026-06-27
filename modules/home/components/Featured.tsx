@@ -17,7 +17,7 @@ function Featured() {
       route: "/projects",
       icon: (
         <LuGalleryVerticalEnd
-          size={24}
+          size={38}
           className='object-cover w-full h-full text-description'
         />
       ),
@@ -29,7 +29,7 @@ function Featured() {
       route: "/achievements",
       icon: (
         <PiCertificate
-          size={24}
+          size={38}
           className='object-cover w-full h-full text-description'
         />
       ),
@@ -41,7 +41,7 @@ function Featured() {
       route: "/about",
       icon: (
         <LuUser
-          size={24}
+          size={38}
           className='object-cover w-full h-full text-description'
         />
       ),
@@ -52,7 +52,7 @@ function Featured() {
       route: "/dashboard",
       icon: (
         <LuLayoutDashboard
-          size={24}
+          size={38}
           className='object-cover w-full h-full text-description'
         />
       ),
@@ -65,12 +65,12 @@ function Featured() {
   return (
     <div className='py-6'>
       <SubHeaderSection
-        icon={<MdBackupTable size={24} />}
+        icon={<MdBackupTable size={38} />}
         title='Featured Section'
         description='Explore everything I’ve crafted, contributed, and accomplished.'
       />
 
-      <div className='mt-8 flex flex-col sm:grid grid-cols-2 grid-rows-2 gap-4 sm:gap-2'>
+      <div className='mt-8 flex flex-col sm:grid grid-cols-2 grid-rows-2 gap-2'>
         {featured.map((item, index) => (
           <Link
             key={index}
@@ -78,7 +78,7 @@ function Featured() {
             className='flex flex-row items-center gap-4'
           >
             <SpotlightCard className='flex rounded-lg flex-row items-center gap-6 w-full'>
-              <div className='p-3 rounded-xl h-14 w-14 bg-neutral-300 dark:bg-neutral-800'>
+              <div className='p-3 rounded-lg bg-neutral-300 dark:bg-neutral-800'>
                 <>{item.icon}</>
               </div>
               <div>
