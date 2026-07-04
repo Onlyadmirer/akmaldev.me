@@ -56,14 +56,16 @@ function DesktopNav() {
             <Link
               href={item.href}
               key={item.label}
-              className={`flex flex-row justify-between py-2 rounded-lg px-4 items-center hover:scale-105 hover:text-primary transition-all duration-200 ease-in-out hover:bg-muted-foreground/20 ${
+              className={`group flex flex-row justify-between py-2 rounded-lg px-4 items-center hover:scale-105 hover:text-primary transition-all duration-200 ease-in-out hover:bg-muted-foreground/20 ${
                 isActive
                   ? "bg-muted-foreground/20 text-primary scale-105"
                   : "bg-transparent text-muted-foreground"
               }`}
             >
-              <div className='flex flex-row items-center gap-2'>
-                {item.icon}
+              <div className='flex flex-row  items-center gap-2'>
+                <span className='group-hover:-rotate-10 transition-all ease-in-out duration-500'>
+                  {item.icon}
+                </span>
                 <span className='text-base'>{item.label}</span>
               </div>
               {isActive ? <BsArrowRight /> : ""}
@@ -71,9 +73,9 @@ function DesktopNav() {
           );
         })}
       </div>
-      <div className='flex-1 py-4'>
-        <h1 className='text-center'>
-          © {new Date().getFullYear()} Akmal. All rights reserved.
+      <div className='flex-1 py-4 mt-4'>
+        <h1 className='text-center text-sm'>
+          © {new Date().getFullYear()} Akmal. <br /> All rights reserved.
         </h1>
       </div>
     </div>

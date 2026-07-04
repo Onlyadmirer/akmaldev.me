@@ -10,7 +10,7 @@ export async function GET() {
         user: true
       },
       orderBy: {
-        createdAt: "desc"
+        createdAt: "asc"
       }
     })
 
