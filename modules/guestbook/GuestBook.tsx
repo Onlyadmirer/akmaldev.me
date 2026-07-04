@@ -138,7 +138,7 @@ function GuestBook() {
       )}
       <div>
         {session?.user ? (
-          <div className='flex flex-col gap-6'>
+          <div className='flex flex-col mb-6 gap-6'>
             <form
               onSubmit={handleSubmit(onSubmit)}
               className='flex flex-row gap-2'
@@ -181,7 +181,7 @@ function GuestBook() {
             </div>
           </div>
         ) : (
-          <div className='flex flex-col items-center gap-4 justify-center'>
+          <div className='flex flex-col items-center mb-6 gap-4 justify-center'>
             <h2>Sign in to join the conversation. Your data is secure.</h2>
             <Button
               onClick={() => signIn("google")}
