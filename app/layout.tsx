@@ -63,7 +63,7 @@ export default function RootLayout({
     <html lang='en' suppressHydrationWarning>
       <body className={` ${fontInter.className} antialiased`}>
         <TopLoader />
-        <Toaster position='bottom-right' />
+        <Toaster position='top-center' />
         <AuthProvider>
           <ThemeProvider
             attribute='class'
