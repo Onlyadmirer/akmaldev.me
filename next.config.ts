@@ -6,33 +6,33 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'raw.githubusercontent.com',  // Tambah ini untuk GitHub
-        port: '',  // Opsional, kosongkan jika standar
-        pathname: '/**',  // Allow semua path di hostname ini
+        hostname: 'raw.githubusercontent.com',
+        port: '',
+        pathname: '/**',
       },
       {
         protocol: 'https',
-        hostname: 'res.cloudinary.com',  // Tambah ini untuk GitHub
-        port: '',  // Opsional, kosongkan jika standar
-        pathname: '/**',  // Allow semua path di hostname ini
+        hostname: 'res.cloudinary.com',
+        port: '',
+        pathname: '/**',
       },
       {
         protocol: 'https',
-        hostname: 'learn.wpucourse.id',  // Tambah ini untuk GitHub
-        port: '',  // Opsional, kosongkan jika standar
-        pathname: '/**',  // Allow semua path di hostname ini
+        hostname: 'learn.wpucourse.id',
+        port: '',
+        pathname: '/**',
       },
       {
         protocol: 'https',
-        hostname: 'akmaldev.my.id',  // Tambah ini untuk GitHub
-        port: '',  // Opsional, kosongkan jika standar
-        pathname: '/**',  // Allow semua path di hostname ini
+        hostname: 'akmaldev.my.id',
+        port: '',
+        pathname: '/**',
       },
       {
         protocol: 'https',
-        hostname: 'lh3.googleusercontent.com',  // Tambah ini untuk GitHub
-        port: '',  // Opsional, kosongkan jika standar
-        pathname: '/**',  // Allow semua path di hostname ini
+        hostname: 'lh3.googleusercontent.com',
+        port: '',
+        pathname: '/**',
       },
     ],
   },

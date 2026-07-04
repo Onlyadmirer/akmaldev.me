@@ -1,3 +1,4 @@
+import { auth } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
 import { NextResponse } from "next/server";
 
@@ -24,10 +25,44 @@ export async function GET() {
 }
 
 
-export async function POST() {
+export async function POST(request: Request) {
   try {
 
-  } catch (error) {
+    const session = await auth()
 
+    if (!session || !session.user || !session.user.id) {
+      return NextResponse.json({
+        message: "Login first!"
+      }, { status: 401 })
+    }
+
+    const body = await request.json()
+    const { text } = body
+
+    if (!text || !text.trim()) {
+      return NextResponse.json(
+        { message: "The comment cannot be empty." },
+        { status: 400 }
+      )
+    }
+
+    const newComment = await prisma.comment.create({
+      data: {
+        text: text.trim(),
+        userId: session.user.id
+      },
+      include: {
+        user: true
+      }
+    })
+
+    return NextResponse.json(newComment, { status: 201 })
+
+  } catch (error) {
+    console.error("POST_COMMENT_ERROR:", error);
+    return NextResponse.json(
+      { message: 'Gagal mengirim komentar' },
+      { status: 500 }
+    );
   }
 }

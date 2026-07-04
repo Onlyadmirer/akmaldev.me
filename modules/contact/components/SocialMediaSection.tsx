@@ -29,7 +29,7 @@ function SocialMediaSection() {
               target='_blank'
               rel='noopener noreferrer'
             >
-              <Button>
+              <Button className='text-neutral-800'>
                 Send Email <MdOutlineArrowOutward size={18} />
               </Button>
             </a>
@@ -57,7 +57,7 @@ function SocialMediaSection() {
                 target='_blank'
                 rel='noopener noreferrer'
               >
-                <Button>
+                <Button className='text-neutral-800'>
                   {item.action} <MdOutlineArrowOutward size={18} />
                 </Button>
               </Link>
