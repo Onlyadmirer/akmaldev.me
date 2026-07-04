@@ -28,6 +28,12 @@ const nextConfig: NextConfig = {
         port: '',  // Opsional, kosongkan jika standar
         pathname: '/**',  // Allow semua path di hostname ini
       },
+      {
+        protocol: 'https',
+        hostname: 'lh3.googleusercontent.com',  // Tambah ini untuk GitHub
+        port: '',  // Opsional, kosongkan jika standar
+        pathname: '/**',  // Allow semua path di hostname ini
+      },
     ],
   },
 };

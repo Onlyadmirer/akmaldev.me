@@ -6,6 +6,7 @@ import { ThemeProvider } from "@/providers/ThemeProvider";
 import Background from "@/common/layouts/background/Background";
 import TopLoader from "@/common/components/elements/TopLoader";
 import { Toaster } from "@/common/components/ui/sonner";
+import { AuthProvider } from "@/providers/AuthProvider";
 
 const fontInter = Inter({
   subsets: ["latin"],
@@ -63,15 +64,17 @@ export default function RootLayout({
       <body className={` ${fontInter.className} antialiased`}>
         <TopLoader />
         <Toaster position='bottom-right' />
-        <ThemeProvider
-          attribute='class'
-          defaultTheme='dark'
-          enableSystem
-          disableTransitionOnChange
-        >
-          <Background />
-          <Layouts>{children}</Layouts>
-        </ThemeProvider>
+        <AuthProvider>
+          <ThemeProvider
+            attribute='class'
+            defaultTheme='dark'
+            enableSystem
+            disableTransitionOnChange
+          >
+            <Background />
+            <Layouts>{children}</Layouts>
+          </ThemeProvider>
+        </AuthProvider>
       </body>
     </html>
   );
