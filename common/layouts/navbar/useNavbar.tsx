@@ -2,6 +2,7 @@
 
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import { IoChatbubbleEllipsesOutline } from "react-icons/io5";
 import {
   LuBookUser,
   LuGalleryVerticalEnd,
@@ -25,6 +26,11 @@ export const useNavbar = () => {
       icon: <LuUser size={20} />,
     },
     {
+      label: "Dashboard",
+      href: "/dashboard",
+      icon: <LuLayoutDashboard size={20} />,
+    },
+    {
       label: "Achievements",
       href: "/achievements",
       icon: <PiCertificate size={20} />,
@@ -35,9 +41,9 @@ export const useNavbar = () => {
       icon: <LuGalleryVerticalEnd size={20} />,
     },
     {
-      label: "Dashboard",
-      href: "/dashboard",
-      icon: <LuLayoutDashboard size={20} />,
+      label: "Guestbook",
+      href: "/guestbook",
+      icon: <IoChatbubbleEllipsesOutline size={20} />,
     },
     {
       label: "Contact",
