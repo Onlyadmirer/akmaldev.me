@@ -4,21 +4,30 @@ import { NextResponse } from "next/server";
 
 export async function GET() {
   try {
-    const user = await prisma.user.findUnique({
-      where: { email: "akmalrbc6@gmail.com" },
+    const response = await prisma.comment.findMany({
       include: {
-        achievements: true
+        user: true
+      },
+      orderBy: {
+        createdAt: "desc"
       }
     })
 
-    const achievements = user?.achievements || []
-
-    return NextResponse.json(achievements, { status: 200 })
+    return NextResponse.json(response, { status: 200 })
   } catch (error) {
-    console.error("--- PRISMA ERROR ---", error);
+    console.log(error)
     return NextResponse.json(
       { message: 'Gagal mengambil data achievements' },
       { status: 500 }
     );
+  }
+}
+
+
+export async function POST() {
+  try {
+
+  } catch (error) {
+
   }
 }

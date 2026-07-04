@@ -5,7 +5,7 @@ export default async function getProjectDetail(slug: string) {
   const project = await prisma.projects.findUnique({
     where: { slug: slug },
     include: {
-      stack: true,
+      techStacks: true,
       author: true
     }
   })

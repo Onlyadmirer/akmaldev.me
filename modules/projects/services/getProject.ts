@@ -9,7 +9,7 @@ export default async function getProjectDetail() {
           id: "asc"
         },
         include: {
-          stack: true
+          techStacks: true
         }
       },
     }
@@ -17,7 +17,7 @@ export default async function getProjectDetail() {
 
   const userProjects = (user?.projects || []).map((project) => ({
     ...project,
-    stack: project.stack.map((s) => s.name)
+    stack: project.techStacks.map((s) => s.name)
   }))
 
   if (!user) {

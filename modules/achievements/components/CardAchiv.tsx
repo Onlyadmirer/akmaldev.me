@@ -11,13 +11,8 @@ async function CardAchiv() {
 
   return (
     <div className='grid grid-cols-1 py-6 gap-4 sm:grid-cols-2 md:grid-cols-3'>
-      {achievements.map((achiev: Achiv) => (
-        <Link
-          key={achiev.id}
-          href={achiev.url}
-          className='h-full'
-          target='_blank'
-        >
+      {achievements.map((achiev: Achiv, idx) => (
+        <Link key={idx} href={achiev.url} className='h-full' target='_blank'>
           <SpotlightCardAchiev className='flex flex-col justify-between overflow-hidden group'>
             <div className='relative h-46'>
               <Image

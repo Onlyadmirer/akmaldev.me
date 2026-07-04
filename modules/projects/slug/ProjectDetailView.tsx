@@ -45,7 +45,7 @@ async function ProjectDetailView({ slug }: Props) {
         <div className='flex flex-col sm:flex-row gap-2 items-center'>
           <h1 className='text-muted-foreground'>Tech Stack:</h1>
           <div className='flex flex-row md:gap-1'>
-            {project.stack.map((stackName) => {
+            {project.techStacks.map((stackName) => {
               const stackData = STACK[stackName.name];
               if (!stackData) {
                 return null;

@@ -9,12 +9,8 @@ async function ProjectCards() {
   const { userProjects } = await getProject();
   return (
     <div className='grid grid-cols-1 py-6 gap-4 md:grid-cols-2 '>
-      {userProjects.map((project: Projects) => (
-        <Link
-          key={project.id}
-          href={`/projects/${project.slug}`}
-          className='h-full'
-        >
+      {userProjects.map((project: Projects, idx) => (
+        <Link key={idx} href={`/projects/${project.slug}`} className='h-full'>
           <SpotlightCardAchiev className='flex flex-col h-full justify-between overflow-hidden group'>
             <div className='relative overflow-hidden h-46'>
               <Image

@@ -1,5 +1,4 @@
 export type Achiv = {
-  id: number;
   title: string | null;
   url: string;
   publisher: string;
@@ -7,7 +6,6 @@ export type Achiv = {
 }
 
 export type Projects = {
-  id: number
   title: string;
   image: string
   slug: string
