@@ -5,6 +5,9 @@ export default async function getProjectDetail() {
     where: { email: "akmalrbc6@gmail.com" },
     include: {
       projects: {
+        orderBy: {
+          id: "asc"
+        },
         include: {
           stack: true
         }

@@ -15,7 +15,7 @@ async function ProjectCards() {
           href={`/projects/${project.slug}`}
           className='h-full'
         >
-          <SpotlightCardAchiev className='flex flex-col justify-between overflow-hidden group'>
+          <SpotlightCardAchiev className='flex flex-col h-full justify-between overflow-hidden group'>
             <div className='relative overflow-hidden h-46'>
               <Image
                 src={project.image}

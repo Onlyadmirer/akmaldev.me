@@ -41,8 +41,8 @@ async function ProjectDetailView({ slug }: Props) {
           description={project.description}
         ></HeaderSection>
       </div>
-      <div className='py-6 flex flex-col md:flex-row items-center md:justify-between'>
-        <div className='flex flex-row gap-2 items-center'>
+      <div className='py-6 flex flex-col gap-4 md:flex-row items-center md:justify-between'>
+        <div className='flex flex-col sm:flex-row gap-2 items-center'>
           <h1 className='text-muted-foreground'>Tech Stack:</h1>
           <div className='flex flex-row md:gap-1'>
             {project.stack.map((stackName) => {
@@ -78,21 +78,26 @@ async function ProjectDetailView({ slug }: Props) {
           </div>
         </div>
         <div className='flex flex-row gap-3 items-center'>
-          <div className='flex flex-row gap-2 items-center'>
-            <BsGithub size={26} />
-            <Link
-              href={project.github || ""}
-              className='text-violet-400'
-              target='_blank'
-              rel='noopener noreferrer'
-            >
-              Source Code
-            </Link>
-          </div>
+          {project.github ? (
+            <div className='flex flex-row gap-2 items-center'>
+              <BsGithub size={26} />
+              <Link
+                href={project.github || ""}
+                className='text-violet-400'
+                target='_blank'
+                rel='noopener noreferrer'
+              >
+                Source Code
+              </Link>
+            </div>
+          ) : (
+            ""
+          )}
           <span className='text-muted-foreground'>|</span>
           <div>
             <Link
               href={project.url}
+              target='_blank'
               className='flex flex-row gap-2 items-center'
             >
               <FiExternalLink size={24} />
