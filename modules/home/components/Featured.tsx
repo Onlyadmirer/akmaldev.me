@@ -65,12 +65,12 @@ function Featured() {
   return (
     <div className='py-6'>
       <SubHeaderSection
-        icon={<MdBackupTable size={38} />}
+        icon={<MdBackupTable size={24} />}
         title='Featured Section'
         description='Explore everything I’ve crafted, contributed, and accomplished.'
       />
 
-      <div className='mt-8 flex flex-col sm:grid grid-cols-2 grid-rows-2 gap-2'>
+      <div className='mt-8 flex flex-col sm:grid grid-cols-2 grid-rows-2 gap-3'>
         {featured.map((item, index) => (
           <Link
             key={index}
