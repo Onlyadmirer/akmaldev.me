@@ -122,7 +122,7 @@ function GuestBook() {
                         {new Date(c.createdAt).toLocaleDateString()}
                       </small>
                     </div>
-                    <Bubble variant='muted'>
+                    <Bubble variant='tinted'>
                       <BubbleContent>{c.text}</BubbleContent>
                     </Bubble>
                   </MessageContent>
