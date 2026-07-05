@@ -1,12 +1,13 @@
+import PageAnimateWrapper from "@/common/components/elements/PageAnimateWrapper";
 import DashboardHeader from "./components/DashboardHeader";
 import GithubStats from "./components/GithubStats";
 
 function Dashboard() {
   return (
-    <div>
+    <PageAnimateWrapper>
       <DashboardHeader />
       <GithubStats />
-    </div>
+    </PageAnimateWrapper>
   );
 }
 

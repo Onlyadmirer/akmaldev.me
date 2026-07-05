@@ -1,12 +1,13 @@
+import PageAnimateWrapper from "@/common/components/elements/PageAnimateWrapper";
 import ProjectCards from "./components/ProjectCards";
 import ProjectsHeader from "./components/ProjectsHeader";
 
 function Projects() {
   return (
-    <div>
+    <PageAnimateWrapper>
       <ProjectsHeader />
       <ProjectCards />
-    </div>
+    </PageAnimateWrapper>
   );
 }
 

@@ -23,6 +23,7 @@ import { useForm } from "react-hook-form";
 import { Spinner } from "@/common/components/ui/spinner";
 import SkeletonChat from "./components/SkeletonChat";
 import useComments, { CommentType } from "./swr";
+import PageAnimateWrapper from "@/common/components/elements/PageAnimateWrapper";
 
 function GuestBook() {
   const { data: session, status } = useSession();
@@ -67,7 +68,7 @@ function GuestBook() {
   }
 
   return (
-    <div>
+    <PageAnimateWrapper>
       <HeaderSection
         title='Guestbook'
         description='We’d love to hear your thoughts, suggestions, or questions.'
@@ -193,7 +194,7 @@ function GuestBook() {
           </div>
         )}
       </div>
-    </div>
+    </PageAnimateWrapper>
   );
 }
 
