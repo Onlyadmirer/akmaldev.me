@@ -21,8 +21,10 @@ function ChatShortcut() {
         ""
       ) : (
         <motion.div
+          initial={{ opacity: 0 }}
           animate={{
             scale: [0, 0, 1.1, 1, 1],
+            opacity: [0, 0, 1, 1, 1],
           }}
           transition={{
             duration: 10,
