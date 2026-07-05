@@ -7,6 +7,7 @@ import Background from "@/common/layouts/background/Background";
 import TopLoader from "@/common/components/elements/TopLoader";
 import { Toaster } from "@/common/components/ui/sonner";
 import { AuthProvider } from "@/providers/AuthProvider";
+import ChatShortcut from "@/modules/guestbook/components/ChatShortcut";
 
 const fontInter = Inter({
   subsets: ["latin"],
@@ -75,6 +76,7 @@ export default function RootLayout({
             <Layouts>{children}</Layouts>
           </ThemeProvider>
         </AuthProvider>
+        <ChatShortcut />
       </body>
     </html>
   );

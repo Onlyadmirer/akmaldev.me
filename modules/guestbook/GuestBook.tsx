@@ -76,7 +76,7 @@ function GuestBook() {
       {isError ? (
         <p>Gagal memuat komentar.</p>
       ) : (
-        <div className='flex h-116 overflow-y-scroll max-w-4xl px-4 mb-4 flex-col mx-auto gap-6 py-12 border-b border-neutral-500 border-dashed'>
+        <div className='flex h-116 overflow-y-scroll max-w-4xl sm:px-4 mb-4 flex-col mx-auto gap-6 py-12 border-b border-neutral-500 border-dashed'>
           {comments.length > 0 ? (
             comments.map((c) =>
               c.user.role === "Admin" ? (
