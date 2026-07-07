@@ -14,9 +14,9 @@ import {
   MessageAvatar,
   MessageContent,
 } from "@/common/components/ui/message";
-import { LogOut, Send } from "lucide-react";
+import { LogOut, Send, Trash } from "lucide-react";
 import { signIn, signOut, useSession } from "next-auth/react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { toast } from "sonner";
 import { FcGoogle } from "react-icons/fc";
 import { useForm } from "react-hook-form";
@@ -30,6 +30,13 @@ function GuestBook() {
   const { comments, isError, isLoading, mutate } = useComments();
 
   const [comment, setComment] = useState("");
+
+  const [contextMenu, setContextMenu] = useState({
+    visible: false,
+    commentId: "",
+    x: 0,
+    y: 0,
+  });
 
   const {
     handleSubmit,
@@ -62,6 +69,41 @@ function GuestBook() {
       toast.error("failed to sent message");
     }
   };
+
+  const onDelete = async (id: string) => {
+    try {
+      await fetch(`/api/guestbook?id=${id}`, {
+        method: "DELETE",
+      });
+      toast.success("Deleted");
+    } catch (error) {
+      console.error(error);
+      toast.error("Something went wrong");
+    }
+  };
+
+  const handleContextMenu = (
+    e: React.MouseEvent<HTMLElement>,
+    commentId: string,
+  ) => {
+    e.preventDefault();
+
+    setContextMenu({
+      visible: true,
+      commentId,
+      x: e.pageX,
+      y: e.pageY,
+    });
+  };
+
+  useEffect(() => {
+    const closeMenu = () =>
+      setContextMenu((prev) => ({ ...prev, visible: false }));
+    window.addEventListener("click", closeMenu);
+    return () => {
+      window.removeEventListener("click", closeMenu);
+    };
+  }, []);
 
   if (status === "loading" || isLoading) {
     return <SkeletonChat />;
@@ -114,7 +156,9 @@ function GuestBook() {
                       </AvatarFallback>
                     </Avatar>
                   </MessageAvatar>
-                  <MessageContent>
+                  <MessageContent
+                    onContextMenu={(e) => handleContextMenu(e, c.id)}
+                  >
                     <div className='flex flex-row gap-2 items-center'>
                       <p className='text-neutral-900 dark:text-neutral-300'>
                         {c.user.name}
@@ -127,6 +171,18 @@ function GuestBook() {
                       <BubbleContent>{c.text}</BubbleContent>
                     </Bubble>
                   </MessageContent>
+                  {contextMenu.visible &&
+                    session?.user.role === "Admin" &&
+                    contextMenu.commentId === c.id && (
+                      <button
+                        onClick={() => onDelete(c.id)}
+                        style={{ top: contextMenu.y, left: contextMenu.x }}
+                        className='fixed hover:cursor-pointer hover:bg-neutral-500 text-neutral-700 dark:text-neutral-200 bg-neutral-300 dark:bg-neutral-600 p-2 rounded-lg flex flex-row gap-1 justify-center items-center'
+                      >
+                        <Trash className='text-red-600' size={16} />
+                        Delete
+                      </button>
+                    )}
                 </Message>
               ),
             )

@@ -66,3 +66,31 @@ export async function POST(request: Request) {
     );
   }
 }
+
+export async function DELETE(request: Request) {
+
+  const session = await auth()
+
+  if (!session || !session.user || !session?.user.id || session.user.role !== "Admin") {
+    return NextResponse.json({ message: "Unauthorized" }, { status: 401 })
+  }
+
+
+  try {
+
+    const { searchParams } = new URL(request.url)
+    const chatId = searchParams.get("id")
+
+    if (!chatId) {
+      return NextResponse.json({ message: "ID is required" }, { status: 400 })
+    }
+
+    await prisma.comment.delete({ where: { id: chatId } })
+
+    return NextResponse.json({ message: "Deleted" }, { status: 200 })
+
+  } catch (error) {
+    console.error("DELETE_COMMENT_ERROR:", error)
+    return NextResponse.json({ message: "Gagal menghapus komentar" }, { status: 500 })
+  }
+} 
