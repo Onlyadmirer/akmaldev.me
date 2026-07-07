@@ -2,12 +2,12 @@ import Contact from "@/modules/contact/Contact";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Contact | Akmaldev",
+  title: "Contact",
   description:
     "Get in touch with Akmal for collaboration, freelance work, or professional inquiries.",
 
   openGraph: {
-    title: "Contact Akmaldev — Let's Collaborate",
+    title: "Contact Akmaldev - Let's Collaborate",
     description:
       "Reach out to Akmal for web development projects, collaborations, or creative discussions.",
     url: "https://www.akmaldev.me/contact",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "Contact | Akmaldev",
+    title: "Contact",
     description:
       "Reach out to Akmal for web development projects, collaborations, or creative discussions.",
     images: ["https://www.akmaldev.me/images/profile/akmal.jpg"],

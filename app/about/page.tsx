@@ -2,12 +2,12 @@ import About from "@/modules/about/About";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About | Akmaldev",
+  title: "About",
   description:
-    "Learn more about Akmal — a passionate web developer who crafts interactive and performance-driven web experiences.",
+    "Learn more about Akmal - a passionate web developer who crafts interactive and performance-driven web experiences.",
 
   openGraph: {
-    title: "About Akmal — Personal Background & Vision",
+    title: "About Akmal - Personal Background & Vision",
     description:
       "Discover Akmal’s background, skills, and vision in building modern and user-centered web applications.",
     url: "https://www.akmaldev.me/about",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "About | Akmaldev",
+    title: "About",
     description:
       "Discover Akmal’s background, skills, and vision in building modern web applications.",
     images: ["https://www.akmaldev.me/images/profile/akmal.jpg"],

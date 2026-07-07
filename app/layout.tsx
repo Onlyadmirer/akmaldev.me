@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     template: "%s | Akmaldev",
   },
   description:
-    "The personal portfolio of Akmal — a web developer passionate about building clean, modern, and efficient web experiences.",
+    "The personal portfolio of Akmal - a web developer passionate about building clean, modern, and efficient web experiences.",
   keywords: [
     "Akmal",
     "Akmaldev",
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     locale: "id_ID",
     url: domain,
     siteName: "Akmaldev",
-    title: "Akmaldev — Web Developer Portfolio",
+    title: "Akmaldev - Web Developer Portfolio",
     description:
       "Explore Akmal’s portfolio showcasing projects, achievements, and creative work in web development.",
     images: [
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "Akmaldev — Web Developer Portfolio",
+    title: "Akmaldev - Web Developer Portfolio",
     description:
       "Explore Akmal’s portfolio showcasing projects, achievements, and creative work.",
     images: ["/images/profile/akmal.jpg"],

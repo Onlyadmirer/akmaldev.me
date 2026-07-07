@@ -2,12 +2,12 @@ import ChatRoom from "@/modules/guestbook/GuestBook";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Guestbook | Akmaldev",
+  title: "Guestbook",
   description:
     "Leave a message, sign the guestbook, or share your thoughts on Akmaldev. Let's connect and share feedback!",
 
   openGraph: {
-    title: "Guestbook — Akmaldev",
+    title: "Guestbook - Akmaldev",
     description:
       "Leave a message, sign the guestbook, or share your thoughts on Akmaldev. Let's connect and share feedback!",
     url: "https://akmaldev.me/guestbook",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Guestbook | Akmaldev",
+    title: "Guestbook",
     description:
       "Leave a message, sign the guestbook, or share your thoughts on Akmaldev.",
     images: ["https://www.akmaldev.me/images/profile/akmal.jpg"],
