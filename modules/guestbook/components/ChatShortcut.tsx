@@ -27,7 +27,7 @@ function ChatShortcut() {
             opacity: [0, 0, 1, 1, 1],
           }}
           transition={{
-            duration: 2,
+            duration: 10,
             times: [0, 0.5, 0.52, 0.55, 1],
             ease: "easeInOut",
           }}

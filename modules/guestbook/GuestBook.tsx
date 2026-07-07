@@ -167,9 +167,11 @@ function GuestBook() {
                         {new Date(c.createdAt).toLocaleDateString()}
                       </small>
                     </div>
-                    <Bubble variant='tinted'>
-                      <BubbleContent>{c.text}</BubbleContent>
-                    </Bubble>
+                    {session?.user.role === "Admin" && (
+                      <Bubble variant='tinted' className='select-none'>
+                        <BubbleContent>{c.text}</BubbleContent>
+                      </Bubble>
+                    )}
                   </MessageContent>
                   {contextMenu.visible &&
                     session?.user.role === "Admin" &&
@@ -177,7 +179,7 @@ function GuestBook() {
                       <button
                         onClick={() => onDelete(c.id)}
                         style={{ top: contextMenu.y, left: contextMenu.x }}
-                        className='fixed hover:cursor-pointer hover:bg-neutral-500 text-neutral-700 dark:text-neutral-200 bg-neutral-300 dark:bg-neutral-600 p-2 rounded-lg flex flex-row gap-1 justify-center items-center'
+                        className='fixed z-99 hover:cursor-pointer hover:bg-neutral-500 text-neutral-700 dark:text-neutral-200 bg-neutral-300 dark:bg-neutral-600 p-2 rounded-lg flex flex-row gap-1 justify-center items-center'
                       >
                         <Trash className='text-red-600' size={16} />
                         Delete
