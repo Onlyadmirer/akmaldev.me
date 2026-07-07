@@ -27,14 +27,14 @@ function ChatShortcut() {
             opacity: [0, 0, 1, 1, 1],
           }}
           transition={{
-            duration: 10,
+            duration: 2,
             times: [0, 0.5, 0.52, 0.55, 1],
             ease: "easeInOut",
           }}
           className='self-end w-70 justify-end flex pr-8 '
         >
-          <Bubble className='relative'>
-            <BubbleContent className='rounded-br-none'>
+          <Bubble className='relative' variant={"tinted"}>
+            <BubbleContent className='rounded-br-none '>
               Want to leave a message? click here
             </BubbleContent>
             <span
