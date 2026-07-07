@@ -20,13 +20,14 @@ export const metadata: Metadata = {
   metadataBase: new URL(domain),
 
   title: {
-    default: "Akmaldev - Full-Stack Web Developer Portfolio",
+    default: "Akmal - Full-Stack Web Developer Portfolio",
     template: "%s | Akmaldev",
   },
   description:
     "The personal portfolio of Akmal - a web developer passionate about building clean, modern, and efficient web experiences.",
   keywords: [
     "Akmal",
+    "akmal",
     "Akmaldev",
     "akmal dev",
     "web developer Indonesia",
