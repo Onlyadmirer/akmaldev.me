@@ -167,11 +167,9 @@ function GuestBook() {
                         {new Date(c.createdAt).toLocaleDateString()}
                       </small>
                     </div>
-                    {session?.user.role === "Admin" && (
-                      <Bubble variant='tinted' className='select-none'>
-                        <BubbleContent>{c.text}</BubbleContent>
-                      </Bubble>
-                    )}
+                    <Bubble variant='tinted' className='select-none'>
+                      <BubbleContent>{c.text}</BubbleContent>
+                    </Bubble>
                   </MessageContent>
                   {contextMenu.visible &&
                     session?.user.role === "Admin" &&
