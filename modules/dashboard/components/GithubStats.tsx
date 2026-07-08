@@ -28,7 +28,7 @@ function GithubStats() {
   }
 
   return (
-    <div className='py-6 flex flex-col gap-4'>
+    <div className='py-6 flex flex-col gap-4 border-b border-neutral-600'>
       <div className='flex flex-row justify-between items-end'>
         <SubHeaderSection
           icon={<GithubIcon height='2em' />}
