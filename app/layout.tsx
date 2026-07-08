@@ -9,6 +9,7 @@ import { Toaster } from "@/common/components/ui/sonner";
 import { AuthProvider } from "@/providers/AuthProvider";
 import ChatShortcut from "@/modules/guestbook/components/ChatShortcut";
 import Script from "next/script";
+import { ReactLenis } from "lenis/react";
 
 const fontInter = Inter({
   subsets: ["latin"],
@@ -74,6 +75,8 @@ export default function RootLayout({
   return (
     <html lang='en' suppressHydrationWarning>
       <body className={` ${fontInter.className} antialiased`}>
+        <ReactLenis />
+        <Script src='https://unpkg.com/lenis@1.3.25/dist/lenis.min.js' />
         <Script
           defer
           src='https://cloud.umami.is/script.js'
