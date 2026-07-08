@@ -77,7 +77,7 @@ export default function RootLayout({
         <Script
           defer
           src='https://cloud.umami.is/script.js'
-          data-website-id={process.env.NEXT_PUBLIC_UMAMI_URL}
+          data-website-id={process.env.NEXT_PUBLIC_UMAMI_TOKEN}
         ></Script>
       </head>
       <body className={` ${fontInter.className} antialiased`}>

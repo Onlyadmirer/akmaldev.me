@@ -1,18 +1,34 @@
 "use client";
 
 import SubHeaderSection from "@/common/components/elements/SubHeaderSection";
+import SpotlightCard from "@/common/components/ui/SpotlightCard";
 import GithubIcon from "@iconify-react/mdi/github";
 import { useTheme } from "next-themes";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { GitHubCalendar } from "react-github-calendar";
 
+interface Github {
+  public_repos: number;
+  followers: number;
+  following: number;
+}
+
 function GithubStats() {
+  const [github, setGithub] = useState<Github>();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => setMounted(true), 0);
-    return () => clearTimeout(timer);
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setMounted(true);
+  }, []);
+  useEffect(() => {
+    const githubDatas = async () => {
+      const response = await fetch("https://api.github.com/users/Onlyadmirer");
+      const datas = await response.json();
+      setGithub(datas);
+    };
+    githubDatas();
   }, []);
 
   const explicitTheme = {
@@ -38,6 +54,26 @@ function GithubStats() {
         <Link href={"https://github.com/onlyadmirer"} target='_blank'>
           <p className='text-muted-foreground font-medium'>@akmal</p>
         </Link>
+      </div>
+      <div className='grid grid-cols-3 grid-rows-1 py-4 gap-4 w-full '>
+        <SpotlightCard className='rounded-md text-center flex flex-col justify-center items-center'>
+          <p className='text-neutral-400'>Public Repositories</p>
+          <p className='text-[#ad89ff] text-2xl font-semibold '>
+            {github?.public_repos}
+          </p>
+        </SpotlightCard>
+        <SpotlightCard className='rounded-md flex flex-col justify-center items-center'>
+          <p className='text-neutral-400'>Followers</p>
+          <p className='text-[#ad89ff] text-2xl font-semibold '>
+            {github?.followers}
+          </p>
+        </SpotlightCard>
+        <SpotlightCard className='rounded-md flex flex-col justify-center items-center'>
+          <p className='text-neutral-400'>Following</p>
+          <p className='text-[#ad89ff] text-2xl font-semibold '>
+            {github?.following}
+          </p>
+        </SpotlightCard>
       </div>
       <GitHubCalendar
         username='onlyadmirer'
