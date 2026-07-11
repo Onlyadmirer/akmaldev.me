@@ -8,6 +8,7 @@ import TopLoader from "@/common/components/elements/TopLoader";
 import { Toaster } from "@/common/components/ui/sonner";
 import { AuthProvider } from "@/providers/AuthProvider";
 import ChatShortcut from "@/modules/guestbook/components/ChatShortcut";
+import Script from "next/script";
 
 const fontInter = Inter({
   subsets: ["latin"],
@@ -72,6 +73,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en' suppressHydrationWarning>
+      <head>
+        <Script
+          defer
+          src='https://cloud.umami.is/script.js'
+          data-website-id={process.env.NEXT_PUBLIC_UMAMI_TOKEN}
+        ></Script>
+      </head>
       <body className={` ${fontInter.className} antialiased`}>
         <TopLoader />
         <Toaster position='top-center' />

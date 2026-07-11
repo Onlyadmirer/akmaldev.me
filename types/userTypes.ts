@@ -13,3 +13,7 @@ export type Projects = {
   url: string
   stack: string[]
 }
+
+export type InputCommentType = {
+  comments: string
+}

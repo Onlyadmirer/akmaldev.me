@@ -11,12 +11,12 @@ interface props {
 
 const ThemeToggle = ({ className }: props) => {
   const { resolvedTheme, setTheme } = useTheme();
-  const [mounted, setIsMounted] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => setIsMounted(true), 0);
-    return () => clearTimeout(timer);
-  });
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setMounted(true);
+  }, []);
 
   if (!mounted) {
     return null;
@@ -82,7 +82,7 @@ const ThemeToggle = ({ className }: props) => {
       <button
         className='flex items-center gap-2 rounded-full border-[1.5px] border-neutral-300 bg-neutral-100 p-1 transition duration-200 hover:scale-110 dark:border-neutral-700 dark:bg-neutral-800 md:hidden'
         onClick={() => setTheme(isLightMode ? "dark" : "light")}
-        aria-label="thme toggle button"
+        aria-label='thme toggle button'
       >
         <motion.div
           transition={{ duration: 0.3, ease: "easeInOut" }}
