@@ -4,31 +4,42 @@ import Button from "@/common/components/ui/Button";
 import { Input } from "@/common/components/ui/input";
 import { useForm } from "react-hook-form";
 import { FaPlus } from "react-icons/fa";
-import { AchivAdd, addAchiv } from "../services/addAchiv";
 import { useSession } from "next-auth/react";
 import { toast } from "sonner";
+import { AchivAdd } from "@/types/userTypes";
 
 function InputAchiv() {
   const { data: session } = useSession();
 
-  const { register, handleSubmit } = useForm<AchivAdd>();
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { isSubmitting },
+  } = useForm<AchivAdd>();
 
   const onSubmit = async (formData: AchivAdd) => {
     if (!session?.user) {
-      return "login dulu bro";
+      toast.error("login dulu");
+      return;
     }
-
     const dataLengkap: AchivAdd = {
       ...formData,
-      userId: session.user.id as string,
+      userId: session?.user.id as string,
     };
-
-    const response = await addAchiv(dataLengkap);
-
-    if (response.success) {
-      toast.success("Add data successfully");
-    } else {
-      toast.error(response.error);
+    try {
+      await fetch("/api/achievements", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(dataLengkap),
+      });
+      reset();
+      toast.success("Successfully add Achievement");
+    } catch (error) {
+      console.log(error);
+      toast.error("failed to add Achievement");
     }
   };
 
@@ -41,12 +52,33 @@ function InputAchiv() {
         onSubmit={handleSubmit(onSubmit)}
         className='p-4 gap-4 flex flex-col'
       >
-        <Input {...register("title")} placeholder='Title' type='text' />
-        <Input {...register("url")} placeholder='Url' type='text' />
-        <Input {...register("issuedOn")} placeholder='Issued on' type='text' />
-        <Input {...register("publisher")} placeholder='Publisher' type='text' />
+        <Input
+          {...register("achiv.title")}
+          placeholder='Title'
+          type='text'
+          disabled={isSubmitting}
+        />
+        <Input
+          {...register("achiv.url")}
+          placeholder='Url'
+          type='text'
+          disabled={isSubmitting}
+        />
+        <Input
+          {...register("achiv.issuedOn")}
+          placeholder='Issued on'
+          type='text'
+          disabled={isSubmitting}
+        />
+        <Input
+          {...register("achiv.publisher")}
+          placeholder='Publisher'
+          type='text'
+          disabled={isSubmitting}
+        />
         <Button
           type='submit'
+          disabled={isSubmitting}
           className='flex items-center justify-center hover:bg-neutral-800 dark:hover:bg-neutral-400 bg-neutral-900 text-neutral-300 dark:bg-neutral-300 dark:text-neutral-900'
         >
           <div className=' flex -translate-x-2 flex-row justify-center items-center gap-2'>
