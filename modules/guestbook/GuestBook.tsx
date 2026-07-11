@@ -24,6 +24,7 @@ import { Spinner } from "@/common/components/ui/spinner";
 import SkeletonChat from "./components/SkeletonChat";
 import useComments, { CommentType } from "./swr";
 import PageAnimateWrapper from "@/common/components/elements/PageAnimateWrapper";
+import { InputCommentType } from "@/types/userTypes";
 
 function GuestBook() {
   const { data: session, status } = useSession();
@@ -40,10 +41,15 @@ function GuestBook() {
 
   const {
     handleSubmit,
-    formState: { isSubmitting },
-  } = useForm();
+    register,
+    formState: { isSubmitting, errors },
+  } = useForm<InputCommentType>();
 
   const onSubmit = async () => {
+    if (comment === "") {
+      toast.error("Invalid Input");
+      return;
+    }
     try {
       const response = await fetch("/api/guestbook", {
         method: "POST",
@@ -198,30 +204,47 @@ function GuestBook() {
           <div className='flex flex-col mb-6 gap-6'>
             <form
               onSubmit={handleSubmit(onSubmit)}
-              className='flex flex-row gap-2'
+              className='flex flex-col gap-2'
             >
-              <Input
-                placeholder='Type your message'
-                value={comment}
-                disabled={isSubmitting}
-                onChange={(e) =>
-                  setComment((e.target as HTMLInputElement).value)
-                }
-              />
-              {isSubmitting ? (
-                <Button
-                  type='submit'
-                  className='flex items-center dark:bg-neutral-300 bg-neutral-900 text-neutral-300 dark:text-neutral-800 justify-center'
-                >
-                  <Spinner />
-                </Button>
-              ) : (
-                <Button
-                  type='submit'
-                  className='flex items-center dark:bg-neutral-300 bg-neutral-900 text-neutral-300 dark:text-neutral-800 justify-center'
-                >
-                  <Send size={20} />
-                </Button>
+              <div className='flex flex-row gap-2'>
+                <Input
+                  placeholder='Type your message'
+                  value={comment}
+                  disabled={isSubmitting}
+                  {...register("comments", {
+                    required: "*Input can not be empty",
+                    validate: (value) => {
+                      if (value.trim() === "") {
+                        return "*Input can not be empty";
+                      }
+                      return true;
+                    },
+                  })}
+                  onChange={(e) =>
+                    setComment((e.target as HTMLInputElement).value)
+                  }
+                />
+
+                {isSubmitting ? (
+                  <Button
+                    type='submit'
+                    className='flex items-center dark:bg-neutral-300 bg-neutral-900 text-neutral-300 dark:text-neutral-800 justify-center'
+                  >
+                    <Spinner />
+                  </Button>
+                ) : (
+                  <Button
+                    type='submit'
+                    className='flex items-center dark:bg-neutral-300 bg-neutral-900 text-neutral-300 dark:text-neutral-800 justify-center'
+                  >
+                    <Send size={20} />
+                  </Button>
+                )}
+              </div>
+              {errors.comments && (
+                <small className='text-red-500'>
+                  {errors.comments.message}
+                </small>
               )}
             </form>
             <div className='flex flex-col sm:flex-row items-center justify-between gap-4'>

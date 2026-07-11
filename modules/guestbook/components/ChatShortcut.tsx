@@ -16,7 +16,7 @@ function ChatShortcut() {
   };
 
   return (
-    <div className='fixed right-4 xl:right-20 gap-2 bottom-6 xl:bottom-10 flex flex-col'>
+    <div className='fixed right-4 xl:right-20 pointer-events-none gap-2 bottom-6 xl:bottom-10 flex flex-col'>
       {close ? (
         ""
       ) : (
@@ -33,13 +33,13 @@ function ChatShortcut() {
           }}
           className='self-end w-70 justify-end flex pr-8 '
         >
-          <Bubble className='relative' variant={"tinted"}>
+          <Bubble className='relative pointer-events-none' variant={"tinted"}>
             <BubbleContent className='rounded-br-none '>
               Want to leave a message? click here
             </BubbleContent>
             <span
               onClick={() => closeButton()}
-              className='p-1 -left-3 cursor-pointer -top-2 bg-neutral-300 dark:bg-neutral-700 absolute flex justify-center items-center h-6 w-6 rounded-full'
+              className='p-1 -left-3 cursor-pointer -top-2 bg-neutral-300 dark:bg-neutral-700 absolute flex pointer-events-auto justify-center items-center h-6 w-6 rounded-full'
             >
               <IoMdClose />
             </span>

@@ -5,6 +5,11 @@ export type Achiv = {
   issuedOn: string;
 }
 
+export type AchivAdd = {
+  achiv: Achiv
+  userId: string
+}
+
 export type Projects = {
   title: string;
   image: string
