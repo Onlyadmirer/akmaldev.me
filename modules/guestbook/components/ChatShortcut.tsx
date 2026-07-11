@@ -48,7 +48,7 @@ function ChatShortcut() {
       )}
       <Link
         href={"/guestbook"}
-        className='rounded-full cursor-pointer w-12 h-12 sm:w-13 sm:h-13 flex justify-center items-center self-end group hover:scale-105 duration-300 transition-all ease-in-out p-3 bg-neutral-200 dark:bg-neutral-700 border border-neutral-600'
+        className='rounded-full cursor-pointer pointer-events-auto w-12 h-12 sm:w-13 sm:h-13 flex justify-center items-center self-end group hover:scale-105 duration-300 transition-all ease-in-out p-3 bg-neutral-200 dark:bg-neutral-700 border border-neutral-600'
       >
         <IoChatbubbleEllipsesOutline size={28} className='group-hover:hidden' />
         <RiChatSmileAiLine size={28} className='hidden group-hover:block' />
