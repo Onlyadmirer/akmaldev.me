@@ -11,9 +11,9 @@ function DesktopNav() {
   const { pathName, menuItems } = useNavbar();
 
   return (
-    <div className='flex h-full flex-col px-1'>
-      <div className='flex-3 flex flex-col pb-2 items-center gap-3 border-b border-primary/50'>
-        <div className='overflow-hidden w-22 h-22 rounded-full border-2 border-primary/50 relative'>
+    <div className='flex flex-col h-full px-1'>
+      <div className='flex flex-col items-center gap-3 pb-2 border-b flex-3 border-primary/50'>
+        <div className='relative overflow-hidden border-2 rounded-full w-22 h-22 border-primary/50'>
           <Image
             src={"/images/profile/akmal.jpg"}
             alt='Akmal'
@@ -25,7 +25,7 @@ function DesktopNav() {
           ></Image>
         </div>
         <div className='text-center'>
-          <div className='flex flex-row gap-2 items-center'>
+          <div className='flex flex-row items-center gap-2'>
             <ShinyText
               text='Akmal'
               speed={2}
@@ -43,12 +43,12 @@ function DesktopNav() {
           </div>
           <p className='text-sm text-muted-foreground'>@akmal</p>
         </div>
-        <div className='flex flex-row w-full justify-around items-center '>
+        <div className='flex flex-row items-center justify-around w-full '>
           <IntlToggle />
           <ThemeToggle />
         </div>
       </div>
-      <div className='flex-4 py-4 flex flex-col gap-1 border-b border-primary/50'>
+      <div className='flex flex-col gap-1 py-4 border-b flex-4 border-primary/50'>
         {menuItems.map((item) => {
           const isActive =
             item.href === "/"
@@ -64,8 +64,8 @@ function DesktopNav() {
                   : "bg-transparent text-muted-foreground"
               }`}
             >
-              <div className='flex flex-row  items-center gap-2'>
-                <span className='group-hover:-rotate-10 transition-all ease-in-out duration-500'>
+              <div className='flex flex-row items-center gap-2'>
+                <span className='transition-all duration-500 ease-in-out group-hover:-rotate-10'>
                   {item.icon}
                 </span>
                 <span className='text-base'>{item.label}</span>
@@ -76,7 +76,7 @@ function DesktopNav() {
         })}
       </div>
       <div className='flex-1 py-4 mt-4'>
-        <h1 className='text-center text-sm'>
+        <h1 className='text-sm text-center'>
           © {new Date().getFullYear()} Akmal. <br /> All rights reserved.
         </h1>
       </div>

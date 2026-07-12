@@ -29,6 +29,8 @@ const ShinyText: React.FC<ShinyTextProps> = ({
   delay = 0
 }) => {
   const [isPaused, setIsPaused] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
+  const containerRef = useRef<HTMLSpanElement>(null);
   const progress = useMotionValue(0);
   const elapsedRef = useRef(0);
   const lastTimeRef = useRef<number | null>(null);
@@ -37,8 +39,19 @@ const ShinyText: React.FC<ShinyTextProps> = ({
   const animationDuration = speed * 1000;
   const delayDuration = delay * 1000;
 
+  useEffect(() => {
+    const el = containerRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => setIsVisible(entry.isIntersecting),
+      { threshold: 0 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
   useAnimationFrame(time => {
-    if (disabled || isPaused) {
+    if (disabled || isPaused || !isVisible) {
       lastTimeRef.current = null;
       return;
     }
@@ -118,6 +131,7 @@ const ShinyText: React.FC<ShinyTextProps> = ({
 
   return (
     <motion.span
+      ref={containerRef}
       className={`inline-block ${className}`}
       style={{ ...gradientStyle, backgroundPosition }}
       onMouseEnter={handleMouseEnter}
