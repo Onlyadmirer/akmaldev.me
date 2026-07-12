@@ -10,7 +10,7 @@ function Layouts({ children }: { children: React.ReactNode }) {
       duration: 800,
       delay: 50,
     });
-  });
+  }, []);
 
   return (
     <div className='max-w-6xl mx-auto lg:px-4'>
