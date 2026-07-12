@@ -7,7 +7,6 @@ import Link from "next/link";
 import { useNavbar } from "@/common/layouts/navbar/useNavbar";
 import { BsArrowRight } from "react-icons/bs";
 import { IoMdClose } from "react-icons/io";
-import ShinyText from "@/common/components/ui/ShinyText";
 import IntlToggle from "../components/IntlToggle";
 
 function MobileNav() {
@@ -45,20 +44,8 @@ function MobileNav() {
               className='object-cover scale-155'
             ></Image>
           </div>
-          <div className='flex flex-row gap-2 items-center'>
-            <ShinyText
-              text='Akmal'
-              speed={2}
-              delay={0}
-              color={"var(--shiny-color)"}
-              shineColor={"var(--shiny-shine)"}
-              spread={120}
-              direction='left'
-              yoyo={false}
-              pauseOnHover={false}
-              disabled={false}
-              className='text-2xl font-medium'
-            />
+          <div className='flex flex-row items-center gap-2'>
+            <p className='text-lg font-semibold'>Akmal</p>
             <RiVerifiedBadgeFill className='text-cyan-400' size={20} />
           </div>
         </div>
@@ -67,7 +54,7 @@ function MobileNav() {
             showMenu ? "grid-rows-2 px-2 justify-items-end " : "grid-cols-2"
           }`}
         >
-          <div className='flex flex-row w-full gap-4  justify-around items-center'>
+          <div className='flex flex-row items-center justify-around w-full gap-4'>
             <IntlToggle />
             {showMenu && <ThemeToggle />}
           </div>

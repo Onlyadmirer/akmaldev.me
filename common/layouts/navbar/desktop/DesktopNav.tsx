@@ -4,7 +4,6 @@ import { RiVerifiedBadgeFill } from "react-icons/ri";
 import Link from "next/link";
 import { BsArrowRight } from "react-icons/bs";
 import { useNavbar } from "@/common/layouts/navbar/useNavbar";
-import ShinyText from "@/common/components/ui/ShinyText";
 import IntlToggle from "../components/IntlToggle";
 
 function DesktopNav() {
@@ -26,19 +25,7 @@ function DesktopNav() {
         </div>
         <div className='text-center'>
           <div className='flex flex-row items-center gap-2'>
-            <ShinyText
-              text='Akmal'
-              speed={2}
-              delay={0}
-              color={"var(--shiny-color)"}
-              shineColor={"var(--shiny-shine)"}
-              spread={120}
-              direction='left'
-              yoyo={false}
-              pauseOnHover={false}
-              disabled={false}
-              className='text-2xl font-medium'
-            />
+            <p className='text-lg font-semibold'>Akmal</p>
             <RiVerifiedBadgeFill className='text-cyan-400' size={20} />
           </div>
           <p className='text-sm text-muted-foreground'>@akmal</p>
