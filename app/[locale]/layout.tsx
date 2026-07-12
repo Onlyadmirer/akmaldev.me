@@ -3,7 +3,6 @@ import { Inter } from "next/font/google";
 import "@/app/globals.css";
 import Layouts from "@/common/layouts/Layouts";
 import { ThemeProviderContext } from "@/providers/ThemeProvider";
-import Background from "@/common/layouts/background/Background";
 import TopLoader from "@/common/components/elements/TopLoader";
 import { Toaster } from "@/common/components/ui/sonner";
 import { AuthProvider } from "@/providers/AuthProvider";
@@ -103,7 +102,6 @@ export default async function LocaleLayout({
           <NextIntlClientProvider>
             <ThemeProviderContext>
               <TopLoader />
-              <Background />
               <Layouts>{children}</Layouts>
             </ThemeProviderContext>
           </NextIntlClientProvider>
