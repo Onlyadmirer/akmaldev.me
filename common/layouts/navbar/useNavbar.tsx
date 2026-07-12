@@ -1,6 +1,6 @@
 "use client";
 
-import { usePathname } from "next/navigation";
+import { usePathname } from "@/i18n/navigation";
 import { useState } from "react";
 import { IoChatbubbleEllipsesOutline } from "react-icons/io5";
 import {
