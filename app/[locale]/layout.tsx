@@ -1,14 +1,18 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "./globals.css";
+import "@/app/globals.css";
 import Layouts from "@/common/layouts/Layouts";
-import { ThemeProvider } from "@/providers/ThemeProvider";
+import { ThemeProviderContext } from "@/providers/ThemeProvider";
 import Background from "@/common/layouts/background/Background";
 import TopLoader from "@/common/components/elements/TopLoader";
 import { Toaster } from "@/common/components/ui/sonner";
 import { AuthProvider } from "@/providers/AuthProvider";
 import ChatShortcut from "@/modules/guestbook/components/ChatShortcut";
 import Script from "next/script";
+import { hasLocale, NextIntlClientProvider } from "next-intl";
+import { notFound } from "next/navigation";
+import { routing } from "@/i18n/routing";
+import { setRequestLocale } from "next-intl/server";
 
 const fontInter = Inter({
   subsets: ["latin"],
@@ -16,6 +20,10 @@ const fontInter = Inter({
 });
 
 const domain = process.env.NEXT_PUBLIC_DOMAIN || "https://www.akmaldev.me";
+
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
+}
 
 export const metadata: Metadata = {
   metadataBase: new URL(domain),
@@ -66,13 +74,22 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function LocaleLayout({
   children,
+  params,
 }: Readonly<{
   children: React.ReactNode;
+  params: Promise<{ locale: string }>;
 }>) {
+  const { locale } = await params;
+  if (!hasLocale(routing.locales, locale)) {
+    notFound();
+  }
+
+  setRequestLocale(locale);
+
   return (
-    <html lang='en' suppressHydrationWarning>
+    <html lang={locale} data-scroll-behavior='smooth' suppressHydrationWarning>
       <head>
         <Script
           defer
@@ -81,18 +98,15 @@ export default function RootLayout({
         ></Script>
       </head>
       <body className={` ${fontInter.className} antialiased`}>
-        <TopLoader />
         <Toaster position='top-center' />
         <AuthProvider>
-          <ThemeProvider
-            attribute='class'
-            defaultTheme='dark'
-            enableSystem
-            disableTransitionOnChange
-          >
-            <Background />
-            <Layouts>{children}</Layouts>
-          </ThemeProvider>
+          <NextIntlClientProvider>
+            <ThemeProviderContext>
+              <TopLoader />
+              <Background />
+              <Layouts>{children}</Layouts>
+            </ThemeProviderContext>
+          </NextIntlClientProvider>
         </AuthProvider>
         <ChatShortcut />
       </body>

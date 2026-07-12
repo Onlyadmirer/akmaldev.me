@@ -2,12 +2,13 @@
 
 import Image from "next/image";
 import { RiMenu3Fill, RiVerifiedBadgeFill } from "react-icons/ri";
-import ThemeToggle from "../../../components/ui/ThemeToggle";
+import ThemeToggle from "../components/ThemeToggle";
 import Link from "next/link";
 import { useNavbar } from "@/common/layouts/navbar/useNavbar";
 import { BsArrowRight } from "react-icons/bs";
 import { IoMdClose } from "react-icons/io";
 import ShinyText from "@/common/components/ui/ShinyText";
+import IntlToggle from "../components/IntlToggle";
 
 function MobileNav() {
   const { pathName, menuItems, toggleMenu, setShowMenu, showMenu } =
@@ -66,7 +67,10 @@ function MobileNav() {
             showMenu ? "grid-rows-2 px-2 justify-items-end " : "grid-cols-2"
           }`}
         >
-          <ThemeToggle />
+          <div className='flex flex-row w-full gap-4  justify-around items-center'>
+            <IntlToggle />
+            {showMenu && <ThemeToggle />}
+          </div>
           {showMenu ? (
             <IoMdClose
               size={26}

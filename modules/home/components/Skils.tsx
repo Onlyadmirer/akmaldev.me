@@ -7,6 +7,7 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from "@/common/components/ui/tooltip";
+import { useTranslations } from "next-intl";
 
 function Skils() {
   const skills = [
@@ -87,12 +88,14 @@ function Skils() {
     },
   ];
 
+  const t = useTranslations("HomePage.Skills");
+
   return (
     <div className='py-6 border-b border-muted-foreground/50'>
       <SubSectionHeader
         icon={<GrTechnology size={24} />}
-        title='skills & tools'
-        description='My professional Skills & Tools.'
+        title={t("title")}
+        description={t("subTitle")}
       />
       <div className='grid grid-cols-5 md:grid-cols-7 lg:grid-cols-11 pt-6 space-y-3 lg:space-y-4'>
         {skills.map((skill) => (

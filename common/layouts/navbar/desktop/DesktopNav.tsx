@@ -1,10 +1,11 @@
 import Image from "next/image";
-import ThemeToggle from "../../../components/ui/ThemeToggle";
+import ThemeToggle from "../components/ThemeToggle";
 import { RiVerifiedBadgeFill } from "react-icons/ri";
 import Link from "next/link";
 import { BsArrowRight } from "react-icons/bs";
 import { useNavbar } from "@/common/layouts/navbar/useNavbar";
 import ShinyText from "@/common/components/ui/ShinyText";
+import IntlToggle from "../components/IntlToggle";
 
 function DesktopNav() {
   const { pathName, menuItems } = useNavbar();
@@ -42,7 +43,8 @@ function DesktopNav() {
           </div>
           <p className='text-sm text-muted-foreground'>@akmal</p>
         </div>
-        <div>
+        <div className='flex flex-row w-full justify-around items-center '>
+          <IntlToggle />
           <ThemeToggle />
         </div>
       </div>

@@ -2,6 +2,7 @@
 
 import SubHeaderSection from "@/common/components/elements/SubHeaderSection";
 import SpotlightCard from "@/common/components/ui/SpotlightCard";
+import { useTranslations } from "next-intl";
 import Link from "next/link";
 import {
   LuGalleryVerticalEnd,
@@ -62,12 +63,14 @@ function Featured() {
     },
   ];
 
+  const t = useTranslations("HomePage.Featured");
+
   return (
     <div className='py-6'>
       <SubHeaderSection
         icon={<MdBackupTable size={24} />}
-        title='Featured Section'
-        description='Explore everything I’ve crafted, contributed, and accomplished.'
+        title={t("title")}
+        description={t("subTitle")}
       />
 
       <div className='mt-8 flex flex-col sm:grid grid-cols-2 grid-rows-2 gap-3'>
