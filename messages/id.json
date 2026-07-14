@@ -1,4 +1,24 @@
 {
+  "AboutPage": {
+    "Header": {
+      "title": "Tentang",
+      "description": "Siapa saya dan apa yang saya kerjakan."
+    },
+    "Intro": {
+      "p1": "Halo! Terima kasih telah mengunjungi website pribadi saya. Saya Akmal, seorang mahasiswa jurusan Sistem Informasi di Universitas Hasanuddin, Makassar. Saya seorang Fullstack Developer yang bersemangat dalam membangun produk perangkat lunak yang berdampak. Stack saya mencakup teknologi frontend modern seperti Next.js, TypeScript, dan Tailwind CSS, serta mengembangkan layanan backend yang andal dengan Go.",
+      "p2": "Saya senang menciptakan solusi yang ramah pengguna dan berperforma tinggi. Baik itu membangun antarmuka yang intuitif atau menata layanan backend, saya bertujuan untuk menghadirkan efisiensi dan kejelasan di setiap lapisan aplikasi. Saya pembelajar cepat yang berkembang di lingkungan dinamis, dan saya senang memecahkan masalah kompleks secara kolaboratif.",
+      "p3": "Saya percaya bahwa komunikasi yang baik dan sinergi tim adalah kunci kesuksesan dalam pengembangan perangkat lunak. Pengalaman saya telah memperkuat keterampilan teknis dan analitis saya, serta kualitas kepemimpinan saya. Saya selalu bersemangat untuk bekerja dalam tim, belajar dari orang lain, dan berkontribusi pada proyek-proyek yang bermakna.",
+      "closing": "Yang terbaik,"
+    },
+    "Education": {
+      "title": "Pendidikan",
+      "description": "Perjalanan pendidikan saya.",
+      "degree": "SMA",
+      "major": "IPA",
+      "period": "2021 - 2024",
+      "location": "Enrekang, Sulawesi Selatan, Indonesia ID"
+    }
+  },
   "HomePage": {
     "Header": {
       "greeting": "Hai, saya Akmal",

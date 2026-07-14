@@ -1,10 +1,30 @@
 {
+  "AboutPage": {
+    "Header": {
+      "title": "About",
+      "description": "A short description of who I am."
+    },
+    "Intro": {
+      "p1": "Hello there! Thank you for visiting my personal website. I'm Akmal, a student majoring in Information Systems at Hasanuddin University, Makassar. I'm a Fullstack Developer with a passion for building impactful software products. My stack includes modern frontend technologies like Next.js, TypeScript, and Tailwind CSS, while developing reliable backend services with Go.",
+      "p2": "I enjoy creating solutions that are both user-friendly and performant. Whether it's building intuitive interfaces or architecting backend services, I aim to bring efficiency and clarity into every layer of the application. I'm a fast learner who thrives in dynamic environments, and I enjoy solving complex problems collaboratively.",
+      "p3": "I believe that great communication and team synergy are key to success in software development. My experience has strengthened my technical and analytical skills, as well as my leadership qualities. I'm always excited to work in teams, learn from others, and contribute to meaningful projects.",
+      "closing": "All the best,"
+    },
+    "Education": {
+      "title": "Education",
+      "description": "My educational journey.",
+      "degree": "Senior High School",
+      "major": "Science",
+      "period": "2021 - 2024",
+      "location": "Enrekang, Sulawesi Selatan, Indonesia ID"
+    }
+  },
   "HomePage": {
     "Header": {
       "greeting": "Hi I'm Akmal",
       "location": "Based in Enrekang, Indonesia ID",
       "workMode": "Onsite",
-      "description": "I’m an experienced and dedicated Fullstack Developer with a strong focus on building scalable and high quality digital products. I craft responsive and accessible user interfaces using Next.js, TypeScript, and Tailwind CSS, while developing reliable backend services with Node js. I’m a collaborative engineer with attention to detail, committed to delivering clean, efficient, and high-performance solutions across platforms."
+      "description": "I’m an experienced and dedicated Fullstack Developer with a strong focus on building scalable and high quality digital products. I craft responsive and accessible user interfaces using Next.js, TypeScript, and Tailwind CSS, while developing reliable backend services with Go. I’m a collaborative engineer with attention to detail, committed to delivering clean, efficient, and high-performance solutions across platforms."
     },
     "Skills": {
       "title": "skills & tools",

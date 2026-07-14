@@ -1,11 +1,14 @@
 import HeaderSection from "@/common/components/elements/HeaderSection";
+import { useTranslations } from "next-intl";
 
 function AboutHeader() {
+  const t = useTranslations("AboutPage.Header");
+
   return (
     <div>
       <HeaderSection
-        title='About'
-        description='A short description of who I am.'
+        title={t("title")}
+        description={t("description")}
       />
     </div>
   );
