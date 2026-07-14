@@ -16,6 +16,11 @@ interface Github {
 
 function GithubStats() {
   const [github, setGithub] = useState<Github>();
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     const githubDatas = async () => {
@@ -26,12 +31,17 @@ function GithubStats() {
     githubDatas();
   }, []);
 
+  const { theme } = useTheme();
+  const isDark = theme === "dark";
+
+  if (!mounted) {
+    return null;
+  }
+
   const explicitTheme = {
     light: ["#ebedf0", "#9be9a8", "#40c463", "#30a14e", "#216e39"],
     dark: ["#161b22", "#0e4429", "#006d32", "#26a641", "#39d353"],
   };
-
-  const { theme } = useTheme();
 
   return (
     <div className='py-6 flex flex-col gap-4 border-b border-neutral-600'>
@@ -47,27 +57,29 @@ function GithubStats() {
       </div>
       <div className='grid grid-cols-3 grid-rows-1 py-4 gap-4 w-full '>
         <SpotlightCard className='rounded-md text-center flex flex-col justify-center items-center'>
-          <p className='text-neutral-400'>Public Repositories</p>
-          <p className='text-[#ad89ff] text-2xl font-semibold '>
+          <p className='text-neutral-600 dark:text-neutral-400'>
+            Public Repositories
+          </p>
+          <p className='text-[#7052b6] dark:text-[#ad89ff] text-2xl font-semibold '>
             {github?.public_repos}
           </p>
         </SpotlightCard>
         <SpotlightCard className='rounded-md flex flex-col justify-center items-center'>
-          <p className='text-neutral-400'>Followers</p>
-          <p className='text-[#ad89ff] text-2xl font-semibold '>
+          <p className='text-neutral-600 dark:text-neutral-400'>Followers</p>
+          <p className='text-[#7052b6] dark:text-[#ad89ff] text-2xl font-semibold  '>
             {github?.followers}
           </p>
         </SpotlightCard>
         <SpotlightCard className='rounded-md flex flex-col justify-center items-center'>
-          <p className='text-neutral-400'>Following</p>
-          <p className='text-[#ad89ff] text-2xl font-semibold '>
+          <p className='text-neutral-600 dark:text-neutral-400'>Following</p>
+          <p className='text-[#7052b6] dark:text-[#ad89ff] text-2xl font-semibold  '>
             {github?.following}
           </p>
         </SpotlightCard>
       </div>
       <GitHubCalendar
         username='onlyadmirer'
-        colorScheme={`${theme === "dark" ? "dark" : "light"}`}
+        colorScheme={`${isDark ? "dark" : "light"}`}
         theme={explicitTheme}
         fontSize={14}
         blockSize={11}
