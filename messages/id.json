@@ -1,4 +1,20 @@
 {
+  "HomePage": {
+    "Header": {
+      "greeting": "Hai, saya Akmal",
+      "location": "Berdomisili di Enrekang, Indonesia ID",
+      "workMode": "Onsite",
+      "description": "Saya seorang Fullstack Developer berpengalaman dan berdedikasi dengan fokus kuat pada pembangunan produk digital yang terukur dan berkualitas tinggi. Saya merancang antarmuka pengguna yang responsif dan dapat diakses menggunakan Next.js, TypeScript, dan Tailwind CSS, serta mengembangkan layanan backend yang andal dengan Go. Saya adalah seorang engineer yang kolaboratif dengan perhatian terhadap detail, berkomitmen untuk menghadirkan solusi yang bersih, efisien, dan berkinerja tinggi di berbagai platform."
+    },
+    "Skills": {
+      "title": "keahlian & alat",
+      "subTitle": "keahlian & alat profesional saya"
+    },
+    "Featured": {
+      "title": "Bagian unggulan",
+      "subTitle": "Jelajahi segala hal yang telah saya ciptakan, kontribusikan, dan capai."
+    }
+  },
   "AboutPage": {
     "Header": {
       "title": "Tentang",
@@ -17,22 +33,6 @@
       "major": "IPA",
       "period": "2021 - 2024",
       "location": "Enrekang, Sulawesi Selatan, Indonesia ID"
-    }
-  },
-  "HomePage": {
-    "Header": {
-      "greeting": "Hai, saya Akmal",
-      "location": "Berdomisili di Enrekang, Indonesia ID",
-      "workMode": "Onsite",
-      "description": "Saya seorang Fullstack Developer berpengalaman dan berdedikasi dengan fokus kuat pada pembangunan produk digital yang terukur dan berkualitas tinggi. Saya merancang antarmuka pengguna yang responsif dan dapat diakses menggunakan Next.js, TypeScript, dan Tailwind CSS, serta mengembangkan layanan backend yang andal dengan Go. Saya adalah seorang engineer yang kolaboratif dengan perhatian terhadap detail, berkomitmen untuk menghadirkan solusi yang bersih, efisien, dan berkinerja tinggi di berbagai platform."
-    },
-    "Skills": {
-      "title": "keahlian & alat",
-      "subTitle": "keahlian & alat profesional saya"
-    },
-    "Featured": {
-      "title": "Bagian unggulan",
-      "subTitle": "Jelajahi segala hal yang telah saya ciptakan, kontribusikan, dan capai."
     }
   }
 }

@@ -1,4 +1,20 @@
 {
+  "HomePage": {
+    "Header": {
+      "greeting": "Hi I'm Akmal",
+      "location": "Based in Enrekang, Indonesia ID",
+      "workMode": "Onsite",
+      "description": "I’m an experienced and dedicated Fullstack Developer with a strong focus on building scalable and high quality digital products. I craft responsive and accessible user interfaces using Next.js, TypeScript, and Tailwind CSS, while developing reliable backend services with Go. I’m a collaborative engineer with attention to detail, committed to delivering clean, efficient, and high-performance solutions across platforms."
+    },
+    "Skills": {
+      "title": "skills & tools",
+      "subTitle": "My professional Skills & Tools."
+    },
+    "Featured": {
+      "title": "featured section",
+      "subTitle": "Explore everything I’ve crafted, contributed, and accomplished."
+    }
+  },
   "AboutPage": {
     "Header": {
       "title": "About",
@@ -17,22 +33,6 @@
       "major": "Science",
       "period": "2021 - 2024",
       "location": "Enrekang, Sulawesi Selatan, Indonesia ID"
-    }
-  },
-  "HomePage": {
-    "Header": {
-      "greeting": "Hi I'm Akmal",
-      "location": "Based in Enrekang, Indonesia ID",
-      "workMode": "Onsite",
-      "description": "I’m an experienced and dedicated Fullstack Developer with a strong focus on building scalable and high quality digital products. I craft responsive and accessible user interfaces using Next.js, TypeScript, and Tailwind CSS, while developing reliable backend services with Go. I’m a collaborative engineer with attention to detail, committed to delivering clean, efficient, and high-performance solutions across platforms."
-    },
-    "Skills": {
-      "title": "skills & tools",
-      "subTitle": "My professional Skills & Tools."
-    },
-    "Featured": {
-      "title": "featured section",
-      "subTitle": "Explore everything I’ve crafted, contributed, and accomplished."
     }
   }
 }
