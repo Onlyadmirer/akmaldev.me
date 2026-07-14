@@ -3,7 +3,7 @@
 import SubHeaderSection from "@/common/components/elements/SubHeaderSection";
 import SpotlightCard from "@/common/components/ui/SpotlightCard";
 import GithubIcon from "@iconify-react/mdi/github";
-import { useTheme } from "next-themes";
+import { useTheme } from "@teispace/next-themes";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { GitHubCalendar } from "react-github-calendar";
@@ -16,12 +16,7 @@ interface Github {
 
 function GithubStats() {
   const [github, setGithub] = useState<Github>();
-  const [mounted, setMounted] = useState(false);
 
-  useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect
-    setMounted(true);
-  }, []);
   useEffect(() => {
     const githubDatas = async () => {
       const response = await fetch("https://api.github.com/users/Onlyadmirer");
@@ -36,12 +31,7 @@ function GithubStats() {
     dark: ["#161b22", "#0e4429", "#006d32", "#26a641", "#39d353"],
   };
 
-  const { resolvedTheme } = useTheme();
-  const isDark = resolvedTheme === "dark";
-
-  if (!mounted) {
-    return null;
-  }
+  const { theme } = useTheme();
 
   return (
     <div className='py-6 flex flex-col gap-4 border-b border-neutral-600'>
@@ -77,7 +67,7 @@ function GithubStats() {
       </div>
       <GitHubCalendar
         username='onlyadmirer'
-        colorScheme={`${isDark ? "dark" : "light"}`}
+        colorScheme={`${theme === "dark" ? "dark" : "light"}`}
         theme={explicitTheme}
         fontSize={14}
         blockSize={11}

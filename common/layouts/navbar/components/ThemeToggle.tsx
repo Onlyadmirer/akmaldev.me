@@ -1,8 +1,7 @@
 "use client";
 
+import { useTheme } from "@teispace/next-themes";
 import { motion } from "framer-motion";
-import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
 import { LuMoonStar, LuSun } from "react-icons/lu";
 
 interface props {
@@ -10,19 +9,9 @@ interface props {
 }
 
 const ThemeToggle = ({ className }: props) => {
-  const { resolvedTheme, setTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
+  const { theme, setTheme } = useTheme();
 
-  useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect
-    setMounted(true);
-  }, []);
-
-  if (!mounted) {
-    return null;
-  }
-
-  const isLightMode = resolvedTheme === "light";
+  const isLightMode = theme === "light";
 
   return (
     <div className={`flex items-center justify-center ${className}`}>

@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "@/app/globals.css";
 import Layouts from "@/common/layouts/Layouts";
-import { ThemeProviderContext } from "@/providers/ThemeProvider";
 import TopLoader from "@/common/components/elements/TopLoader";
 import { Toaster } from "@/common/components/ui/sonner";
 import { AuthProvider } from "@/providers/AuthProvider";
@@ -12,6 +11,8 @@ import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import { setRequestLocale } from "next-intl/server";
+import { ThemeProvider } from "@teispace/next-themes";
+import { getTheme } from "@teispace/next-themes/server";
 
 const fontInter = Inter({
   subsets: ["latin"],
@@ -87,6 +88,8 @@ export default async function LocaleLayout({
 
   setRequestLocale(locale);
 
+  const initialTheme = await getTheme();
+
   return (
     <html lang={locale} data-scroll-behavior='smooth' suppressHydrationWarning>
       <head>
@@ -100,10 +103,13 @@ export default async function LocaleLayout({
         <Toaster position='top-center' />
         <AuthProvider>
           <NextIntlClientProvider>
-            <ThemeProviderContext>
+            <ThemeProvider
+              attribute='class'
+              initialTheme={initialTheme ?? undefined}
+            >
               <TopLoader />
               <Layouts>{children}</Layouts>
-            </ThemeProviderContext>
+            </ThemeProvider>
           </NextIntlClientProvider>
         </AuthProvider>
         <ChatShortcut />
