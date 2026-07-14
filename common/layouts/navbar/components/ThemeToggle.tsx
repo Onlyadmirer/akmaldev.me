@@ -1,7 +1,7 @@
 "use client";
 
 import { useTheme } from "@teispace/next-themes";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { LuMoonStar, LuSun } from "react-icons/lu";
 
 interface props {

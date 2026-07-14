@@ -2,11 +2,11 @@
 
 import SubHeaderSection from "@/common/components/elements/SubHeaderSection";
 import SpotlightCard from "@/common/components/ui/SpotlightCard";
-import GithubIcon from "@iconify-react/mdi/github";
 import { useTheme } from "@teispace/next-themes";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { GitHubCalendar } from "react-github-calendar";
+import { FaGithub } from "react-icons/fa";
 
 interface Github {
   public_repos: number;
@@ -47,7 +47,7 @@ function GithubStats() {
     <div className='py-6 flex flex-col gap-4 border-b border-neutral-600'>
       <div className='flex flex-row justify-between items-end'>
         <SubHeaderSection
-          icon={<GithubIcon height='2em' />}
+          icon={<FaGithub height='2em' />}
           title='Github Activity'
           description='Open source contributions, repositories, and coding activity over the past year.'
         />
@@ -57,7 +57,7 @@ function GithubStats() {
       </div>
       <div className='grid grid-cols-3 grid-rows-1 py-4 gap-4 w-full '>
         <SpotlightCard className='rounded-md text-center flex flex-col justify-center items-center'>
-          <p className='text-neutral-600 dark:text-neutral-400'>
+          <p className='text-neutral-600 dark:text-neutral-400 text-sm md:text-base'>
             Public Repositories
           </p>
           <p className='text-[#7052b6] dark:text-[#ad89ff] text-2xl font-semibold '>
@@ -65,13 +65,17 @@ function GithubStats() {
           </p>
         </SpotlightCard>
         <SpotlightCard className='rounded-md flex flex-col justify-center items-center'>
-          <p className='text-neutral-600 dark:text-neutral-400'>Followers</p>
+          <p className='text-neutral-600 dark:text-neutral-400 text-sm md:text-base'>
+            Followers
+          </p>
           <p className='text-[#7052b6] dark:text-[#ad89ff] text-2xl font-semibold  '>
             {github?.followers}
           </p>
         </SpotlightCard>
         <SpotlightCard className='rounded-md flex flex-col justify-center items-center'>
-          <p className='text-neutral-600 dark:text-neutral-400'>Following</p>
+          <p className='text-neutral-600 dark:text-neutral-400 text-sm md:text-base'>
+            Following
+          </p>
           <p className='text-[#7052b6] dark:text-[#ad89ff] text-2xl font-semibold  '>
             {github?.following}
           </p>
