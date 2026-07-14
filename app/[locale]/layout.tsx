@@ -100,13 +100,13 @@ export default async function LocaleLayout({
         ></Script>
       </head>
       <body className={` ${fontInter.className} antialiased`}>
-        <Toaster position='top-center' />
         <AuthProvider>
           <NextIntlClientProvider>
             <ThemeProvider
               attribute='class'
               initialTheme={initialTheme ?? undefined}
             >
+              <Toaster position='top-center' />
               <TopLoader />
               <Layouts>{children}</Layouts>
             </ThemeProvider>
