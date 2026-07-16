@@ -1,12 +1,13 @@
+"use client";
+
 import HeaderSection from "@/common/components/elements/HeaderSection";
+import { useTranslations } from "next-intl";
 
 function DashboardHeader() {
+  const t = useTranslations("DashboardPage.Header");
   return (
     <div>
-      <HeaderSection
-        title='Dashboard'
-        description='A custom-built dashboard leveraging Next.js API routes to present real-time insights into my development activity and contributions.'
-      />
+      <HeaderSection title={t("title")} description={t("description")} />
     </div>
   );
 }

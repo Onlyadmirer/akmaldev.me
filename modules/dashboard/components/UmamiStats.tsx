@@ -2,11 +2,13 @@
 
 import SubHeaderSection from "@/common/components/elements/SubHeaderSection";
 import { Spinner } from "@/common/components/ui/spinner";
+import { useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
 import { BsEmojiDizzy } from "react-icons/bs";
 import { SiUmami } from "react-icons/si";
 
 function UmamiStats() {
+  const t = useTranslations("DashboardPage.UmamiStats");
   const [isBlock, setIsBlock] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const umami = "https://cloud.umami.is/share/kQqVwGiVToTkkgX0/akmaldev.me";
@@ -31,8 +33,8 @@ function UmamiStats() {
     <div className='py-6 flex flex-col gap-4 '>
       <SubHeaderSection
         icon={<SiUmami height='2em' />}
-        title='Umami'
-        description='Track real-time visitor metrics and user engagement'
+        title={t("title")}
+        description={t("description")}
       />
       <div>
         {isLoading ? (
@@ -42,8 +44,7 @@ function UmamiStats() {
             <BsEmojiDizzy size={36} />
             <p className='text-center text-sm'>
               {" "}
-              Failed to load analytics. Please disable your AdBlocker or Brave
-              Shields.
+              {t("error")}
             </p>
           </div>
         ) : (

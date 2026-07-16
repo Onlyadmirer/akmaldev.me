@@ -3,6 +3,7 @@
 import SubHeaderSection from "@/common/components/elements/SubHeaderSection";
 import SpotlightCard from "@/common/components/ui/SpotlightCard";
 import { useTheme } from "@teispace/next-themes";
+import { useTranslations } from "next-intl";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { GitHubCalendar } from "react-github-calendar";
@@ -15,6 +16,7 @@ interface Github {
 }
 
 function GithubStats() {
+  const t = useTranslations("DashboardPage.GithubStats");
   const [github, setGithub] = useState<Github>();
   const [mounted, setMounted] = useState(false);
   useEffect(() => {
@@ -48,17 +50,17 @@ function GithubStats() {
       <div className='flex flex-row justify-between items-end'>
         <SubHeaderSection
           icon={<FaGithub height='2em' />}
-          title='Github Activity'
-          description='Open source contributions, repositories, and coding activity over the past year.'
+          title={t("title")}
+          description={t("description")}
         />
         <Link href={"https://github.com/onlyadmirer"} target='_blank'>
-          <p className='text-muted-foreground font-medium'>@akmal</p>
+          <p className='text-muted-foreground font-medium'>{t("username")}</p>
         </Link>
       </div>
       <div className='grid grid-cols-3 grid-rows-1 py-4 gap-4 w-full '>
         <SpotlightCard className='rounded-md text-center flex flex-col justify-center items-center'>
           <p className='text-neutral-600 dark:text-neutral-400 text-sm md:text-base'>
-            Public Repositories
+            {t("publicRepos")}
           </p>
           <p className='text-[#7052b6] dark:text-[#ad89ff] text-2xl font-semibold '>
             {github?.public_repos}
@@ -66,7 +68,7 @@ function GithubStats() {
         </SpotlightCard>
         <SpotlightCard className='rounded-md flex flex-col justify-center items-center'>
           <p className='text-neutral-600 dark:text-neutral-400 text-sm md:text-base'>
-            Followers
+            {t("followers")}
           </p>
           <p className='text-[#7052b6] dark:text-[#ad89ff] text-2xl font-semibold  '>
             {github?.followers}
@@ -74,7 +76,7 @@ function GithubStats() {
         </SpotlightCard>
         <SpotlightCard className='rounded-md flex flex-col justify-center items-center'>
           <p className='text-neutral-600 dark:text-neutral-400 text-sm md:text-base'>
-            Following
+            {t("following")}
           </p>
           <p className='text-[#7052b6] dark:text-[#ad89ff] text-2xl font-semibold  '>
             {github?.following}
@@ -92,8 +94,7 @@ function GithubStats() {
         blockRadius={3}
         tooltips={{
           activity: {
-            text: (activity) =>
-              `${activity.count} activities on ${activity.date}`,
+            text: (activity) => `${activity.count} ${t("tooltip", { date: activity.date })}`,
             placement: "top",
             offset: 12,
             transitionStyles: {

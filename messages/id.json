@@ -15,6 +15,26 @@
       "subTitle": "Jelajahi segala hal yang telah saya ciptakan, kontribusikan, dan capai."
     }
   },
+  "DashboardPage": {
+    "Header": {
+      "title": "Dashboard",
+      "description": "Dashboard khusus yang dibangun menggunakan API routes Next.js untuk menampilkan wawasan real-time tentang aktivitas pengembangan dan kontribusi saya."
+    },
+    "GithubStats": {
+      "title": "Aktivitas GitHub",
+      "description": "Kontribusi open source, repositori, dan aktivitas coding selama setahun terakhir.",
+      "publicRepos": "Repositori Publik",
+      "followers": "Pengikut",
+      "following": "Mengikuti",
+      "username": "@akmal",
+      "tooltip": "aktivitas pada {date}"
+    },
+    "UmamiStats": {
+      "title": "Umami",
+      "description": "Lacak metrik pengunjung real-time dan interaksi pengguna",
+      "error": "Gagal memuat analytics. Nonaktifkan AdBlocker atau Brave Shields Anda."
+    }
+  },
   "AboutPage": {
     "Header": {
       "title": "Tentang",

@@ -15,6 +15,26 @@
       "subTitle": "Explore everything I’ve crafted, contributed, and accomplished."
     }
   },
+  "DashboardPage": {
+    "Header": {
+      "title": "Dashboard",
+      "description": "A custom-built dashboard leveraging Next.js API routes to present real-time insights into my development activity and contributions."
+    },
+    "GithubStats": {
+      "title": "GitHub Activity",
+      "description": "Open source contributions, repositories, and coding activity over the past year.",
+      "publicRepos": "Public Repositories",
+      "followers": "Followers",
+      "following": "Following",
+      "username": "@akmal",
+      "tooltip": "activities on {date}"
+    },
+    "UmamiStats": {
+      "title": "Umami",
+      "description": "Track real-time visitor metrics and user engagement",
+      "error": "Failed to load analytics. Please disable your AdBlocker or Brave Shields."
+    }
+  },
   "AboutPage": {
     "Header": {
       "title": "About",
