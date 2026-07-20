@@ -2,14 +2,16 @@
 
 import Header from "./Header";
 import Footer from "./Footer";
+import ChatShortcut from "@/modules/guestbook/components/ChatShortcut";
 
 function Layouts({ children }: { children: React.ReactNode }) {
   return (
-    <div className='min-h-screen bg-background'>
+    <main className='min-h-screen bg-background'>
       <Header />
-      <main className='pt-14'>{children}</main>
+      <div className='pt-14'>{children}</div>
       <Footer />
-    </div>
+      <ChatShortcut />
+    </main>
   );
 }
 
