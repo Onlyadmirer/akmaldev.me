@@ -11,6 +11,7 @@ import { routing } from "@/i18n/routing";
 import { setRequestLocale } from "next-intl/server";
 import { ThemeProvider } from "@teispace/next-themes";
 import { getTheme } from "@teispace/next-themes/server";
+import TopLoader from "@/common/constants/TopLoader";
 
 const fontInter = Inter({
   subsets: ["latin"],
@@ -112,6 +113,7 @@ export default async function LocaleLayout({
               attribute='class'
               initialTheme={initialTheme ?? undefined}
             >
+              <TopLoader />
               <Toaster position='top-center' />
               <Layouts>{children}</Layouts>
             </ThemeProvider>
