@@ -3,22 +3,22 @@ import Home from "@/modules/home/Home";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Akmaldev - Full-Stack Web Developer Portfolio",
+  title: "Akmal — Full-Stack Developer & UI Engineer",
   description:
-    "Welcome to Akmaldev. Explore a curated showcase of interactive, high-performance web applications built with clean code and modern technologies.",
+    "Portfolio of Akmal — a full-stack developer and UI engineer crafting digital products with precision.",
 
   openGraph: {
-    title: "Akmaldev - Personal Portfolio & Central Hub",
+    title: "Akmal — Full-Stack Developer & UI Engineer",
     description:
-      "Explore Akmal’s web projects, development journey, and creative highlights in one place.",
+      "Crafting digital products with modern web technologies.",
     url: "https://www.akmaldev.me",
-    siteName: "Akmaldev",
+    siteName: "Akmal",
     images: [
       {
         url: "https://www.akmaldev.me/images/profile/akmal.jpg",
         width: 1200,
         height: 630,
-        alt: "Akmaldev - Portfolio Homepage",
+        alt: "Akmal — Portfolio",
       },
     ],
     locale: "en_US",
@@ -27,9 +27,9 @@ export const metadata: Metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "Akmaldev - Full-Stack Web Developer Portfolio",
+    title: "Akmal — Full-Stack Developer & UI Engineer",
     description:
-      "Explore a curated showcase of interactive, high-performance web applications built by Akmal.",
+      "Crafting digital products with modern web technologies.",
     images: ["https://www.akmaldev.me/images/profile/akmal.jpg"],
   },
 };

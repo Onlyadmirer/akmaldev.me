@@ -1,17 +1,7 @@
 import { notFound } from "next/navigation";
 import getProjectDetail from "../services/getProjectDetail";
 import Link from "next/link";
-import { IoArrowBackCircleOutline } from "react-icons/io5";
-import HeaderSection from "@/common/components/elements/HeaderSection";
-import { STACK } from "@/common/constants/TechStack";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipTrigger,
-} from "@/common/components/ui/tooltip";
 import Image from "next/image";
-import { BsGithub } from "react-icons/bs";
-import { FiExternalLink } from "react-icons/fi";
 
 type Props = {
   slug: string;
@@ -25,97 +15,105 @@ async function ProjectDetailView({ slug }: Props) {
   }
 
   return (
-    <div>
-      <div className='space-y-6'>
-        <button>
-          <Link
-            href={"/projects"}
-            className='flex items-center gap-1 hover:gap-2 transition-all duration-300 ease-in-out cursor-pointer text-muted-foreground'
-          >
-            <IoArrowBackCircleOutline size={20} />
-            <span>Back</span>
-          </Link>
-        </button>
-        <HeaderSection
-          title={project.title}
-          description={project.description}
-        ></HeaderSection>
+    <div className='mx-auto max-w-6xl px-6 pt-8 pb-24'>
+      <Link
+        href='/projects'
+        className='group inline-flex items-center gap-1 text-sm text-foreground-secondary transition-colors duration-200 hover:text-foreground'
+      >
+        <svg
+          width='16'
+          height='16'
+          viewBox='0 0 16 16'
+          fill='none'
+          className='transition-transform duration-200 group-hover:-translate-x-0.5'
+        >
+          <path
+            d='M10 4L6 8L10 12'
+            stroke='currentColor'
+            strokeWidth='1.5'
+            strokeLinecap='round'
+            strokeLinejoin='round'
+          />
+        </svg>
+        Back
+      </Link>
+
+      <div className='mt-10'>
+        <h1 className='font-heading text-3xl font-semibold tracking-tight text-foreground md:text-4xl'>
+          {project.title}
+        </h1>
+        <p className='mt-3 max-w-lg text-base text-foreground-secondary'>
+          {project.description}
+        </p>
       </div>
-      <div className='py-6 flex flex-col gap-4 md:flex-row items-center md:justify-between'>
-        <div className='flex flex-col sm:flex-row gap-2 items-center'>
-          <h1 className='text-muted-foreground'>Tech Stack:</h1>
-          <div className='flex flex-row md:gap-1'>
-            {project.techStacks.map((stackName) => {
-              const stackData = STACK[stackName.name];
-              if (!stackData) {
-                return null;
-              }
-              return (
-                <Tooltip key={stackData.key}>
-                  <TooltipTrigger className='hover:scale-105 transition-all p-1 md:p-2 duration-300 ease-in-out'>
-                    <Link
-                      href={stackData.link}
-                      target='_blank'
-                      rel='noopener noreferrer'
-                      className='relative block h-12 w-12 lg:h-9 lg:w-9 overflow-hidden'
-                    >
-                      <Image
-                        src={stackData.icon}
-                        alt={stackData.key}
-                        fill
-                        priority
-                        sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
-                        className='p-2 lg:p-0 object-cover'
-                      />
-                    </Link>
-                  </TooltipTrigger>
-                  <TooltipContent>
-                    <p>{stackData.key}</p>
-                  </TooltipContent>
-                </Tooltip>
-              );
-            })}
-          </div>
+
+      <div className='mt-8 flex flex-wrap items-center gap-6'>
+        <div className='flex flex-wrap items-center gap-x-3 gap-y-1'>
+          <span className='text-xs text-foreground-secondary/60'>
+            Tech Stack:
+          </span>
+          {project.techStacks.map((stack) => (
+            <span
+              key={stack.name}
+              className='text-xs text-foreground-secondary'
+            >
+              {stack.name}
+            </span>
+          ))}
         </div>
-        <div className='flex flex-row gap-3 items-center'>
-          {project.github ? (
-            <div className='flex flex-row gap-2 items-center'>
-              <BsGithub size={26} />
-              <Link
-                href={project.github || ""}
-                className='text-violet-400'
-                target='_blank'
-                rel='noopener noreferrer'
-              >
-                Source Code
-              </Link>
-            </div>
-          ) : (
-            ""
+
+        <div className='flex items-center gap-4'>
+          {project.github && (
+            <Link
+              href={project.github}
+              target='_blank'
+              rel='noopener noreferrer'
+              className='group inline-flex items-center gap-1.5 text-sm text-foreground-secondary transition-colors duration-200 hover:text-foreground'
+            >
+              <svg width='16' height='16' viewBox='0 0 16 16' fill='currentColor'>
+                <path d='M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z' />
+              </svg>
+              Source Code
+            </Link>
           )}
-          <span className='text-muted-foreground'>|</span>
-          <div>
+          {project.url && (
             <Link
               href={project.url}
               target='_blank'
-              className='flex flex-row gap-2 items-center'
+              rel='noopener noreferrer'
+              className='group inline-flex items-center gap-1.5 text-sm text-foreground-secondary transition-colors duration-200 hover:text-foreground'
             >
-              <FiExternalLink size={24} />
-              <span className='text-violet-400'>Live Demo</span>
+              <svg
+                width='16'
+                height='16'
+                viewBox='0 0 16 16'
+                fill='none'
+              >
+                <path
+                  d='M12 12H4V4M12 4L8 8M12 4V7.5'
+                  stroke='currentColor'
+                  strokeWidth='1.5'
+                  strokeLinecap='round'
+                  strokeLinejoin='round'
+                />
+              </svg>
+              Live Demo
             </Link>
-          </div>
+          )}
         </div>
       </div>
-      <div className='relative overflow-hidden w-full h-full'>
-        <Image
-          src={project.image}
-          alt='project'
-          width={800}
-          height={300}
-          className='object-cover'
-          sizes='(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 53vw'
-          priority
-        ></Image>
+
+      <div className='mt-10'>
+        <div className='relative aspect-video w-full overflow-hidden bg-surface'>
+          <Image
+            src={project.image}
+            alt={project.title}
+            fill
+            className='object-cover'
+            sizes='(max-width: 1200px) 100vw, 800px'
+            priority
+          />
+        </div>
       </div>
     </div>
   );

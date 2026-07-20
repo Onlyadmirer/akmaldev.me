@@ -1,19 +1,21 @@
 interface buttonProps {
-  children: string | React.ReactNode;
+  children: React.ReactNode;
   className?: string;
   type?: "submit" | "button";
+  onClick?: () => void;
+  disabled?: boolean;
 }
 
 function Button({
   children,
-  className,
+  className = "",
   type,
   ...props
-}: buttonProps | React.ComponentProps<"button">) {
+}: buttonProps & React.ComponentProps<"button">) {
   return (
     <button
       type={type}
-      className={`flex flex-row justify-center gap-2 py-2 text-sm font-semibold transition-all duration-300 ease-in-out rounded-md cursor-pointer px-2 lg:px-4 hover:bg-neutral-400 bg-neutral-300 focus:ring-2 focus:outline-none focus:ring-offset-2 ring-neutral-800 lg:w-auto ${className}`}
+      className={`inline-flex cursor-pointer items-center justify-center gap-2 px-4 py-2 text-sm font-medium text-foreground transition-all duration-200 hover:text-foreground-secondary disabled:pointer-events-none disabled:opacity-50 ${className}`}
       {...props}
     >
       {children}

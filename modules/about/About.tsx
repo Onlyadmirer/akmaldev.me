@@ -1,14 +1,14 @@
 import PageAnimateWrapper from "@/common/components/elements/PageAnimateWrapper";
-import AboutHeader from "./components/AboutHeader";
-import Education from "./components/Education";
 import Intro from "./components/Intro";
+import Education from "./components/Education";
 
 function About() {
   return (
     <PageAnimateWrapper>
-      <AboutHeader />
-      <Intro />
-      <Education />
+      <div className='mx-auto max-w-6xl px-6 pt-8 pb-24'>
+        <Intro />
+        <Education />
+      </div>
     </PageAnimateWrapper>
   );
 }

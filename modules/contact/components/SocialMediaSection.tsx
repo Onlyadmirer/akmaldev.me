@@ -1,70 +1,52 @@
-"use client";
-
-import Button from "@/common/components/ui/Button";
-import { useContact } from "./useContact";
-import { SiGmail } from "react-icons/si";
 import Link from "next/link";
-import { MdOutlineArrowOutward } from "react-icons/md";
+
+const links = [
+  {
+    label: "Email",
+    href: "mailto:akmalrbc6@gmail.com",
+    value: "akmalrbc6@gmail.com",
+  },
+  {
+    label: "GitHub",
+    href: "https://github.com/Onlyadmirer",
+    value: "@Onlyadmirer",
+  },
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/in/akmal-l-0365ab2b5/",
+    value: "Akmal L",
+  },
+  {
+    label: "Instagram",
+    href: "https://www.instagram.com/akmal_2yu",
+    value: "@akmal_2yu",
+  },
+  {
+    label: "TikTok",
+    href: "https://www.tiktok.com/@akmalrbc2",
+    value: "@akmalrbc2",
+  },
+];
 
 function SocialMediaSection() {
-  const { items } = useContact();
-
   return (
-    <div className='py-6 space-y-4 border-b border-primary/50'>
-      <h1 className='text-primary'>Find me on social media</h1>
-      <div className='grid lg:grid-cols-2 gap-4 grid-rows-3'>
-        <div className='rounded-md lg:col-span-2 flex flex-row justify-between items-center py-4 px-6 bg-[url(/images/backgroundSocialMedia/gmail.png)]'>
-          <div className='space-y-3'>
-            <div className='space-y-2'>
-              <h1 className='text-xl font-semibold text-neutral-200'>
-                Stay in Touch
-              </h1>
-              <p className='text-sm font-medium text-neutral-300'>
-                Reach out via email for formal inquiries or project
-                collaborations.
-              </p>
-            </div>
-            <a
-              href='mailto:akmalrbc6@gmail.com'
+    <div>
+      <h2 className='font-heading text-lg font-semibold tracking-tight text-foreground'>
+        Find me online
+      </h2>
+      <div className='mt-6 space-y-5'>
+        {links.map((link) => (
+          <div key={link.label} className='border-b border-border pb-4'>
+            <p className='text-xs text-foreground-secondary/60'>{link.label}</p>
+            <Link
+              href={link.href}
               target='_blank'
               rel='noopener noreferrer'
+              className='group mt-1 inline-block text-sm text-foreground-secondary transition-colors duration-200 hover:text-foreground'
             >
-              <Button className='text-neutral-800'>
-                Send Email <MdOutlineArrowOutward size={18} />
-              </Button>
-            </a>
-          </div>
-          <div className='rounded-2xl p-2 border-4 flex items-center justify-center w-16 h-16 border-neutral-200/60'>
-            <SiGmail size={38} />
-          </div>
-        </div>
-        {items.map((item) => (
-          <div
-            key={item.title}
-            className={`rounded-md row-span-1 flex flex-row justify-between items-center py-4 px-6 ${item.background}`}
-          >
-            <div className='space-y-3'>
-              <div className='space-y-2'>
-                <h1 className='text-xl font-semibold text-neutral-200'>
-                  {item.title}
-                </h1>
-                <p className='text-sm font-medium max-w-[90%] text-neutral-300'>
-                  {item.description}
-                </p>
-              </div>
-              <Link
-                href={item.url || ""}
-                target='_blank'
-                rel='noopener noreferrer'
-              >
-                <Button className='text-neutral-800'>
-                  {item.action} <MdOutlineArrowOutward size={18} />
-                </Button>
-              </Link>
-            </div>
-            <div className='rounded-2xl p-2 border-4 flex items-center justify-center w-16 h-16 border-neutral-200/60'>
-              {item.icon}
-            </div>
+              {link.value}
+              <span className='block h-px max-w-0 bg-foreground transition-all duration-300 group-hover:max-w-full' />
+            </Link>
           </div>
         ))}
       </div>

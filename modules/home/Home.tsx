@@ -1,13 +1,13 @@
 import PageAnimateWrapper from "@/common/components/elements/PageAnimateWrapper";
+import Hero from "./components/Hero";
+import Skills from "./components/Skills";
 import Featured from "./components/Featured";
-import Header from "./components/Header";
-import Skils from "./components/Skils";
 
 function Home() {
   return (
     <PageAnimateWrapper>
-      <Header />
-      <Skils />
+      <Hero />
+      <Skills />
       <Featured />
     </PageAnimateWrapper>
   );

@@ -1,9 +1,6 @@
 "use client";
 
-import SubHeaderSection from "@/common/components/elements/SubHeaderSection";
-import SpotlightCard from "@/common/components/ui/SpotlightCard";
 import { useTheme } from "@teispace/next-themes";
-import { useTranslations } from "next-intl";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { GitHubCalendar } from "react-github-calendar";
@@ -16,11 +13,10 @@ interface Github {
 }
 
 function GithubStats() {
-  const t = useTranslations("DashboardPage.GithubStats");
   const [github, setGithub] = useState<Github>();
   const [mounted, setMounted] = useState(false);
+
   useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect
     setMounted(true);
   }, []);
 
@@ -36,9 +32,7 @@ function GithubStats() {
   const { theme } = useTheme();
   const isDark = theme === "dark";
 
-  if (!mounted) {
-    return null;
-  }
+  if (!mounted) return null;
 
   const explicitTheme = {
     light: ["#ebedf0", "#9be9a8", "#40c463", "#30a14e", "#216e39"],
@@ -46,64 +40,65 @@ function GithubStats() {
   };
 
   return (
-    <div className='py-6 flex flex-col gap-4 border-b border-neutral-600'>
-      <div className='flex flex-row justify-between items-end'>
-        <SubHeaderSection
-          icon={<FaGithub height='2em' />}
-          title={t("title")}
-          description={t("description")}
-        />
-        <Link href={"https://github.com/onlyadmirer"} target='_blank'>
-          <p className='text-muted-foreground font-medium'>{t("username")}</p>
+    <div className='mb-16'>
+      <div className='flex items-center justify-between border-b border-border pb-4'>
+        <div className='flex items-center gap-2'>
+          <FaGithub size={18} className='text-foreground-secondary' />
+          <h2 className='font-heading text-lg font-semibold tracking-tight text-foreground'>
+            GitHub Activity
+          </h2>
+        </div>
+        <Link
+          href='https://github.com/onlyadmirer'
+          target='_blank'
+          className='text-xs text-foreground-secondary transition-colors duration-200 hover:text-foreground'
+        >
+          @Onlyadmirer
         </Link>
       </div>
-      <div className='grid grid-cols-3 grid-rows-1 py-4 gap-4 w-full '>
-        <SpotlightCard className='rounded-md text-center flex flex-col justify-center items-center'>
-          <p className='text-neutral-600 dark:text-neutral-400 text-sm md:text-base'>
-            {t("publicRepos")}
+
+      <div className='mt-6 grid grid-cols-3 gap-6'>
+        <div>
+          <p className='text-xs text-foreground-secondary/60'>
+            Public Repositories
           </p>
-          <p className='text-[#7052b6] dark:text-[#ad89ff] text-2xl font-semibold '>
-            {github?.public_repos}
+          <p className='mt-1 font-heading text-xl font-semibold tracking-tight text-foreground'>
+            {github?.public_repos ?? "—"}
           </p>
-        </SpotlightCard>
-        <SpotlightCard className='rounded-md flex flex-col justify-center items-center'>
-          <p className='text-neutral-600 dark:text-neutral-400 text-sm md:text-base'>
-            {t("followers")}
+        </div>
+        <div>
+          <p className='text-xs text-foreground-secondary/60'>Followers</p>
+          <p className='mt-1 font-heading text-xl font-semibold tracking-tight text-foreground'>
+            {github?.followers ?? "—"}
           </p>
-          <p className='text-[#7052b6] dark:text-[#ad89ff] text-2xl font-semibold  '>
-            {github?.followers}
+        </div>
+        <div>
+          <p className='text-xs text-foreground-secondary/60'>Following</p>
+          <p className='mt-1 font-heading text-xl font-semibold tracking-tight text-foreground'>
+            {github?.following ?? "—"}
           </p>
-        </SpotlightCard>
-        <SpotlightCard className='rounded-md flex flex-col justify-center items-center'>
-          <p className='text-neutral-600 dark:text-neutral-400 text-sm md:text-base'>
-            {t("following")}
-          </p>
-          <p className='text-[#7052b6] dark:text-[#ad89ff] text-2xl font-semibold  '>
-            {github?.following}
-          </p>
-        </SpotlightCard>
+        </div>
       </div>
-      <GitHubCalendar
-        username='onlyadmirer'
-        colorScheme={`${isDark ? "dark" : "light"}`}
-        theme={explicitTheme}
-        fontSize={14}
-        blockSize={11}
-        blockMargin={4}
-        year={"last"}
-        blockRadius={3}
-        tooltips={{
-          activity: {
-            text: (activity) => `${activity.count} ${t("tooltip", { date: activity.date })}`,
-            placement: "top",
-            offset: 12,
-            transitionStyles: {
-              common: { fontFamily: "monospace" },
+
+      <div className='mt-8'>
+        <GitHubCalendar
+          username='onlyadmirer'
+          colorScheme={`${isDark ? "dark" : "light"}`}
+          theme={explicitTheme}
+          fontSize={14}
+          blockSize={11}
+          blockMargin={4}
+          year={"last"}
+          blockRadius={2}
+          tooltips={{
+            activity: {
+              text: (activity) => `${activity.count} activities on ${activity.date}`,
+              placement: "top",
+              offset: 12,
             },
-            withArrow: true,
-          },
-        }}
-      />
+          }}
+        />
+      </div>
     </div>
   );
 }

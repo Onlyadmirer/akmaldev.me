@@ -8,68 +8,70 @@ function FormSection() {
   const { onSubmit } = useFormSection();
 
   return (
-    <div className='py-6 space-y-4'>
-      <h1 className='font-medium text-lg text-primary'>Or send me a message</h1>
-      <div>
-        <form
-          onSubmit={handleSubmit(onSubmit)}
-          className='grid space-y-4 md:gap-4 grid-cols-1 md:grid-cols-2'
+    <div>
+      <h2 className='font-heading text-lg font-semibold tracking-tight text-foreground'>
+        Send a message
+      </h2>
+      <form
+        onSubmit={handleSubmit(onSubmit)}
+        className='mt-6 space-y-5'
+      >
+        <div>
+          <input
+            type='text'
+            placeholder='Name'
+            {...register("name")}
+            className='w-full border-b border-border bg-transparent pb-2 text-sm text-foreground placeholder-foreground-secondary/40 outline-none transition-colors duration-200 focus:border-foreground'
+          />
+          {errors.name && (
+            <p className='mt-1 text-xs text-red-500'>{errors.name.message}</p>
+          )}
+        </div>
+        <div>
+          <input
+            type='email'
+            placeholder='Email'
+            {...register("email")}
+            className='w-full border-b border-border bg-transparent pb-2 text-sm text-foreground placeholder-foreground-secondary/40 outline-none transition-colors duration-200 focus:border-foreground'
+          />
+          {errors.email && (
+            <p className='mt-1 text-xs text-red-500'>{errors.email.message}</p>
+          )}
+        </div>
+        <div>
+          <textarea
+            placeholder='Message'
+            rows={4}
+            {...register("message")}
+            className='w-full resize-none border-b border-border bg-transparent pb-2 text-sm text-foreground placeholder-foreground-secondary/40 outline-none transition-colors duration-200 focus:border-foreground'
+          />
+          {errors.message && (
+            <p className='mt-1 text-xs text-red-500'>
+              {errors.message.message}
+            </p>
+          )}
+        </div>
+        <button
+          type='submit'
+          className='inline-flex cursor-pointer items-center gap-2 text-sm font-medium text-foreground transition-colors duration-200 hover:text-foreground-secondary'
         >
-          <div className='flex flex-col w-full row-start-1 gap-1 md:col-span-1'>
-            <input
-              type='text'
-              placeholder='Name'
-              required
-              {...register("name")}
-              className='rounded-lg px-4 py-2 border-3 w-full border-neutral-500'
-            />
-            {errors.name && (
-              <div>
-                <p className='text-xs pl-1 text-red-500'>
-                  {errors.name.message}
-                </p>
-              </div>
-            )}
-          </div>
-          <div className='felx flex-col row-start-2 md:row-start-1 w-full gap-1 md:col-span-1'>
-            <input
-              type='email'
-              placeholder='Email'
-              required
-              {...register("email")}
-              className='rounded-lg px-4 py-2 border-3 w-full border-neutral-500'
-            />
-            {errors.email && (
-              <div>
-                <p className='text-xs pl-1 text-red-500'>
-                  {errors.email.message}
-                </p>
-              </div>
-            )}
-          </div>
-          <div className='felx flex-col row-start-3 w-full md:row-start-2 md:col-span-2 '>
-            <textarea
-              placeholder='Message'
-              required
-              {...register("message")}
-              className='rounded-lg px-4 py-2 border-3 w-full border-neutral-500'
-            />
-            {errors.email && (
-              <div>
-                <p className='text-xs pl-1 text-red-500'>
-                  {errors.email.message}
-                </p>
-              </div>
-            )}
-          </div>
-          <button
-            type='submit'
-            className='rounded-lg w-full py-2 text-neutral-200 cursor-pointer focus:ring-2 ring-neutral-500 focus:ring-offset-2  dark:text-neutral-800 font-medium bg-neutral-600 transition-all duration-300 ease-in-out hover:bg-neutral-400 dark:bg-neutral-300 col-span-2'
+          Send Message
+          <svg
+            width='16'
+            height='16'
+            viewBox='0 0 16 16'
+            fill='none'
           >
-            Send Email
-          </button>
-        </form>
-      </div>
+            <path
+              d='M2 8H14M14 8L9 3M14 8L9 13'
+              stroke='currentColor'
+              strokeWidth='1.5'
+              strokeLinecap='round'
+              strokeLinejoin='round'
+            />
+          </svg>
+        </button>
+      </form>
     </div>
   );
 }

@@ -5,9 +5,13 @@ interface HeaderProps {
 
 function HeaderSection({ title, description }: HeaderProps) {
   return (
-    <div className='space-y-2 border-b pb-6 border-primary/50 border-dashed'>
-      <h1 className='text-2xl md:text-2xl font-medium text-primary'>{title}</h1>
-      <h2 className='text-muted-foreground'>{description}</h2>
+    <div className='mb-16'>
+      <h1 className='font-heading text-3xl font-semibold tracking-tight text-foreground md:text-4xl'>
+        {title}
+      </h1>
+      <p className='mt-3 max-w-lg text-base text-foreground-secondary'>
+        {description}
+      </p>
     </div>
   );
 }

@@ -1,102 +1,67 @@
 "use client";
 
-import SubHeaderSection from "@/common/components/elements/SubHeaderSection";
-import SpotlightCard from "@/common/components/ui/SpotlightCard";
-import { useTranslations } from "next-intl";
+import SectionHeading from "@/common/components/elements/SectionHeading";
 import Link from "next/link";
-import {
-  LuGalleryVerticalEnd,
-  LuLayoutDashboard,
-  LuUser,
-} from "react-icons/lu";
-import { MdBackupTable } from "react-icons/md";
-import { PiCertificate } from "react-icons/pi";
+
+const links = [
+  {
+    label: "Projects",
+    href: "/projects",
+    description: "Explore my work",
+  },
+  {
+    label: "Achievements",
+    href: "/achievements",
+    description: "Certifications & milestones",
+  },
+  {
+    label: "Dashboard",
+    href: "/dashboard",
+    description: "GitHub stats & analytics",
+  },
+];
 
 function Featured() {
-  const featured = [
-    {
-      route: "/projects",
-      icon: (
-        <LuGalleryVerticalEnd
-          size={38}
-          className='object-cover w-full h-full text-description'
-        />
-      ),
-      title: "Projects",
-      description:
-        "Exploring my recent web development and systems integration projects",
-    },
-    {
-      route: "/achievements",
-      icon: (
-        <PiCertificate
-          size={38}
-          className='object-cover w-full h-full text-description'
-        />
-      ),
-      title: "Achievements",
-      description:
-        "Certificates, tech bootcamp completions, and academic milestones",
-    },
-    {
-      route: "/about",
-      icon: (
-        <LuUser
-          size={38}
-          className='object-cover w-full h-full text-description'
-        />
-      ),
-      title: "About",
-      description: "Get to know more about my background and philosophy",
-    },
-    {
-      route: "/dashboard",
-      icon: (
-        <LuLayoutDashboard
-          size={38}
-          className='object-cover w-full h-full text-description'
-        />
-      ),
-      title: "Dashboard",
-      description:
-        "Real-time insights of my coding activity, GitHub metrics, and stats",
-    },
-  ];
-
-  const t = useTranslations("HomePage.Featured");
-
   return (
-    <div className='py-6'>
-      <SubHeaderSection
-        icon={<MdBackupTable size={24} />}
-        title={t("title")}
-        description={t("subTitle")}
+    <section className='mx-auto max-w-6xl px-6 py-20 border-t border-border'>
+      <SectionHeading
+        title='Explore'
+        subtitle='Quick links to key sections'
       />
-
-      <div className='mt-8 flex flex-col sm:grid grid-cols-2 grid-rows-2 gap-3'>
-        {featured.map((item, index) => (
+      <div className='space-y-4'>
+        {links.map((link) => (
           <Link
-            key={index}
-            href={item.route}
-            className='flex flex-row items-center gap-4'
+            key={link.href}
+            href={link.href}
+            className='group flex items-center justify-between border-b border-border py-4 transition-all duration-200 hover:opacity-60'
           >
-            <SpotlightCard className='flex rounded-lg flex-row items-center gap-6 w-full'>
-              <div className='p-3 rounded-lg bg-neutral-300 dark:bg-neutral-800'>
-                <>{item.icon}</>
-              </div>
-              <div>
-                <h2 className='text-description text-sm flex flex-row gap-2 items-center font-medium'>
-                  {item.title}
-                </h2>
-                <p className='text-neutral-600 dark:text-neutral-400 tracking-tight text-xs'>
-                  {item.description}
-                </p>
-              </div>
-            </SpotlightCard>
+            <div>
+              <span className='font-heading text-lg font-medium tracking-tight text-foreground'>
+                {link.label}
+              </span>
+              <p className='mt-0.5 text-sm text-foreground-secondary'>
+                {link.description}
+              </p>
+            </div>
+            <svg
+              width='20'
+              height='20'
+              viewBox='0 0 20 20'
+              fill='none'
+              className='text-foreground-secondary transition-transform duration-200 group-hover:translate-x-1'
+            >
+              <path
+                d='M7 4L13 10L7 16'
+                stroke='currentColor'
+                strokeWidth='1.5'
+                strokeLinecap='round'
+                strokeLinejoin='round'
+              />
+            </svg>
           </Link>
         ))}
       </div>
-    </div>
+    </section>
   );
 }
 

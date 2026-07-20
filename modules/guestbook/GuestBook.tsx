@@ -1,6 +1,5 @@
 "use client";
 
-import HeaderSection from "@/common/components/elements/HeaderSection";
 import {
   Avatar,
   AvatarFallback,
@@ -8,7 +7,6 @@ import {
 } from "@/common/components/ui/avatar";
 import { Bubble, BubbleContent } from "@/common/components/ui/bubble";
 import Button from "@/common/components/ui/Button";
-import { Input } from "@/common/components/ui/input";
 import {
   Message,
   MessageAvatar,
@@ -70,9 +68,8 @@ function GuestBook() {
       );
 
       await mutate();
-    } catch (error) {
-      console.log(error);
-      toast.error("failed to sent message");
+    } catch {
+      toast.error("Failed to send message");
     }
   };
 
@@ -82,8 +79,7 @@ function GuestBook() {
         method: "DELETE",
       });
       toast.success("Deleted");
-    } catch (error) {
-      console.error(error);
+    } catch {
       toast.error("Something went wrong");
     }
   };
@@ -93,7 +89,6 @@ function GuestBook() {
     commentId: string,
   ) => {
     e.preventDefault();
-
     setContextMenu({
       visible: true,
       commentId,
@@ -117,161 +112,172 @@ function GuestBook() {
 
   return (
     <PageAnimateWrapper>
-      <HeaderSection
-        title='Guestbook'
-        description='We’d love to hear your thoughts, suggestions, or questions.'
-      />
-
-      {isError ? (
-        <p>Gagal memuat komentar.</p>
-      ) : (
-        <div className='flex h-116 overflow-y-scroll max-w-4xl sm:px-4 mb-4 flex-col mx-auto gap-6 py-12 border-b border-neutral-500 border-dashed'>
-          {comments.length > 0 ? (
-            comments.map((c) =>
-              c.user.role === "Admin" ? (
-                <Message key={c.id} align='end'>
-                  <MessageAvatar>
-                    <Avatar>
-                      <AvatarImage src={c.user.image} alt='@avatar' />
-                      <AvatarFallback>
-                        {c.user.name?.charAt(0) || "A"}
-                      </AvatarFallback>
-                    </Avatar>
-                  </MessageAvatar>
-                  <MessageContent>
-                    <div className='flex flex-row justify-end gap-2 items-center'>
-                      <small className='text-neutral-700 dark:text-neutral-400'>
-                        {new Date(c.createdAt).toLocaleDateString()}
-                      </small>
-                      <p className='text-neutral-900 dark:text-neutral-300'>
-                        {c.user.name}
-                      </p>
-                    </div>
-                    <Bubble>
-                      <BubbleContent>{c.text}</BubbleContent>
-                    </Bubble>
-                  </MessageContent>
-                </Message>
-              ) : (
-                <Message key={c.id}>
-                  <MessageAvatar>
-                    <Avatar>
-                      <AvatarImage src={c.user.image} alt='@avatar' />
-                      <AvatarFallback>
-                        {c.user.name?.charAt(0) || "U"}
-                      </AvatarFallback>
-                    </Avatar>
-                  </MessageAvatar>
-                  <MessageContent
-                    onContextMenu={(e) => handleContextMenu(e, c.id)}
-                  >
-                    <div className='flex flex-row gap-2 items-center'>
-                      <p className='text-neutral-900 dark:text-neutral-300'>
-                        {c.user.name}
-                      </p>
-                      <small className='text-neutral-700 dark:text-neutral-400'>
-                        {new Date(c.createdAt).toLocaleDateString()}
-                      </small>
-                    </div>
-                    <Bubble variant='tinted' className='select-none'>
-                      <BubbleContent>{c.text}</BubbleContent>
-                    </Bubble>
-                  </MessageContent>
-                  {contextMenu.visible &&
-                    session?.user.role === "Admin" &&
-                    contextMenu.commentId === c.id && (
-                      <button
-                        onClick={() => onDelete(c.id)}
-                        style={{ top: contextMenu.y, left: contextMenu.x }}
-                        className='fixed z-99 hover:cursor-pointer hover:bg-neutral-500 text-neutral-700 dark:text-neutral-200 bg-neutral-300 dark:bg-neutral-600 p-2 rounded-lg flex flex-row gap-1 justify-center items-center'
-                      >
-                        <Trash className='text-red-600' size={16} />
-                        Delete
-                      </button>
-                    )}
-                </Message>
-              ),
-            )
-          ) : (
-            <p className='text-neutral-900 dark:text-neutral-400'>
-              No comments yet. Be the first!
-            </p>
-          )}
+      <div className='mx-auto max-w-3xl px-6 pt-8 pb-24'>
+        <div className='mb-12'>
+          <h1 className='font-heading text-3xl font-semibold tracking-tight text-foreground md:text-4xl'>
+            Guestbook
+          </h1>
+          <p className='mt-3 text-base text-foreground-secondary'>
+            Leave a message — I&apos;d love to hear from you.
+          </p>
         </div>
-      )}
-      <div>
-        {session?.user ? (
-          <div className='flex flex-col mb-6 gap-6'>
-            <form
-              onSubmit={handleSubmit(onSubmit)}
-              className='flex flex-col gap-2'
-            >
-              <div className='flex flex-row gap-2'>
-                <Input
-                  placeholder='Type your message'
-                  value={comment}
-                  disabled={isSubmitting}
-                  {...register("comments", {
-                    required: "*Input can not be empty",
-                    validate: (value) => {
-                      if (value.trim() === "") {
-                        return "*Input can not be empty";
-                      }
-                      return true;
-                    },
-                  })}
-                  onChange={(e) =>
-                    setComment((e.target as HTMLInputElement).value)
-                  }
-                />
 
+        {isError ? (
+          <p className='text-sm text-foreground-secondary'>
+            Failed to load comments.
+          </p>
+        ) : (
+          <div className='mb-8 space-y-6'>
+            {comments.length > 0 ? (
+              comments.map((c) =>
+                c.user.role === "Admin" ? (
+                  <Message key={c.id} align='end'>
+                    <MessageAvatar>
+                      <Avatar>
+                        <AvatarImage src={c.user.image} alt='@avatar' />
+                        <AvatarFallback>
+                          {c.user.name?.charAt(0) || "A"}
+                        </AvatarFallback>
+                      </Avatar>
+                    </MessageAvatar>
+                    <MessageContent>
+                      <div className='flex flex-row-reverse items-center gap-2'>
+                        <span className='text-xs text-foreground-secondary/60'>
+                          {new Date(c.createdAt).toLocaleDateString()}
+                        </span>
+                        <span className='text-sm font-medium text-foreground'>
+                          {c.user.name}
+                        </span>
+                      </div>
+                      <Bubble>
+                        <BubbleContent>{c.text}</BubbleContent>
+                      </Bubble>
+                    </MessageContent>
+                  </Message>
+                ) : (
+                  <Message key={c.id}>
+                    <MessageAvatar>
+                      <Avatar>
+                        <AvatarImage src={c.user.image} alt='@avatar' />
+                        <AvatarFallback>
+                          {c.user.name?.charAt(0) || "U"}
+                        </AvatarFallback>
+                      </Avatar>
+                    </MessageAvatar>
+                    <MessageContent
+                      onContextMenu={(e) => handleContextMenu(e, c.id)}
+                    >
+                      <div className='flex items-center gap-2'>
+                        <span className='text-sm font-medium text-foreground'>
+                          {c.user.name}
+                        </span>
+                        <span className='text-xs text-foreground-secondary/60'>
+                          {new Date(c.createdAt).toLocaleDateString()}
+                        </span>
+                      </div>
+                      <Bubble variant='tinted'>
+                        <BubbleContent>{c.text}</BubbleContent>
+                      </Bubble>
+                    </MessageContent>
+                    {contextMenu.visible &&
+                      session?.user.role === "Admin" &&
+                      contextMenu.commentId === c.id && (
+                        <button
+                          onClick={() => onDelete(c.id)}
+                          style={{ top: contextMenu.y, left: contextMenu.x }}
+                          className='fixed z-50 flex cursor-pointer items-center gap-1 rounded border border-border bg-surface px-3 py-2 text-xs text-foreground-secondary shadow-sm transition-colors hover:text-red-500'
+                        >
+                          <Trash size={14} />
+                          Delete
+                        </button>
+                      )}
+                  </Message>
+                ),
+              )
+            ) : (
+              <p className='text-sm text-foreground-secondary'>
+                No comments yet. Be the first!
+              </p>
+            )}
+          </div>
+        )}
+
+        <div>
+          {session?.user ? (
+            <div className='space-y-4'>
+              <form
+                onSubmit={handleSubmit(onSubmit)}
+                className='flex items-end gap-3'
+              >
+                <div className='flex-1'>
+                  <input
+                    placeholder='Type your message...'
+                    value={comment}
+                    disabled={isSubmitting}
+                    {...register("comments", {
+                      required: "Input cannot be empty",
+                      validate: (value) => {
+                        if (value.trim() === "") {
+                          return "Input cannot be empty";
+                        }
+                        return true;
+                      },
+                    })}
+                    onChange={(e) =>
+                      setComment((e.target as HTMLInputElement).value)
+                    }
+                    className='w-full border-b border-border bg-transparent pb-2 text-sm text-foreground placeholder-foreground-secondary/40 outline-none transition-colors duration-200 focus:border-foreground'
+                  />
+                  {errors.comments && (
+                    <p className='mt-1 text-xs text-red-500'>
+                      {errors.comments.message}
+                    </p>
+                  )}
+                </div>
                 {isSubmitting ? (
                   <Button
                     type='submit'
-                    className='flex items-center dark:bg-neutral-300 bg-neutral-900 text-neutral-300 dark:text-neutral-800 justify-center'
+                    className='flex items-center justify-center border border-border px-4 py-2'
                   >
                     <Spinner />
                   </Button>
                 ) : (
                   <Button
                     type='submit'
-                    className='flex items-center dark:bg-neutral-300 bg-neutral-900 text-neutral-300 dark:text-neutral-800 justify-center'
+                    className='flex items-center justify-center border border-border px-4 py-2'
                   >
-                    <Send size={20} />
+                    <Send size={16} />
                   </Button>
                 )}
+              </form>
+              <div className='flex items-center justify-between border-t border-border pt-4'>
+                <span className='text-xs text-foreground-secondary/60'>
+                  Signed in as @{session?.user?.name}
+                </span>
+                <button
+                  onClick={() => signOut()}
+                  className='flex cursor-pointer items-center gap-1 text-xs text-foreground-secondary transition-colors duration-200 hover:text-red-500'
+                >
+                  <LogOut size={14} />
+                  Sign out
+                </button>
               </div>
-              {errors.comments && (
-                <small className='text-red-500'>
-                  {errors.comments.message}
-                </small>
-              )}
-            </form>
-            <div className='flex flex-col sm:flex-row items-center justify-between gap-4'>
-              <span className='text-neutral-400'>
-                Signed in as @{session?.user?.name}
-              </span>
-              <Button
-                onClick={() => signOut()}
-                className='bg-red-600 px-2 hover:bg-red-800 text-neutral-300'
-              >
-                <LogOut size={20} />
-                Sign out
-              </Button>
             </div>
-          </div>
-        ) : (
-          <div className='flex flex-col items-center mb-6 gap-4 justify-center'>
-            <h2>Sign in to join the conversation. Your data is secure.</h2>
-            <Button
-              onClick={() => signIn("google")}
-              className='bg-neutral-200 max-w-sm text-neutral-900'
-            >
-              <FcGoogle size={22} />
-              Sign in with Google
-            </Button>
-          </div>
-        )}
+          ) : (
+            <div className='flex flex-col items-center gap-4 border-t border-border pt-8'>
+              <p className='text-sm text-foreground-secondary'>
+                Sign in to leave a message.
+              </p>
+              <button
+                onClick={() => signIn("google")}
+                className='flex cursor-pointer items-center gap-2 border border-border px-4 py-2 text-sm text-foreground transition-colors duration-200 hover:bg-surface'
+              >
+                <FcGoogle size={18} />
+                Sign in with Google
+              </button>
+            </div>
+          )}
+        </div>
       </div>
     </PageAnimateWrapper>
   );

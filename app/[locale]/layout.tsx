@@ -1,11 +1,9 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Inter_Tight } from "next/font/google";
 import "@/app/globals.css";
 import Layouts from "@/common/layouts/Layouts";
-import TopLoader from "@/common/components/elements/TopLoader";
 import { Toaster } from "@/common/components/ui/sonner";
 import { AuthProvider } from "@/providers/AuthProvider";
-import ChatShortcut from "@/modules/guestbook/components/ChatShortcut";
 import Script from "next/script";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { notFound } from "next/navigation";
@@ -16,7 +14,14 @@ import { getTheme } from "@teispace/next-themes/server";
 
 const fontInter = Inter({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["300", "400", "500"],
+  variable: "--font-inter",
+});
+
+const fontInterTight = Inter_Tight({
+  subsets: ["latin"],
+  weight: ["500", "600", "700", "800"],
+  variable: "--font-inter-tight",
 });
 
 const domain = process.env.NEXT_PUBLIC_DOMAIN || "https://www.akmaldev.me";
@@ -29,18 +34,17 @@ export const metadata: Metadata = {
   metadataBase: new URL(domain),
 
   title: {
-    default: "Akmal - Full-Stack Web Developer Portfolio",
-    template: "%s | Akmaldev",
+    default: "Akmal — Full-Stack Developer & UI Engineer",
+    template: "%s — Akmal",
   },
   description:
-    "The personal portfolio of Akmal - a web developer passionate about building clean, modern, and efficient web experiences.",
+    "Portfolio of Akmal — a full-stack developer and UI engineer crafting digital products with precision.",
   keywords: [
     "Akmal",
     "akmal",
     "Akmaldev",
-    "akmal dev",
     "web developer Indonesia",
-    "portfolio developer",
+    "full-stack developer",
     "Next.js portfolio",
     "React developer",
   ],
@@ -51,25 +55,25 @@ export const metadata: Metadata = {
     type: "website",
     locale: "id_ID",
     url: domain,
-    siteName: "Akmaldev",
-    title: "Akmaldev - Web Developer Portfolio",
+    siteName: "Akmal",
+    title: "Akmal — Full-Stack Developer & UI Engineer",
     description:
-      "Explore Akmal’s portfolio showcasing projects, achievements, and creative work in web development.",
+      "Full-stack developer and UI engineer crafting digital products with precision.",
     images: [
       {
         url: "/images/profile/akmal.jpg",
         width: 1200,
         height: 630,
-        alt: "Akmaldev Portfolio Preview",
+        alt: "Akmal Portfolio Preview",
       },
     ],
   },
 
   twitter: {
     card: "summary_large_image",
-    title: "Akmaldev - Web Developer Portfolio",
+    title: "Akmal — Full-Stack Developer & UI Engineer",
     description:
-      "Explore Akmal’s portfolio showcasing projects, achievements, and creative work.",
+      "Full-stack developer and UI engineer crafting digital products with precision.",
     images: ["/images/profile/akmal.jpg"],
   },
 };
@@ -91,15 +95,17 @@ export default async function LocaleLayout({
   const initialTheme = await getTheme();
 
   return (
-    <html lang={locale} data-scroll-behavior='smooth' suppressHydrationWarning>
+    <html lang={locale} suppressHydrationWarning>
       <head>
         <Script
           defer
           src='https://cloud.umami.is/script.js'
           data-website-id={process.env.NEXT_PUBLIC_UMAMI_TOKEN}
-        ></Script>
+        />
       </head>
-      <body className={` ${fontInter.className} antialiased`}>
+      <body
+        className={`${fontInter.variable} ${fontInterTight.variable} font-sans antialiased`}
+      >
         <AuthProvider>
           <NextIntlClientProvider>
             <ThemeProvider
@@ -107,12 +113,10 @@ export default async function LocaleLayout({
               initialTheme={initialTheme ?? undefined}
             >
               <Toaster position='top-center' />
-              <TopLoader />
               <Layouts>{children}</Layouts>
             </ThemeProvider>
           </NextIntlClientProvider>
         </AuthProvider>
-        <ChatShortcut />
       </body>
     </html>
   );

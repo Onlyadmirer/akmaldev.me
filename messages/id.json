@@ -2,23 +2,21 @@
   "HomePage": {
     "Header": {
       "greeting": "Hai, saya Akmal",
-      "location": "Berdomisili di Enrekang, Indonesia ID",
-      "workMode": "Onsite",
-      "description": "Saya seorang Fullstack Developer berpengalaman dan berdedikasi dengan fokus kuat pada pembangunan produk digital yang terukur dan berkualitas tinggi. Saya merancang antarmuka pengguna yang responsif dan dapat diakses menggunakan Next.js, TypeScript, dan Tailwind CSS, serta mengembangkan layanan backend yang andal dengan Go. Saya adalah seorang engineer yang kolaboratif dengan perhatian terhadap detail, berkomitmen untuk menghadirkan solusi yang bersih, efisien, dan berkinerja tinggi di berbagai platform."
-    },
-    "Skills": {
-      "title": "keahlian & alat",
-      "subTitle": "keahlian & alat profesional saya"
-    },
-    "Featured": {
-      "title": "Bagian unggulan",
-      "subTitle": "Jelajahi segala hal yang telah saya ciptakan, kontribusikan, dan capai."
+      "location": "Berdomisili di Indonesia",
+      "workMode": "Full-Stack Developer",
+      "description": "Saya menciptakan produk digital dengan teknologi web modern."
+    }
+  },
+  "AboutPage": {
+    "Header": {
+      "title": "Tentang",
+      "description": "Siapa saya dan apa yang saya kerjakan."
     }
   },
   "DashboardPage": {
     "Header": {
       "title": "Dashboard",
-      "description": "Dashboard khusus yang dibangun menggunakan API routes Next.js untuk menampilkan wawasan real-time tentang aktivitas pengembangan dan kontribusi saya."
+      "description": "Wawasan real-time tentang aktivitas pengembangan dan kontribusi saya."
     },
     "GithubStats": {
       "title": "Aktivitas GitHub",
@@ -33,26 +31,6 @@
       "title": "Umami",
       "description": "Lacak metrik pengunjung real-time dan interaksi pengguna",
       "error": "Gagal memuat analytics. Nonaktifkan AdBlocker atau Brave Shields Anda."
-    }
-  },
-  "AboutPage": {
-    "Header": {
-      "title": "Tentang",
-      "description": "Siapa saya dan apa yang saya kerjakan."
-    },
-    "Intro": {
-      "p1": "Halo! Terima kasih telah mengunjungi website pribadi saya. Saya Akmal, seorang mahasiswa jurusan Sistem Informasi di Universitas Hasanuddin, Makassar. Saya seorang Fullstack Developer yang bersemangat dalam membangun produk perangkat lunak yang berdampak. Stack saya mencakup teknologi frontend modern seperti Next.js, TypeScript, dan Tailwind CSS, serta mengembangkan layanan backend yang andal dengan Go.",
-      "p2": "Saya senang menciptakan solusi yang ramah pengguna dan berperforma tinggi. Baik itu membangun antarmuka yang intuitif atau menata layanan backend, saya bertujuan untuk menghadirkan efisiensi dan kejelasan di setiap lapisan aplikasi. Saya pembelajar cepat yang berkembang di lingkungan dinamis, dan saya senang memecahkan masalah kompleks secara kolaboratif.",
-      "p3": "Saya percaya bahwa komunikasi yang baik dan sinergi tim adalah kunci kesuksesan dalam pengembangan perangkat lunak. Pengalaman saya telah memperkuat keterampilan teknis dan analitis saya, serta kualitas kepemimpinan saya. Saya selalu bersemangat untuk bekerja dalam tim, belajar dari orang lain, dan berkontribusi pada proyek-proyek yang bermakna.",
-      "closing": "Yang terbaik,"
-    },
-    "Education": {
-      "title": "Pendidikan",
-      "description": "Perjalanan pendidikan saya.",
-      "degree": "SMA",
-      "major": "IPA",
-      "period": "2021 - 2024",
-      "location": "Enrekang, Sulawesi Selatan, Indonesia ID"
     }
   }
 }

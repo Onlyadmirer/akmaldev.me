@@ -1,14 +1,11 @@
 "use client";
 
-import SubHeaderSection from "@/common/components/elements/SubHeaderSection";
 import { Spinner } from "@/common/components/ui/spinner";
-import { useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
 import { BsEmojiDizzy } from "react-icons/bs";
 import { SiUmami } from "react-icons/si";
 
 function UmamiStats() {
-  const t = useTranslations("DashboardPage.UmamiStats");
   const [isBlock, setIsBlock] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const umami = "https://cloud.umami.is/share/kQqVwGiVToTkkgX0/akmaldev.me";
@@ -30,27 +27,28 @@ function UmamiStats() {
   }, []);
 
   return (
-    <div className='py-6 flex flex-col gap-4 '>
-      <SubHeaderSection
-        icon={<SiUmami height='2em' />}
-        title={t("title")}
-        description={t("description")}
-      />
-      <div>
+    <div>
+      <div className='flex items-center gap-2 border-b border-border pb-4'>
+        <SiUmami size={18} className='text-foreground-secondary' />
+        <h2 className='font-heading text-lg font-semibold tracking-tight text-foreground'>
+          Umami
+        </h2>
+      </div>
+      <div className='mt-6'>
         {isLoading ? (
           <Spinner />
         ) : isBlock ? (
-          <div className=' flex py-6 mt-6 text-neutral-400 flex-col gap-4 justify-center items-center'>
-            <BsEmojiDizzy size={36} />
-            <p className='text-center text-sm'>
-              {" "}
-              {t("error")}
+          <div className='flex flex-col items-center justify-center gap-3 py-12 text-center'>
+            <BsEmojiDizzy size={24} className='text-foreground-secondary/40' />
+            <p className='text-sm text-foreground-secondary/60'>
+              Failed to load analytics. Please disable your AdBlocker or Brave
+              Shields.
             </p>
           </div>
         ) : (
           <iframe
             src='https://cloud.umami.is/share/kQqVwGiVToTkkgX0/akmaldev.me'
-            className='w-full h-[600px] border-0'
+            className='h-[600px] w-full border-0'
             referrerPolicy='origin'
             loading='lazy'
           />
