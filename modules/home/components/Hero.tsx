@@ -6,7 +6,7 @@ function Hero() {
       {/* Background monogram */}
       <div
         aria-hidden
-        className='pointer-events-none absolute top-1 left-3 select-none font-heading text-[clamp(10rem,25vw,20rem)] font-bold leading-none text-foreground/4 lg:-top-10 lg:-left-5'
+        className='pointer-events-none absolute top-1 left-3 select-none font-heading text-[clamp(10rem,25vw,20rem)] font-bold leading-none text-foreground/8 lg:-top-10 lg:-left-5'
       >
         Ak
       </div>

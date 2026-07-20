@@ -127,7 +127,7 @@ function GuestBook() {
             Failed to load comments.
           </p>
         ) : (
-          <div className='mb-8 space-y-6'>
+          <div className='mb-8 max-h-96 overflow-y-auto space-y-6'>
             {comments.length > 0 ? (
               comments.map((c) =>
                 c.user.role === "Admin" ? (
