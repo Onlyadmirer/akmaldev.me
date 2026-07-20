@@ -14,10 +14,10 @@
 
 .dark {
   --background: #000000;
-  --surface: #0a0a0a;
+  --surface: #1a1a1a;
   --foreground: #ffffff;
   --foreground-secondary: #888888;
-  --border: rgba(255, 255, 255, 0.15);
+  --border: rgba(255, 255, 255, 0.16);
   --accent: #ffffff;
 }
 

@@ -24,12 +24,12 @@ function AddAchiev() {
           <div className='py-4'>
             <Popover>
               <PopoverTrigger asChild>
-                <Button className='flex items-center justify-center dark:hover:bg-neutral-800 dark:bg-neutral-900 dark:border border-neutral-600'>
+                <Button className='flex items-center justify-center bg-foreground/20 rounded-md border-border text-foreground'>
                   <FaPlus />
                   <p>Add Achievement</p>
                 </Button>
               </PopoverTrigger>
-              <PopoverContent align='start'>
+              <PopoverContent className='bg-background' align='start'>
                 <InputAchiv />
               </PopoverContent>
             </Popover>

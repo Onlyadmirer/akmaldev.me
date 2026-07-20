@@ -2,37 +2,82 @@ import Link from "next/link";
 
 function Hero() {
   return (
-    <section className='mx-auto max-w-6xl px-6 pt-24 pb-20 md:pt-32 md:pb-28'>
-      <h1 className='font-heading text-[clamp(2.5rem,8vw,6rem)] font-bold leading-[0.9] tracking-[-0.04em] text-foreground'>
-        Crafting
-        <br />
-        Digital
-        <br />
-        Products
-      </h1>
-      <div className='mt-8 space-y-2 md:mt-10'>
-        <p className='text-base text-foreground-secondary md:text-lg'>
-          Full-Stack Developer & UI Engineer
-        </p>
-        <p className='text-sm text-foreground-secondary/60'>
-          Based in Indonesia
-        </p>
+    <section className='relative md:h-screen mx-auto max-w-6xl px-6 pt-24 overflow-hidden pb-8 md:pt-32 md:pb-28'>
+      {/* Background monogram */}
+      <div
+        aria-hidden
+        className='pointer-events-none absolute top-1 left-3 select-none font-heading text-[clamp(10rem,25vw,20rem)] font-bold leading-none text-foreground/4 lg:-top-10 lg:-left-5'
+      >
+        Ak
       </div>
-      <div className='mt-8 flex items-center gap-8 md:mt-10'>
-        <Link
-          href='/projects'
-          className='group relative text-sm font-medium text-foreground transition-colors duration-200'
-        >
-          View Work
-          <span className='absolute -bottom-1 left-0 h-px w-0 bg-foreground transition-all duration-300 group-hover:w-full' />
-        </Link>
-        <Link
-          href='/contact'
-          className='group relative text-sm font-medium text-foreground-secondary transition-colors duration-200 hover:text-foreground'
-        >
-          Get in Touch
-          <span className='absolute -bottom-1 left-0 h-px w-0 bg-foreground transition-all duration-300 group-hover:w-full' />
-        </Link>
+
+      {/* Radial gradient accent */}
+      <div
+        aria-hidden
+        className='pointer-events-none absolute -top-40 -right-40 h-[500px] w-[500px] rounded-full bg-foreground/1.5 blur-3xl'
+      />
+
+      <div className='relative flex flex-col md:flex-row md:justify-between md:gap-12'>
+        {/* Left: main content */}
+        <div className='max-w-2xl'>
+          <h1 className='font-heading text-[clamp(2.5rem,8vw,5rem)] font-bold leading-[0.9] tracking-[-0.04em] text-foreground'>
+            Building High Performance
+            <br />
+            Digital Systems.
+          </h1>
+
+          <div className='mt-8 h-px w-16 bg-foreground/20 md:mt-10' />
+
+          <div className='mt-6 space-y-2'>
+            <p className='text-base text-foreground/90 md:text-lg'>
+              Full-Stack Developer
+            </p>
+            <p className='text-sm text-foreground-secondary/90'>
+              Based in Indonesia
+            </p>
+          </div>
+
+          <div className='mt-6 flex items-center gap-2'>
+            <span className='relative flex h-2 w-2'>
+              <span className='absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400/75' />
+              <span className='relative inline-flex h-2 w-2 rounded-full bg-emerald-400' />
+            </span>
+            <span className='text-xs text-foreground-secondary/80'>
+              Available for projects
+            </span>
+          </div>
+
+          <div className='mt-8 flex items-center gap-8 md:mt-10'>
+            <Link
+              href='/projects'
+              className='group relative text-sm font-medium text-foreground transition-colors duration-200'
+            >
+              View Work
+              <span className='absolute -bottom-1 left-0 h-px w-0 bg-foreground transition-all duration-300 group-hover:w-full' />
+            </Link>
+            <Link
+              href='/contact'
+              className='group relative text-sm font-medium text-foreground-secondary transition-colors duration-200 hover:text-foreground'
+            >
+              Get in Touch
+              <span className='absolute -bottom-1 left-0 h-px w-0 bg-foreground transition-all duration-300 group-hover:w-full' />
+            </Link>
+          </div>
+        </div>
+
+        {/* Right: vertical contact accent */}
+        <div className='mt-12 hidden md:flex md:items-end md:pb-2'>
+          <div className='flex items-center gap-6'>
+            <div className='h-24 w-px bg-border' />
+            <a
+              href='mailto:akmalrbc6@gmail.com'
+              className='font-heading text-xs font-medium tracking-[0.15em] text-foreground-secondary/60 transition-colors duration-200 hover:text-foreground/80'
+              style={{ writingMode: "vertical-rl" }}
+            >
+              akmalrbc6@gmail.com
+            </a>
+          </div>
+        </div>
       </div>
     </section>
   );

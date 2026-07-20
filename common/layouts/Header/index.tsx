@@ -2,6 +2,7 @@
 
 import { usePathname, useRouter } from "@/i18n/navigation";
 import { useTheme } from "@teispace/next-themes";
+import { AnimatePresence, motion } from "motion/react";
 import { useLocale } from "next-intl";
 import Link from "next/link";
 import { useState } from "react";
@@ -84,7 +85,7 @@ function Header() {
                   />
                 </svg>
               </button>
-              <div className='invisible absolute right-0 top-full mt-1 w-40 origin-top-right scale-95 border border-border bg-surface p-1 opacity-0 shadow-sm transition-all duration-200 group-hover:visible group-hover:scale-100 group-hover:opacity-100'>
+              <div className='invisible absolute right-0 top-full mt-1 w-40 origin-top-right scale-95 border border-border bg-surface p-1 opacity-0 shadow-sm transition-all duration-200 group-hover:visible group-hover:scale-100 group-hover:opacity-100 rounded-sm'>
                 {secondaryLinks.map((link) => (
                   <Link
                     key={link.href}
@@ -126,54 +127,67 @@ function Header() {
         </div>
       </header>
 
-      {mobileOpen && (
-        <div className='fixed inset-0 z-50 bg-background md:hidden'>
-          <div className='flex h-16 items-center justify-between px-6 border-b border-border'>
-            <Link
-              href='/'
-              className='font-heading text-2xl font-semibold tracking-tight text-foreground'
-            >
-              Akmal
-            </Link>
-            <button
-              onClick={() => setMobileOpen(false)}
-              className='cursor-pointer text-foreground'
-            >
-              <LuX size={20} />
-            </button>
-          </div>
-          <nav className='flex flex-col gap-1 px-4 pt-8'>
-            {[...primaryLinks, ...secondaryLinks].map((link) => (
+      <AnimatePresence>
+        {mobileOpen && (
+          <div className='fixed inset-0 z-50 bg-background md:hidden'>
+            <div className='flex h-16 items-center justify-between px-6 border-b border-border'>
               <Link
-                key={link.href}
-                href={link.href}
+                href='/'
+                className='font-heading text-2xl font-semibold tracking-tight text-foreground'
                 onClick={() => setMobileOpen(false)}
-                className={`rounded px-4 py-3 text-base transition-colors duration-200 ${
-                  isActive(link.href)
-                    ? "text-foreground bg-foreground/5"
-                    : "text-foreground-secondary hover:text-foreground"
-                }`}
               >
-                {link.label}
+                Akmal
               </Link>
-            ))}
-          </nav>
-          <div className='flex items-center gap-4 px-8 pt-8'>
-            <button
-              onClick={toggleLocale}
-              className='cursor-pointer text-sm font-medium uppercase tracking-wider text-foreground-secondary transition-colors duration-200 hover:text-foreground'
+              <button
+                onClick={() => setMobileOpen(false)}
+                className='cursor-pointer text-foreground'
+              >
+                <LuX size={20} />
+              </button>
+            </div>
+            <motion.nav
+              initial={{ opacity: 0, y: -12 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -12 }}
+              transition={{ duration: 0.2, ease: "easeOut" }}
+              className='flex flex-col gap-1 px-4 pt-8'
             >
-              {locale === "en" ? "ID" : "EN"}
-            </button>
-            <button
-              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-              className='cursor-pointer text-foreground-secondary transition-colors duration-200 hover:text-foreground'
-            >
-              {theme === "dark" ? <LuSun size={18} /> : <LuMoon size={18} />}
-            </button>
+              {[...primaryLinks, ...secondaryLinks].map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => setMobileOpen(false)}
+                  className={`rounded px-4 py-3 text-base transition-colors duration-200 ${
+                    isActive(link.href)
+                      ? "text-foreground bg-foreground/10"
+                      : "text-foreground-secondary hover:text-foreground"
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              ))}
+              <div className='flex items-center gap-4 px-4 pt-8'>
+                <button
+                  onClick={toggleLocale}
+                  className='cursor-pointer text-sm font-medium uppercase tracking-wider text-foreground-secondary transition-colors duration-200 hover:text-foreground'
+                >
+                  {locale === "en" ? "ID" : "EN"}
+                </button>
+                <button
+                  onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+                  className='cursor-pointer text-foreground-secondary transition-colors duration-200 hover:text-foreground'
+                >
+                  {theme === "dark" ? (
+                    <LuSun size={18} />
+                  ) : (
+                    <LuMoon size={18} />
+                  )}
+                </button>
+              </div>
+            </motion.nav>
           </div>
-        </div>
-      )}
+        )}
+      </AnimatePresence>
     </>
   );
 }

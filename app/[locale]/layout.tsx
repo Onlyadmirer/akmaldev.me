@@ -34,11 +34,11 @@ export const metadata: Metadata = {
   metadataBase: new URL(domain),
 
   title: {
-    default: "Akmal — Full-Stack Developer & UI Engineer",
-    template: "%s — Akmal",
+    default: "Akmal | Full-Stack Developer ",
+    template: "%s | Akmal",
   },
   description:
-    "Portfolio of Akmal — a full-stack developer and UI engineer crafting digital products with precision.",
+    "Portfolio of Akmal | a full-stack developer and UI engineer crafting digital products with precision.",
   keywords: [
     "Akmal",
     "akmal",
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
     locale: "id_ID",
     url: domain,
     siteName: "Akmal",
-    title: "Akmal — Full-Stack Developer & UI Engineer",
+    title: "Akmal | Full-Stack Developer ",
     description:
       "Full-stack developer and UI engineer crafting digital products with precision.",
     images: [
@@ -71,7 +71,7 @@ export const metadata: Metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "Akmal — Full-Stack Developer & UI Engineer",
+    title: "Akmal | Full-Stack Developer ",
     description:
       "Full-stack developer and UI engineer crafting digital products with precision.",
     images: ["/images/profile/akmal.jpg"],

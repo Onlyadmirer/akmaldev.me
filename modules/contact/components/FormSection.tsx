@@ -12,16 +12,13 @@ function FormSection() {
       <h2 className='font-heading text-lg font-semibold tracking-tight text-foreground'>
         Send a message
       </h2>
-      <form
-        onSubmit={handleSubmit(onSubmit)}
-        className='mt-6 space-y-5'
-      >
+      <form onSubmit={handleSubmit(onSubmit)} className='mt-6 space-y-5'>
         <div>
           <input
             type='text'
             placeholder='Name'
             {...register("name")}
-            className='w-full border-b border-border bg-transparent pb-2 text-sm text-foreground placeholder-foreground-secondary/40 outline-none transition-colors duration-200 focus:border-foreground'
+            className='w-full border-b border-border bg-transparent pb-2 text-sm text-foreground placeholder-foreground-secondary/60 outline-none transition-colors duration-200 focus:border-foreground'
           />
           {errors.name && (
             <p className='mt-1 text-xs text-red-500'>{errors.name.message}</p>
@@ -32,7 +29,7 @@ function FormSection() {
             type='email'
             placeholder='Email'
             {...register("email")}
-            className='w-full border-b border-border bg-transparent pb-2 text-sm text-foreground placeholder-foreground-secondary/40 outline-none transition-colors duration-200 focus:border-foreground'
+            className='w-full border-b border-border bg-transparent pb-2 text-sm text-foreground placeholder-foreground-secondary/60 outline-none transition-colors duration-200 focus:border-foreground'
           />
           {errors.email && (
             <p className='mt-1 text-xs text-red-500'>{errors.email.message}</p>
@@ -43,7 +40,7 @@ function FormSection() {
             placeholder='Message'
             rows={4}
             {...register("message")}
-            className='w-full resize-none border-b border-border bg-transparent pb-2 text-sm text-foreground placeholder-foreground-secondary/40 outline-none transition-colors duration-200 focus:border-foreground'
+            className='w-full resize-none border-b border-border bg-transparent pb-2 text-sm text-foreground placeholder-foreground-secondary/60 outline-none transition-colors duration-200 focus:border-foreground'
           />
           {errors.message && (
             <p className='mt-1 text-xs text-red-500'>
@@ -56,12 +53,7 @@ function FormSection() {
           className='inline-flex cursor-pointer items-center gap-2 text-sm font-medium text-foreground transition-colors duration-200 hover:text-foreground-secondary'
         >
           Send Message
-          <svg
-            width='16'
-            height='16'
-            viewBox='0 0 16 16'
-            fill='none'
-          >
+          <svg width='16' height='16' viewBox='0 0 16 16' fill='none'>
             <path
               d='M2 8H14M14 8L9 3M14 8L9 13'
               stroke='currentColor'

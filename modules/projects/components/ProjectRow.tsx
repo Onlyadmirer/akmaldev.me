@@ -27,34 +27,30 @@ function ProjectRow({
   return (
     <Link
       href={`/projects/${slug}`}
-      className='group block py-6 transition-all duration-200'
+      className='group block py-5 transition-all duration-200 md:py-6'
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <div className='flex items-center justify-between'>
-        <div className='flex items-baseline gap-6'>
-          <span className='font-heading text-sm font-medium tabular-nums text-foreground-secondary/40'>
+      <div className='flex items-center justify-between gap-4'>
+        <div className='flex items-baseline gap-4 min-w-0 md:gap-6'>
+          <span className='font-heading text-xs font-medium tabular-nums text-foreground-secondary/60 md:text-sm'>
             {String(index).padStart(2, "0")}
           </span>
-          <h2 className='font-heading text-xl font-medium tracking-tight text-foreground transition-colors duration-200 group-hover:text-foreground-secondary md:text-2xl'>
+          <h2 className='font-heading text-lg font-medium tracking-tight text-foreground transition-colors duration-200 truncate group-hover:text-foreground-secondary md:text-2xl'>
             {title}
           </h2>
         </div>
-        <svg
-          width='20'
-          height='20'
-          viewBox='0 0 20 20'
-          fill='none'
-          className='text-foreground-secondary/40 transition-all duration-200 group-hover:translate-x-1 group-hover:text-foreground'
-        >
-          <path
-            d='M7 4L13 10L7 16'
-            stroke='currentColor'
-            strokeWidth='1.5'
-            strokeLinecap='round'
-            strokeLinejoin='round'
+
+        {/* Thumbnail always visible */}
+        <div className='relative h-10 w-16 shrink-0 overflow-hidden bg-surface ring-1 ring-border md:h-12 md:w-20'>
+          <Image
+            src={image}
+            alt={title}
+            fill
+            className='object-cover transition-transform duration-300 group-hover:scale-105'
+            sizes='80px'
           />
-        </svg>
+        </div>
       </div>
 
       <AnimatePresence>
@@ -66,30 +62,19 @@ function ProjectRow({
             transition={{ duration: 0.25, ease: "easeOut" }}
             className='overflow-hidden'
           >
-            <div className='pt-4 pb-2 grid gap-6 md:grid-cols-[1fr_200px]'>
-              <div>
-                <p className='text-sm leading-relaxed text-foreground-secondary'>
-                  {description}
-                </p>
-                <div className='mt-3 flex flex-wrap gap-x-3 gap-y-1'>
-                  {stack.map((tech) => (
-                    <span
-                      key={tech}
-                      className='text-xs text-foreground-secondary/60'
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </div>
-              <div className='relative aspect-16/10 w-full overflow-hidden bg-surface'>
-                <Image
-                  src={image}
-                  alt={title}
-                  fill
-                  className='object-cover'
-                  sizes='200px'
-                />
+            <div className='pt-3 pb-1 pl-10 md:pl-14'>
+              <p className='text-sm leading-relaxed text-foreground-secondary'>
+                {description}
+              </p>
+              <div className='mt-2 flex flex-wrap gap-x-3 gap-y-1'>
+                {stack.map((tech) => (
+                  <span
+                    key={tech}
+                    className='text-xs text-foreground-secondary/80'
+                  >
+                    {tech}
+                  </span>
+                ))}
               </div>
             </div>
           </motion.div>

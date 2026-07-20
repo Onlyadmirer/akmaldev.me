@@ -6,7 +6,7 @@ interface SectionHeadingProps {
 function SectionHeading({ title, subtitle }: SectionHeadingProps) {
   return (
     <div className='mb-10'>
-      <h2 className='font-heading text-xl font-semibold tracking-tight text-foreground'>
+      <h2 className='font-heading text-2xl font-semibold tracking-tight text-foreground'>
         {title}
       </h2>
       {subtitle && (

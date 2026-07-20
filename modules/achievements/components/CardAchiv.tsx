@@ -17,7 +17,7 @@ async function CardAchiv() {
           target='_blank'
           className='group relative block bg-background p-6 transition-colors duration-200 hover:bg-surface'
         >
-          <div className='relative aspect-[4/3] w-full overflow-hidden bg-surface'>
+          <div className='relative aspect-4/3 w-full overflow-hidden bg-surface'>
             <Image
               src={achiev.url}
               alt={achiev.title || "Certificate"}
@@ -30,8 +30,8 @@ async function CardAchiv() {
             <h3 className='font-heading text-sm font-medium tracking-tight text-foreground'>
               {achiev.title}
             </h3>
-            <p className='text-xs text-foreground-secondary'>{achiev.publisher}</p>
-            <p className='text-xs text-foreground-secondary/60'>
+            <p className='text-xs text-foreground/80'>{achiev.publisher}</p>
+            <p className='text-xs text-foreground-secondary/90'>
               Issued {achiev.issuedOn}
             </p>
           </div>

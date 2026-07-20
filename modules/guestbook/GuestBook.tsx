@@ -150,7 +150,9 @@ function GuestBook() {
                         </span>
                       </div>
                       <Bubble>
-                        <BubbleContent>{c.text}</BubbleContent>
+                        <BubbleContent className='bg-foreground-secondary/40'>
+                          {c.text}
+                        </BubbleContent>
                       </Bubble>
                     </MessageContent>
                   </Message>
@@ -175,7 +177,10 @@ function GuestBook() {
                           {new Date(c.createdAt).toLocaleDateString()}
                         </span>
                       </div>
-                      <Bubble variant='tinted'>
+                      <Bubble
+                        variant='tinted'
+                        className='bg-foreground-secondary/20'
+                      >
                         <BubbleContent>{c.text}</BubbleContent>
                       </Bubble>
                     </MessageContent>
@@ -226,7 +231,7 @@ function GuestBook() {
                     onChange={(e) =>
                       setComment((e.target as HTMLInputElement).value)
                     }
-                    className='w-full border-b border-border bg-transparent pb-2 text-sm text-foreground placeholder-foreground-secondary/40 outline-none transition-colors duration-200 focus:border-foreground'
+                    className='w-full border-b border-border bg-transparent pb-2 text-sm text-foreground placeholder-foreground-secondary/70 outline-none transition-colors duration-200 focus:border-foreground'
                   />
                   {errors.comments && (
                     <p className='mt-1 text-xs text-red-500'>
@@ -244,14 +249,14 @@ function GuestBook() {
                 ) : (
                   <Button
                     type='submit'
-                    className='flex items-center justify-center border border-border px-4 py-2'
+                    className='flex items-center rounded-md justify-center border border-border px-4 py-2'
                   >
                     <Send size={16} />
                   </Button>
                 )}
               </form>
               <div className='flex items-center justify-between border-t border-border pt-4'>
-                <span className='text-xs text-foreground-secondary/60'>
+                <span className='text-xs text-foreground-secondary/90'>
                   Signed in as @{session?.user?.name}
                 </span>
                 <button

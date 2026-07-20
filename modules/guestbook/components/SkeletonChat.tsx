@@ -2,7 +2,7 @@ import { Skeleton } from "@/common/components/ui/skeleton";
 
 function SkeletonChat() {
   return (
-    <div className='flex flex-col max-w-7xl gap-12'>
+    <div className='flex flex-col h-screen max-w-3xl px-6 mt-10 mx-auto gap-12'>
       <div className='flex w-full max-w-2xl flex-col gap-4'>
         <Skeleton className='h-6 w-1/2' />
         <Skeleton className='h-4 w-full' />

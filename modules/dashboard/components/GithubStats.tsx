@@ -17,6 +17,7 @@ function GithubStats() {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    // eslint-disable-next-line
     setMounted(true);
   }, []);
 
@@ -41,63 +42,66 @@ function GithubStats() {
 
   return (
     <div className='mb-16'>
-      <div className='flex items-center justify-between border-b border-border pb-4'>
+      <div className='flex items-center justify-between pb-4 border-b border-border'>
         <div className='flex items-center gap-2'>
           <FaGithub size={18} className='text-foreground-secondary' />
-          <h2 className='font-heading text-lg font-semibold tracking-tight text-foreground'>
+          <h2 className='text-lg font-semibold tracking-tight font-heading text-foreground'>
             GitHub Activity
           </h2>
         </div>
         <Link
           href='https://github.com/onlyadmirer'
           target='_blank'
-          className='text-xs text-foreground-secondary transition-colors duration-200 hover:text-foreground'
+          className='text-xs transition-colors duration-200 text-foreground-secondary hover:text-foreground'
         >
           @Onlyadmirer
         </Link>
       </div>
 
-      <div className='mt-6 grid grid-cols-3 gap-6'>
-        <div>
-          <p className='text-xs text-foreground-secondary/60'>
-            Public Repositories
-          </p>
-          <p className='mt-1 font-heading text-xl font-semibold tracking-tight text-foreground'>
-            {github?.public_repos ?? "—"}
-          </p>
+      <div className='flex flex-col items-center justify-center w-full gap-4'>
+        <div className='grid grid-cols-3 gap-8 mt-6'>
+          <div className='flex flex-col items-center'>
+            <p className='text-xs text-foreground-secondary/90'>
+              Public Repositories
+            </p>
+            <p className='mt-1 text-xl font-semibold tracking-tight font-heading text-foreground'>
+              {github?.public_repos ?? "—"}
+            </p>
+          </div>
+          <div className='flex flex-col items-center'>
+            <p className='text-xs text-foreground-secondary/90'>Followers</p>
+            <p className='mt-1 text-xl font-semibold tracking-tight font-heading text-foreground'>
+              {github?.followers ?? "—"}
+            </p>
+          </div>
+          <div className='flex flex-col items-center'>
+            <p className='text-xs text-foreground-secondary/90'>Following</p>
+            <p className='mt-1 text-xl font-semibold tracking-tight font-heading text-foreground'>
+              {github?.following ?? "—"}
+            </p>
+          </div>
         </div>
-        <div>
-          <p className='text-xs text-foreground-secondary/60'>Followers</p>
-          <p className='mt-1 font-heading text-xl font-semibold tracking-tight text-foreground'>
-            {github?.followers ?? "—"}
-          </p>
-        </div>
-        <div>
-          <p className='text-xs text-foreground-secondary/60'>Following</p>
-          <p className='mt-1 font-heading text-xl font-semibold tracking-tight text-foreground'>
-            {github?.following ?? "—"}
-          </p>
-        </div>
-      </div>
 
-      <div className='mt-8'>
-        <GitHubCalendar
-          username='onlyadmirer'
-          colorScheme={`${isDark ? "dark" : "light"}`}
-          theme={explicitTheme}
-          fontSize={14}
-          blockSize={11}
-          blockMargin={4}
-          year={"last"}
-          blockRadius={2}
-          tooltips={{
-            activity: {
-              text: (activity) => `${activity.count} activities on ${activity.date}`,
-              placement: "top",
-              offset: 12,
-            },
-          }}
-        />
+        <div className='mt-8'>
+          <GitHubCalendar
+            username='onlyadmirer'
+            colorScheme={`${isDark ? "dark" : "light"}`}
+            theme={explicitTheme}
+            fontSize={14}
+            blockSize={11}
+            blockMargin={4}
+            year={"last"}
+            blockRadius={2}
+            tooltips={{
+              activity: {
+                text: (activity) =>
+                  `${activity.count} activities on ${activity.date}`,
+                placement: "top",
+                offset: 12,
+              },
+            }}
+          />
+        </div>
       </div>
     </div>
   );
