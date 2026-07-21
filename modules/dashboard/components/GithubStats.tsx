@@ -61,7 +61,7 @@ function GithubStats() {
       <div className='flex flex-col items-center justify-center w-full gap-4'>
         <div className='grid grid-cols-3 gap-8 mt-6'>
           <div className='flex flex-col items-center'>
-            <p className='text-xs text-foreground-secondary/90'>
+            <p className='text-xs text-center text-foreground-secondary/90'>
               Public Repositories
             </p>
             <p className='mt-1 text-xl font-semibold tracking-tight font-heading text-foreground'>
@@ -82,26 +82,24 @@ function GithubStats() {
           </div>
         </div>
 
-        <div className='mt-8'>
-          <GitHubCalendar
-            username='onlyadmirer'
-            colorScheme={`${isDark ? "dark" : "light"}`}
-            theme={explicitTheme}
-            fontSize={14}
-            blockSize={11}
-            blockMargin={4}
-            year={"last"}
-            blockRadius={2}
-            tooltips={{
-              activity: {
-                text: (activity) =>
-                  `${activity.count} activities on ${activity.date}`,
-                placement: "top",
-                offset: 12,
-              },
-            }}
-          />
-        </div>
+        <GitHubCalendar
+          username='onlyadmirer'
+          colorScheme={`${isDark ? "dark" : "light"}`}
+          theme={explicitTheme}
+          fontSize={14}
+          blockSize={11}
+          blockMargin={4}
+          year={"last"}
+          blockRadius={2}
+          tooltips={{
+            activity: {
+              text: (activity) =>
+                `${activity.count} activities on ${activity.date}`,
+              placement: "top",
+              offset: 12,
+            },
+          }}
+        />
       </div>
     </div>
   );
