@@ -14,6 +14,7 @@ function Button({
 }: buttonProps & React.ComponentProps<"button">) {
   return (
     <button
+      type='button'
       type={type}
       className={`inline-flex cursor-pointer items-center justify-center gap-2 px-4 py-2 text-sm font-medium text-foreground transition-all duration-200 hover:text-foreground-secondary disabled:pointer-events-none disabled:opacity-50 ${className}`}
       {...props}

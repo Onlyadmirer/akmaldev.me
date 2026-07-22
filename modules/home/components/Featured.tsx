@@ -23,11 +23,8 @@ const links = [
 
 function Featured() {
   return (
-    <section className='mx-auto max-w-6xl px-6 py-20 border-t border-border'>
-      <SectionHeading
-        title='Explore'
-        subtitle='Quick links to key sections'
-      />
+    <section className='mx-auto max-w-6xl px-6 py-16 border-t border-border'>
+      <SectionHeading title='Explore' subtitle='Quick links to key sections' />
       <div className='space-y-4'>
         {links.map((link) => (
           <Link

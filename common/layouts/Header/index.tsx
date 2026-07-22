@@ -105,11 +105,14 @@ function Header() {
             <div className='flex items-center gap-3 pl-4 border-l border-border'>
               <button
                 onClick={toggleLocale}
+                type='button'
                 className='cursor-pointer text-xs font-medium uppercase tracking-wider text-foreground-secondary transition-colors duration-200 hover:text-foreground'
               >
                 {locale === "en" ? "ID" : "EN"}
               </button>
               <button
+                type='button'
+                aria-label='theme-toggle'
                 onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
                 className='cursor-pointer text-foreground-secondary transition-colors duration-200 hover:text-foreground'
               >
@@ -119,7 +122,9 @@ function Header() {
           </nav>
 
           <button
+            type='button'
             onClick={() => setMobileOpen(true)}
+            aria-label='nav-toggle'
             className='cursor-pointer text-foreground md:hidden'
           >
             <LuMenu size={20} />
@@ -139,6 +144,7 @@ function Header() {
                 Akmal
               </Link>
               <button
+                type='button'
                 onClick={() => setMobileOpen(false)}
                 className='cursor-pointer text-foreground'
               >
@@ -168,12 +174,14 @@ function Header() {
               ))}
               <div className='flex items-center gap-4 px-4 pt-8'>
                 <button
+                  type='button'
                   onClick={toggleLocale}
                   className='cursor-pointer text-sm font-medium uppercase tracking-wider text-foreground-secondary transition-colors duration-200 hover:text-foreground'
                 >
                   {locale === "en" ? "ID" : "EN"}
                 </button>
                 <button
+                  type='button'
                   onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
                   className='cursor-pointer text-foreground-secondary transition-colors duration-200 hover:text-foreground'
                 >

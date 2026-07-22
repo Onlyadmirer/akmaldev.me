@@ -95,12 +95,12 @@ function SkillChip({ name }: { name: string }) {
 
 function Skills() {
   return (
-    <section className='mx-auto max-w-6xl px-6 py-20 border-t border-border'>
+    <section className='mx-auto max-w-6xl px-6 py-16 border-t border-border'>
       <SectionHeading title='Stack' subtitle='Technologies I work with' />
       <div className='grid gap-8 sm:grid-cols-2'>
         {categories.map((cat) => (
           <div key={cat.label}>
-            <p className='text-xs font-medium uppercase tracking-widest text-foreground-secondary/80'>
+            <p className='text-xs font-medium uppercase tracking-widest text-foreground-secondary'>
               {cat.label}
             </p>
             <div className='mt-3 flex flex-wrap gap-2'>

@@ -38,6 +38,7 @@ function Footer() {
                 key={s.href}
                 href={s.href}
                 target='_blank'
+                aria-label='socialmedia-icon'
                 rel='noopener noreferrer'
                 className='text-foreground-secondary/80 transition-colors duration-200 hover:text-foreground'
               >

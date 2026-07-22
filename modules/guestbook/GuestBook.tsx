@@ -188,6 +188,7 @@ function GuestBook() {
                       session?.user.role === "Admin" &&
                       contextMenu.commentId === c.id && (
                         <button
+                          type='button'
                           onClick={() => onDelete(c.id)}
                           style={{ top: contextMenu.y, left: contextMenu.x }}
                           className='fixed z-50 flex cursor-pointer items-center gap-1 rounded border border-border bg-surface px-3 py-2 text-xs text-foreground-secondary shadow-sm transition-colors hover:text-red-500'
@@ -260,6 +261,7 @@ function GuestBook() {
                   Signed in as @{session?.user?.name}
                 </span>
                 <button
+                  type='button'
                   onClick={() => signOut()}
                   className='flex cursor-pointer items-center gap-1 text-xs text-foreground-secondary transition-colors duration-200 hover:text-red-500'
                 >
@@ -274,6 +276,7 @@ function GuestBook() {
                 Sign in to leave a message.
               </p>
               <button
+                type='button'
                 onClick={() => signIn("google")}
                 className='flex cursor-pointer items-center gap-2 border border-border px-4 py-2 text-sm text-foreground transition-colors duration-200 hover:bg-surface'
               >

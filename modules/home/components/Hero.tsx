@@ -2,10 +2,10 @@ import Link from "next/link";
 
 function Hero() {
   return (
-    <section className='relative md:h-screen mx-auto max-w-6xl px-6 pt-24 overflow-hidden pb-8 md:pt-32 md:pb-28'>
+    <section className='relative md:h-screen mx-auto max-w-6xl px-6 pt-24 overflow-hidden mt-28 pb-8 md:mt-12'>
       {/* Background monogram */}
       <div
-        aria-hidden
+        aria-hidden={true}
         className='pointer-events-none absolute top-1 left-3 select-none font-heading text-[clamp(10rem,25vw,20rem)] font-bold leading-none text-foreground/8 lg:-top-10 lg:-left-5'
       >
         Ak
@@ -42,7 +42,7 @@ function Hero() {
               <span className='absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400/75' />
               <span className='relative inline-flex h-2 w-2 rounded-full bg-emerald-400' />
             </span>
-            <span className='text-xs text-foreground-secondary/80'>
+            <span className='text-xs text-foreground-secondary'>
               Available for projects
             </span>
           </div>
@@ -71,7 +71,7 @@ function Hero() {
             <div className='h-24 w-px bg-border' />
             <a
               href='mailto:akmalrbc6@gmail.com'
-              className='font-heading text-xs font-medium tracking-[0.15em] text-foreground-secondary/60 transition-colors duration-200 hover:text-foreground/80'
+              className='font-heading text-xs font-medium tracking-[0.15em] text-foreground-secondary/60 transition-colors duration-200 hover:text-foreground'
               style={{ writingMode: "vertical-rl" }}
             >
               akmalrbc6@gmail.com
