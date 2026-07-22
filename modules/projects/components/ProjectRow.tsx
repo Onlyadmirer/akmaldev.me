@@ -70,7 +70,7 @@ function ProjectRow({
                 {stack.map((tech) => (
                   <span
                     key={tech}
-                    className='text-xs text-foreground-secondary/80'
+                    className='text-xs px-4 border py-1 border-border rounded-full text-foreground-secondary'
                   >
                     {tech}
                   </span>

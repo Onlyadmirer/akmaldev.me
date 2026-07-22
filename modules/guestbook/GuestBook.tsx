@@ -125,9 +125,7 @@ function GuestBook() {
         </div>
 
         {isError ? (
-          <p className='text-sm text-foreground-secondary'>
-            {t("loadError")}
-          </p>
+          <p className='text-sm text-foreground-secondary'>{t("loadError")}</p>
         ) : (
           <div className='mb-8 max-h-96 overflow-y-auto space-y-6'>
             {comments.length > 0 ? (
@@ -144,7 +142,7 @@ function GuestBook() {
                     </MessageAvatar>
                     <MessageContent>
                       <div className='flex flex-row-reverse items-center gap-2'>
-                        <span className='text-xs text-foreground-secondary/60'>
+                        <span className='text-xs text-foreground-secondary'>
                           {new Date(c.createdAt).toLocaleDateString()}
                         </span>
                         <span className='text-sm font-medium text-foreground'>
@@ -152,7 +150,7 @@ function GuestBook() {
                         </span>
                       </div>
                       <Bubble>
-                        <BubbleContent className='bg-foreground-secondary/40'>
+                        <BubbleContent className='bg-foreground/90 text-neutral-300 dark:text-neutral-900'>
                           {c.text}
                         </BubbleContent>
                       </Bubble>
@@ -175,15 +173,14 @@ function GuestBook() {
                         <span className='text-sm font-medium text-foreground'>
                           {c.user.name}
                         </span>
-                        <span className='text-xs text-foreground-secondary/60'>
+                        <span className='text-xs text-foreground-secondary'>
                           {new Date(c.createdAt).toLocaleDateString()}
                         </span>
                       </div>
-                      <Bubble
-                        variant='tinted'
-                        className='bg-foreground-secondary/20'
-                      >
-                        <BubbleContent>{c.text}</BubbleContent>
+                      <Bubble>
+                        <BubbleContent className='bg-foreground-secondary/30'>
+                          {c.text}
+                        </BubbleContent>
                       </Bubble>
                     </MessageContent>
                     {contextMenu.visible &&
