@@ -11,7 +11,7 @@ function Contact() {
             Contact
           </h1>
           <p className='mt-3 max-w-lg text-base text-foreground-secondary'>
-            Get in touch — I&apos;m always open to new opportunities and
+            Get in touch. I&apos;m always open to new opportunities and
             collaborations.
           </p>
         </div>

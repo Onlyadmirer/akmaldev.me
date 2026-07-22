@@ -118,7 +118,7 @@ function GuestBook() {
             Guestbook
           </h1>
           <p className='mt-3 text-base text-foreground-secondary'>
-            Leave a message — I&apos;d love to hear from you.
+            Leave a message. I&apos;d love to hear from you.
           </p>
         </div>
 

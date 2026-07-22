@@ -8,7 +8,7 @@ function Intro() {
         About
       </h1>
       <div className='mt-10 grid gap-10 md:grid-cols-[300px_1fr] md:gap-16'>
-        <div className='relative aspect-[3/4] w-full overflow-hidden bg-surface'>
+        <div className='relative aspect-3/4 w-full overflow-hidden bg-surface'>
           <Image
             src='/images/profile/akmal.jpg'
             alt='Akmal'
@@ -21,22 +21,21 @@ function Intro() {
         <div className='space-y-5'>
           <p className='text-base leading-relaxed text-foreground-secondary'>
             Hello! I&apos;m Akmal, a Full-Stack Developer based in Indonesia
-            with a passion for building impactful digital products. I
-            specialize in modern frontend technologies like Next.js, React, and
-            TypeScript, while also crafting reliable backend services.
+            with a passion for building impactful digital products. I specialize
+            in modern frontend technologies like Next.js, React, and TypeScript,
+            while also crafting reliable backend services.
           </p>
           <p className='text-base leading-relaxed text-foreground-secondary'>
             I&apos;m currently pursuing a degree in Information Systems at
             Hasanuddin University, Makassar. My approach combines clean,
-            performant code with thoughtful user experiences — because great
+            performant code with thoughtful user experiences because great
             software is both functional and enjoyable to use.
           </p>
           <p className='text-base leading-relaxed text-foreground-secondary'>
             I thrive in collaborative environments and believe that the best
-            products emerge from clear communication and shared vision.
-            Whether it&apos;s architecting a backend API or fine-tuning a
-            frontend interface, I bring the same level of care and attention
-            to detail.
+            products emerge from clear communication and shared vision. Whether
+            it&apos;s architecting a backend API or fine-tuning a frontend
+            interface, I bring the same level of care and attention to detail.
           </p>
           <div className='pt-4'>
             <p className='text-sm text-foreground-secondary'>All the best,</p>
