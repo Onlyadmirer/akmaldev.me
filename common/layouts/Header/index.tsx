@@ -3,29 +3,30 @@
 import { usePathname, useRouter } from "@/i18n/navigation";
 import { useTheme } from "@teispace/next-themes";
 import { AnimatePresence, motion } from "motion/react";
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import Link from "next/link";
 import { useState } from "react";
 import { LuMenu, LuMoon, LuSun, LuX } from "react-icons/lu";
 
-const primaryLinks = [
-  { label: "Work", href: "/projects" },
-  { label: "About", href: "/about" },
-  { label: "Contact", href: "/contact" },
-];
-
-const secondaryLinks = [
-  { label: "Achievements", href: "/achievements" },
-  { label: "Guestbook", href: "/guestbook" },
-  { label: "Dashboard", href: "/dashboard" },
-];
-
 function Header() {
+  const t = useTranslations("Header");
   const pathname = usePathname();
   const { theme, setTheme } = useTheme();
   const locale = useLocale();
   const router = useRouter();
   const [mobileOpen, setMobileOpen] = useState(false);
+
+  const primaryLinks = [
+    { label: t("work"), href: "/projects" },
+    { label: t("about"), href: "/about" },
+    { label: t("contact"), href: "/contact" },
+  ];
+
+  const secondaryLinks = [
+    { label: t("achievements"), href: "/achievements" },
+    { label: t("guestbook"), href: "/guestbook" },
+    { label: t("dashboard"), href: "/dashboard" },
+  ];
 
   const toggleLocale = () => {
     const next = locale === "en" ? "id" : "en";
@@ -68,7 +69,7 @@ function Header() {
 
             <div className='group relative'>
               <button className='flex cursor-pointer items-center gap-1 text-sm text-foreground-secondary transition-colors duration-200 hover:text-foreground'>
-                More
+                {t("more")}
                 <svg
                   width='12'
                   height='12'

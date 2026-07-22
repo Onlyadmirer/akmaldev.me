@@ -7,8 +7,10 @@ import { FaPlus } from "react-icons/fa";
 import { useSession } from "next-auth/react";
 import { toast } from "sonner";
 import { AchivAdd } from "@/types/userTypes";
+import { useTranslations } from "next-intl";
 
 function InputAchiv() {
+  const t = useTranslations("AchievementsPage");
   const { data: session } = useSession();
 
   const {
@@ -20,7 +22,7 @@ function InputAchiv() {
 
   const onSubmit = async (formData: AchivAdd) => {
     if (!session?.user) {
-      toast.error("login dulu");
+      toast.error(t("toast.loginFirst"));
       return;
     }
     const dataLengkap: AchivAdd = {
@@ -36,10 +38,10 @@ function InputAchiv() {
         body: JSON.stringify(dataLengkap),
       });
       reset();
-      toast.success("Successfully add Achievement");
+      toast.success(t("toast.success"));
     } catch (error) {
       console.log(error);
-      toast.error("failed to add Achievement");
+      toast.error(t("toast.failed"));
     }
   };
 
@@ -54,25 +56,25 @@ function InputAchiv() {
       >
         <Input
           {...register("achiv.title")}
-          placeholder='Title'
+          placeholder={t("inputTitle")}
           type='text'
           disabled={isSubmitting}
         />
         <Input
           {...register("achiv.url")}
-          placeholder='Url'
+          placeholder={t("inputUrl")}
           type='text'
           disabled={isSubmitting}
         />
         <Input
           {...register("achiv.issuedOn")}
-          placeholder='Issued on'
+          placeholder={t("inputIssuedOn")}
           type='text'
           disabled={isSubmitting}
         />
         <Input
           {...register("achiv.publisher")}
-          placeholder='Publisher'
+          placeholder={t("inputPublisher")}
           type='text'
           disabled={isSubmitting}
         />
@@ -83,7 +85,7 @@ function InputAchiv() {
         >
           <div className=' flex -translate-x-2 flex-row justify-center items-center gap-2'>
             <FaPlus />
-            <p>Add</p>
+            <p>{t("add")}</p>
           </div>
         </Button>
       </form>

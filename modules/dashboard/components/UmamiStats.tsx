@@ -4,8 +4,10 @@ import { Spinner } from "@/common/components/ui/spinner";
 import { useEffect, useState } from "react";
 import { BsEmojiDizzy } from "react-icons/bs";
 import { SiUmami } from "react-icons/si";
+import { useTranslations } from "next-intl";
 
 function UmamiStats() {
+  const t = useTranslations("DashboardPage.UmamiStats");
   const [isBlock, setIsBlock] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const umami = "https://cloud.umami.is/share/kQqVwGiVToTkkgX0/akmaldev.me";
@@ -31,7 +33,7 @@ function UmamiStats() {
       <div className='flex items-center gap-2 border-b border-border pb-4'>
         <SiUmami size={18} className='text-foreground-secondary' />
         <h2 className='font-heading text-lg font-semibold tracking-tight text-foreground'>
-          Umami
+          {t("title")}
         </h2>
       </div>
       <div className='mt-6'>
@@ -41,8 +43,7 @@ function UmamiStats() {
           <div className='flex flex-col items-center justify-center gap-3 py-12 text-center'>
             <BsEmojiDizzy size={24} className='text-foreground-secondary/40' />
             <p className='text-sm text-foreground-secondary/60'>
-              Failed to load analytics. Please disable your AdBlocker or Brave
-              Shields.
+              {t("error")}
             </p>
           </div>
         ) : (

@@ -1,36 +1,132 @@
 {
   "HomePage": {
-    "Header": {
-      "greeting": "Hai, saya Akmal",
+    "Hero": {
+      "heading": "Membangun Sistem Digital\nBerkinerja Tinggi.",
+      "role": "Full-Stack Developer",
       "location": "Berdomisili di Indonesia",
-      "workMode": "Full-Stack Developer",
-      "description": "Saya menciptakan produk digital dengan teknologi web modern."
+      "available": "Tersedia untuk proyek",
+      "viewWork": "Lihat Karya",
+      "getInTouch": "Hubungi Saya"
+    },
+    "Skills": {
+      "title": "Stack",
+      "subtitle": "Teknologi yang saya gunakan",
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "database": "Database",
+      "tools": "Tools"
+    },
+    "Featured": {
+      "title": "Jelajahi",
+      "subtitle": "Tautan cepat ke bagian penting",
+      "projects": "Proyek",
+      "projectsDesc": "Lihat karya saya",
+      "achievements": "Pencapaian",
+      "achievementsDesc": "Sertifikat & pencapaian",
+      "dashboard": "Dashboard",
+      "dashboardDesc": "Statistik GitHub & analitik"
     }
   },
   "AboutPage": {
-    "Header": {
-      "title": "Tentang",
-      "description": "Siapa saya dan apa yang saya kerjakan."
+    "title": "Tentang",
+    "para1": "Halo! Saya Akmal, seorang Full-Stack Developer yang berbasis di Indonesia dengan passion membangun produk digital yang berdampak. Saya specialize dalam teknologi frontend modern seperti Next.js, React, dan TypeScript, sambil juga membangun layanan backend yang andal.",
+    "para2": "Saat ini saya sedang menempuh pendidikan di bidang Sistem Informasi di Universitas Hasanuddin, Makassar. Pendekatan saya menggabungkan kode yang bersih dan berkinerja tinggi dengan pengalaman pengguna yang matang, karena software yang hebat harus fungsional dan menyenangkan untuk digunakan.",
+    "para3": "Saya berkembang dalam lingkungan kolaboratif dan percaya bahwa produk terbaik lahir dari komunikasi yang jelas dan visi bersama. Baik itu merancang arsitektur API backend atau menyempurnakan antarmuka frontend, saya selalu memberikan perhatian dan ketelitian yang sama.",
+    "closing": "Salam hangat,",
+    "educationTitle": "Pendidikan",
+    "highSchool": "SMAN 3 Enrekang",
+    "highSchoolMajor": "SMA · Jurusan IPA",
+    "highSchoolLocation": "Enrekang, Sulawesi Selatan, Indonesia",
+    "highSchoolPeriod": "2021 - 2024",
+    "university": "Universitas Hasanuddin",
+    "universityMajor": "S1 Sistem Informasi",
+    "universityLocation": "Makassar, Sulawesi Selatan, Indonesia",
+    "universityPeriod": "2024 - Sekarang"
+  },
+  "ProjectsPage": {
+    "title": "Karya",
+    "description": "Proyek pilihan yang telah saya bangun dan kontribusikan."
+  },
+  "ProjectDetailPage": {
+    "back": "Kembali",
+    "techStack": "Tech Stack:",
+    "sourceCode": "Kode Sumber",
+    "liveDemo": "Demo Langsung"
+  },
+  "ContactPage": {
+    "title": "Kontak",
+    "description": "Hubungi saya. Saya selalu terbuka untuk peluang dan kolaborasi baru.",
+    "formTitle": "Kirim pesan",
+    "namePlaceholder": "Nama",
+    "emailPlaceholder": "Email",
+    "messagePlaceholder": "Pesan",
+    "submit": "Kirim Pesan",
+    "socialTitle": "Temukan saya di media sosial",
+    "toast": {
+      "success": "Email berhasil dikirim",
+      "failed": "Gagal mengirim pesan.",
+      "unexpectedError": "Terjadi kesalahan yang tidak terduga."
+    }
+  },
+  "GuestbookPage": {
+    "title": "Buku Tamu",
+    "description": "Tinggalkan pesan. Saya akan senang mendengar dari Anda.",
+    "loadError": "Gagal memuat komentar.",
+    "noComments": "Belum ada komentar. Jadilah yang pertama!",
+    "inputPlaceholder": "Ketik pesan Anda...",
+    "signInPrompt": "Masuk untuk meninggalkan pesan.",
+    "signInGoogle": "Masuk dengan Google",
+    "signedInAs": "Masuk sebagai @{name}",
+    "signOut": "Keluar",
+    "delete": "Hapus",
+    "toast": {
+      "invalidInput": "Input tidak valid",
+      "commentSent": "Komentar terkirim!",
+      "sendFailed": "Gagal mengirim pesan",
+      "deleted": "Berhasil dihapus",
+      "error": "Terjadi kesalahan"
+    }
+  },
+  "AchievementsPage": {
+    "title": "Pencapaian",
+    "description": "Sertifikat dan lencana dari perjalanan akademik dan profesional saya.",
+    "addAchievement": "Tambah Pencapaian",
+    "loading": "Memuat...",
+    "inputTitle": "Judul",
+    "inputUrl": "Url",
+    "inputIssuedOn": "Diterbitkan pada",
+    "inputPublisher": "Penerbit",
+    "add": "Tambah",
+    "issued": "Diterbitkan {date}",
+    "certificateAlt": "Sertifikat",
+    "toast": {
+      "loginFirst": "Silakan login terlebih dahulu",
+      "success": "Berhasil menambah Pencapaian",
+      "failed": "Gagal menambah Pencapaian"
     }
   },
   "DashboardPage": {
-    "Header": {
-      "title": "Dashboard",
-      "description": "Wawasan real-time tentang aktivitas pengembangan dan kontribusi saya."
-    },
+    "title": "Dashboard",
+    "description": "Wawasan real-time tentang aktivitas pengembangan dan kontribusi saya.",
     "GithubStats": {
       "title": "Aktivitas GitHub",
-      "description": "Kontribusi open source, repositori, dan aktivitas coding selama setahun terakhir.",
       "publicRepos": "Repositori Publik",
       "followers": "Pengikut",
       "following": "Mengikuti",
-      "username": "@akmal",
-      "tooltip": "aktivitas pada {date}"
+      "tooltip": "{count} aktivitas pada {date}"
     },
     "UmamiStats": {
       "title": "Umami",
-      "description": "Lacak metrik pengunjung real-time dan interaksi pengguna",
       "error": "Gagal memuat analytics. Nonaktifkan AdBlocker atau Brave Shields Anda."
     }
+  },
+  "Header": {
+    "work": "Karya",
+    "about": "Tentang",
+    "contact": "Kontak",
+    "more": "Lainnya",
+    "achievements": "Pencapaian",
+    "guestbook": "Buku Tamu",
+    "dashboard": "Dashboard"
   }
 }

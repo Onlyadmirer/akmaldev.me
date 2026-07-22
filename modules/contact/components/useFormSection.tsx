@@ -4,19 +4,19 @@ import { submitForm } from "@/modules/contact/action";
 import { ContactType } from "@/modules/contact/schema/ContactFormSchema";
 import { toast } from "sonner";
 
-export const useFormSection = () => {
+export const useFormSection = (t?: (key: string) => string) => {
   const onSubmit = async (formData: ContactType) => {
     try {
       const result = await submitForm(formData);
 
       if (result?.success) {
-        toast.success("Successfully send email");
+        toast.success(t ? t("success") : "Successfully send email");
       } else {
-        toast.error(result?.error || "Failed to send message.");
+        toast.error(result?.error || (t ? t("failed") : "Failed to send message."));
       }
     } catch (error) {
       console.error("Submission Error:", error);
-      toast("An unexpected error occurred.");
+      toast(t ? t("unexpectedError") : "An unexpected error occurred.");
     }
   };
 

@@ -23,8 +23,10 @@ import SkeletonChat from "./components/SkeletonChat";
 import useComments, { CommentType } from "./swr";
 import PageAnimateWrapper from "@/common/components/elements/PageAnimateWrapper";
 import { InputCommentType } from "@/types/userTypes";
+import { useTranslations } from "next-intl";
 
 function GuestBook() {
+  const t = useTranslations("GuestbookPage");
   const { data: session, status } = useSession();
   const { comments, isError, isLoading, mutate } = useComments();
 
@@ -45,7 +47,7 @@ function GuestBook() {
 
   const onSubmit = async () => {
     if (comment === "") {
-      toast.error("Invalid Input");
+      toast.error(t("toast.invalidInput"));
       return;
     }
     try {
@@ -57,7 +59,7 @@ function GuestBook() {
 
       const newComment = await response.json();
 
-      toast.success("Comment sent!");
+      toast.success(t("toast.commentSent"));
 
       setComment("");
 
@@ -69,7 +71,7 @@ function GuestBook() {
 
       await mutate();
     } catch {
-      toast.error("Failed to send message");
+      toast.error(t("toast.sendFailed"));
     }
   };
 
@@ -78,9 +80,9 @@ function GuestBook() {
       await fetch(`/api/guestbook?id=${id}`, {
         method: "DELETE",
       });
-      toast.success("Deleted");
+      toast.success(t("toast.deleted"));
     } catch {
-      toast.error("Something went wrong");
+      toast.error(t("toast.error"));
     }
   };
 
@@ -115,16 +117,16 @@ function GuestBook() {
       <div className='mx-auto max-w-3xl px-6 pt-8 pb-24'>
         <div className='mb-12'>
           <h1 className='font-heading text-3xl font-semibold tracking-tight text-foreground md:text-4xl'>
-            Guestbook
+            {t("title")}
           </h1>
           <p className='mt-3 text-base text-foreground-secondary'>
-            Leave a message. I&apos;d love to hear from you.
+            {t("description")}
           </p>
         </div>
 
         {isError ? (
           <p className='text-sm text-foreground-secondary'>
-            Failed to load comments.
+            {t("loadError")}
           </p>
         ) : (
           <div className='mb-8 max-h-96 overflow-y-auto space-y-6'>
@@ -194,7 +196,7 @@ function GuestBook() {
                           className='fixed z-50 flex cursor-pointer items-center gap-1 rounded border border-border bg-surface px-3 py-2 text-xs text-foreground-secondary shadow-sm transition-colors hover:text-red-500'
                         >
                           <Trash size={14} />
-                          Delete
+                          {t("delete")}
                         </button>
                       )}
                   </Message>
@@ -202,7 +204,7 @@ function GuestBook() {
               )
             ) : (
               <p className='text-sm text-foreground-secondary'>
-                No comments yet. Be the first!
+                {t("noComments")}
               </p>
             )}
           </div>
@@ -217,7 +219,7 @@ function GuestBook() {
               >
                 <div className='flex-1'>
                   <input
-                    placeholder='Type your message...'
+                    placeholder={t("inputPlaceholder")}
                     value={comment}
                     disabled={isSubmitting}
                     {...register("comments", {
@@ -258,7 +260,7 @@ function GuestBook() {
               </form>
               <div className='flex items-center justify-between border-t border-border pt-4'>
                 <span className='text-xs text-foreground-secondary/90'>
-                  Signed in as @{session?.user?.name}
+                  {t("signedInAs", { name: session?.user?.name ?? "" })}
                 </span>
                 <button
                   type='button'
@@ -266,14 +268,14 @@ function GuestBook() {
                   className='flex cursor-pointer items-center gap-1 text-xs text-foreground-secondary transition-colors duration-200 hover:text-red-500'
                 >
                   <LogOut size={14} />
-                  Sign out
+                  {t("signOut")}
                 </button>
               </div>
             </div>
           ) : (
             <div className='flex flex-col items-center gap-4 border-t border-border pt-8'>
               <p className='text-sm text-foreground-secondary'>
-                Sign in to leave a message.
+                {t("signInPrompt")}
               </p>
               <button
                 type='button'
@@ -281,7 +283,7 @@ function GuestBook() {
                 className='flex cursor-pointer items-center gap-2 border border-border px-4 py-2 text-sm text-foreground transition-colors duration-200 hover:bg-surface'
               >
                 <FcGoogle size={18} />
-                Sign in with Google
+                {t("signInGoogle")}
               </button>
             </div>
           )}

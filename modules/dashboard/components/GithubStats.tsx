@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { GitHubCalendar } from "react-github-calendar";
 import { FaGithub } from "react-icons/fa";
+import { useTranslations } from "next-intl";
 
 interface Github {
   public_repos: number;
@@ -13,12 +14,13 @@ interface Github {
 }
 
 function GithubStats() {
+  const t = useTranslations("DashboardPage.GithubStats");
   const [github, setGithub] = useState<Github>();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    // eslint-disable-next-line
-    setMounted(true);
+    const id = setTimeout(() => setMounted(true), 0);
+    return () => clearTimeout(id);
   }, []);
 
   useEffect(() => {
@@ -46,7 +48,7 @@ function GithubStats() {
         <div className='flex items-center gap-2'>
           <FaGithub size={18} className='text-foreground-secondary' />
           <h2 className='text-lg font-semibold tracking-tight font-heading text-foreground'>
-            GitHub Activity
+            {t("title")}
           </h2>
         </div>
         <Link
@@ -62,20 +64,20 @@ function GithubStats() {
         <div className='grid grid-cols-3 gap-8 mt-6'>
           <div className='flex flex-col items-center'>
             <p className='text-xs text-center text-foreground-secondary/90'>
-              Public Repositories
+              {t("publicRepos")}
             </p>
             <p className='mt-1 text-xl font-semibold tracking-tight font-heading text-foreground'>
               {github?.public_repos ?? "—"}
             </p>
           </div>
           <div className='flex flex-col items-center'>
-            <p className='text-xs text-foreground-secondary/90'>Followers</p>
+            <p className='text-xs text-foreground-secondary/90'>{t("followers")}</p>
             <p className='mt-1 text-xl font-semibold tracking-tight font-heading text-foreground'>
               {github?.followers ?? "—"}
             </p>
           </div>
           <div className='flex flex-col items-center'>
-            <p className='text-xs text-foreground-secondary/90'>Following</p>
+            <p className='text-xs text-foreground-secondary/90'>{t("following")}</p>
             <p className='mt-1 text-xl font-semibold tracking-tight font-heading text-foreground'>
               {github?.following ?? "—"}
             </p>
@@ -94,7 +96,7 @@ function GithubStats() {
           tooltips={{
             activity: {
               text: (activity) =>
-                `${activity.count} activities on ${activity.date}`,
+                t("tooltip", { count: activity.count, date: activity.date }),
               placement: "top",
               offset: 12,
             },

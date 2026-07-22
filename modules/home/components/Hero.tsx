@@ -1,6 +1,9 @@
+import { getTranslations } from "next-intl/server";
 import Link from "next/link";
 
-function Hero() {
+async function Hero() {
+  const t = await getTranslations("HomePage.Hero");
+
   return (
     <section className='relative md:h-screen mx-auto max-w-6xl px-6 pt-24 overflow-hidden mt-28 pb-8 md:mt-12'>
       {/* Background monogram */}
@@ -20,20 +23,18 @@ function Hero() {
       <div className='relative flex flex-col md:flex-row md:justify-between md:gap-12'>
         {/* Left: main content */}
         <div className='max-w-2xl'>
-          <h1 className='font-heading text-[clamp(2.5rem,8vw,5rem)] font-bold leading-[0.9] tracking-[-0.04em] text-foreground'>
-            Building High Performance
-            <br />
-            Digital Systems.
+          <h1 className='font-heading text-[clamp(2.5rem,8vw,5rem)] font-bold leading-[0.9] tracking-[-0.04em] text-foreground whitespace-pre-line'>
+            {t("heading")}
           </h1>
 
           <div className='mt-8 h-px w-16 bg-foreground/20 md:mt-10' />
 
           <div className='mt-6 space-y-2'>
             <p className='text-base text-foreground/90 md:text-lg'>
-              Full-Stack Developer
+              {t("role")}
             </p>
             <p className='text-sm text-foreground-secondary/90'>
-              Based in Indonesia
+              {t("location")}
             </p>
           </div>
 
@@ -43,7 +44,7 @@ function Hero() {
               <span className='relative inline-flex h-2 w-2 rounded-full bg-emerald-400' />
             </span>
             <span className='text-xs text-foreground-secondary'>
-              Available for projects
+              {t("available")}
             </span>
           </div>
 
@@ -52,14 +53,14 @@ function Hero() {
               href='/projects'
               className='group relative text-sm font-medium text-foreground transition-colors duration-200'
             >
-              View Work
+              {t("viewWork")}
               <span className='absolute -bottom-1 left-0 h-px w-0 bg-foreground transition-all duration-300 group-hover:w-full' />
             </Link>
             <Link
               href='/contact'
               className='group relative text-sm font-medium text-foreground-secondary transition-colors duration-200 hover:text-foreground'
             >
-              Get in Touch
+              {t("getInTouch")}
               <span className='absolute -bottom-1 left-0 h-px w-0 bg-foreground transition-all duration-300 group-hover:w-full' />
             </Link>
           </div>

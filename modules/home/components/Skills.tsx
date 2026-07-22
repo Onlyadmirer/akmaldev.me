@@ -1,4 +1,5 @@
 import SectionHeading from "@/common/components/elements/SectionHeading";
+import { getTranslations } from "next-intl/server";
 import {
   SiTypescript,
   SiReact,
@@ -49,23 +50,11 @@ const skillIcons: Record<string, React.ReactNode> = {
   Bun: <SiBun size={13} />,
 };
 
-const categories = [
-  {
-    label: "Frontend",
-    items: ["TypeScript", "React", "Next.js", "Tailwind CSS"],
-  },
-  {
-    label: "Backend",
-    items: ["Node.js", "Express", "Go"],
-  },
-  {
-    label: "Database",
-    items: ["PostgreSQL", "Prisma"],
-  },
-  {
-    label: "Tools",
-    items: ["Git", "Docker", "Bun"],
-  },
+const skillCategories = [
+  { key: "frontend", items: ["TypeScript", "React", "Next.js", "Tailwind CSS"] },
+  { key: "backend", items: ["Node.js", "Express", "Go"] },
+  { key: "database", items: ["PostgreSQL", "Prisma"] },
+  { key: "tools", items: ["Git", "Docker", "Bun"] },
 ];
 
 function SkillChip({ name }: { name: string }) {
@@ -93,15 +82,17 @@ function SkillChip({ name }: { name: string }) {
   );
 }
 
-function Skills() {
+async function Skills() {
+  const t = await getTranslations("HomePage.Skills");
+
   return (
     <section className='mx-auto max-w-6xl px-6 py-16 border-t border-border'>
-      <SectionHeading title='Stack' subtitle='Technologies I work with' />
+      <SectionHeading title={t("title")} subtitle={t("subtitle")} />
       <div className='grid gap-8 sm:grid-cols-2'>
-        {categories.map((cat) => (
-          <div key={cat.label}>
+        {skillCategories.map((cat) => (
+          <div key={cat.key}>
             <p className='text-xs font-medium uppercase tracking-widest text-foreground-secondary'>
-              {cat.label}
+              {t(cat.key)}
             </p>
             <div className='mt-3 flex flex-wrap gap-2'>
               {cat.items.map((skill) => (

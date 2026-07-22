@@ -2,29 +2,32 @@
 
 import SectionHeading from "@/common/components/elements/SectionHeading";
 import Link from "next/link";
-
-const links = [
-  {
-    label: "Projects",
-    href: "/projects",
-    description: "Explore my work",
-  },
-  {
-    label: "Achievements",
-    href: "/achievements",
-    description: "Certifications & milestones",
-  },
-  {
-    label: "Dashboard",
-    href: "/dashboard",
-    description: "GitHub stats & analytics",
-  },
-];
+import { useTranslations } from "next-intl";
 
 function Featured() {
+  const t = useTranslations("HomePage.Featured");
+
+  const links = [
+    {
+      label: t("projects"),
+      href: "/projects",
+      description: t("projectsDesc"),
+    },
+    {
+      label: t("achievements"),
+      href: "/achievements",
+      description: t("achievementsDesc"),
+    },
+    {
+      label: t("dashboard"),
+      href: "/dashboard",
+      description: t("dashboardDesc"),
+    },
+  ];
+
   return (
     <section className='mx-auto max-w-6xl px-6 py-16 border-t border-border'>
-      <SectionHeading title='Explore' subtitle='Quick links to key sections' />
+      <SectionHeading title={t("title")} subtitle={t("subtitle")} />
       <div className='space-y-4'>
         {links.map((link) => (
           <Link

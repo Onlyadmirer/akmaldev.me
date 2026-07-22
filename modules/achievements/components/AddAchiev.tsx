@@ -3,6 +3,7 @@
 import Button from "@/common/components/ui/Button";
 import { useSession } from "next-auth/react";
 import { FaPlus } from "react-icons/fa";
+import { useTranslations } from "next-intl";
 import InputAchiv from "./InputAchiv";
 import {
   Popover,
@@ -11,10 +12,11 @@ import {
 } from "@/common/components/ui/popover";
 
 function AddAchiev() {
+  const t = useTranslations("AchievementsPage");
   const { data: session, status } = useSession();
 
   if (status === "loading") {
-    return <p>Loading...</p>;
+    return <p>{t("loading")}</p>;
   }
 
   return (
@@ -26,7 +28,7 @@ function AddAchiev() {
               <PopoverTrigger asChild>
                 <Button className='flex items-center justify-center rounded-md border border-border text-foreground'>
                   <FaPlus />
-                  <p>Add Achievement</p>
+                  <p>{t("addAchievement")}</p>
                 </Button>
               </PopoverTrigger>
               <PopoverContent className='bg-background' align='start'>

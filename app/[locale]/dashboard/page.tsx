@@ -10,12 +10,12 @@ export async function generateMetadata({ params }: Props) {
   const t = await getTranslations({ locale, namespace: "DashboardPage" });
 
   return {
-    title: t("Header.title"),
-    description: t("Header.description"),
+    title: t("title"),
+    description: t("description"),
 
     openGraph: {
-      title: t("Header.title"),
-      description: t("Header.description"),
+      title: t("title"),
+      description: t("description"),
       url: "https://www.akmaldev.me/dashboard",
       siteName: "Akmaldev",
       images: [
@@ -32,8 +32,8 @@ export async function generateMetadata({ params }: Props) {
 
     twitter: {
       card: "summary_large_image",
-      title: t("Header.title"),
-      description: t("Header.description"),
+      title: t("title"),
+      description: t("description"),
       images: ["https://www.akmaldev.me/images/profile/akmal.jpg"],
     },
   };

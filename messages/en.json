@@ -1,36 +1,132 @@
 {
   "HomePage": {
-    "Header": {
-      "greeting": "Hi I'm Akmal",
+    "Hero": {
+      "heading": "Building High Performance\nDigital Systems.",
+      "role": "Full-Stack Developer",
       "location": "Based in Indonesia",
-      "workMode": "Full-Stack Developer",
-      "description": "I craft digital products with modern web technologies."
+      "available": "Available for projects",
+      "viewWork": "View Work",
+      "getInTouch": "Get in Touch"
+    },
+    "Skills": {
+      "title": "Stack",
+      "subtitle": "Technologies I work with",
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "database": "Database",
+      "tools": "Tools"
+    },
+    "Featured": {
+      "title": "Explore",
+      "subtitle": "Quick links to key sections",
+      "projects": "Projects",
+      "projectsDesc": "Explore my work",
+      "achievements": "Achievements",
+      "achievementsDesc": "Certifications & milestones",
+      "dashboard": "Dashboard",
+      "dashboardDesc": "GitHub stats & analytics"
     }
   },
   "AboutPage": {
-    "Header": {
-      "title": "About",
-      "description": "Who I am and what I do."
+    "title": "About",
+    "para1": "Hello! I'm Akmal, a Full-Stack Developer based in Indonesia with a passion for building impactful digital products. I specialize in modern frontend technologies like Next.js, React, and TypeScript, while also crafting reliable backend services.",
+    "para2": "I'm currently pursuing a degree in Information Systems at Hasanuddin University, Makassar. My approach combines clean, performant code with thoughtful user experiences because great software is both functional and enjoyable to use.",
+    "para3": "I thrive in collaborative environments and believe that the best products emerge from clear communication and shared vision. Whether it's architecting a backend API or fine-tuning a frontend interface, I bring the same level of care and attention to detail.",
+    "closing": "All the best,",
+    "educationTitle": "Education",
+    "highSchool": "SMAN 3 Enrekang",
+    "highSchoolMajor": "Senior High School · Science Major",
+    "highSchoolLocation": "Enrekang, South Sulawesi, Indonesia",
+    "highSchoolPeriod": "2021 - 2024",
+    "university": "Hasanuddin University",
+    "universityMajor": "Bachelor's in Information Systems",
+    "universityLocation": "Makassar, South Sulawesi, Indonesia",
+    "universityPeriod": "2024 - Present"
+  },
+  "ProjectsPage": {
+    "title": "Work",
+    "description": "Selected projects I've built and contributed to."
+  },
+  "ProjectDetailPage": {
+    "back": "Back",
+    "techStack": "Tech Stack:",
+    "sourceCode": "Source Code",
+    "liveDemo": "Live Demo"
+  },
+  "ContactPage": {
+    "title": "Contact",
+    "description": "Get in touch. I'm always open to new opportunities and collaborations.",
+    "formTitle": "Send a message",
+    "namePlaceholder": "Name",
+    "emailPlaceholder": "Email",
+    "messagePlaceholder": "Message",
+    "submit": "Send Message",
+    "socialTitle": "Find me online",
+    "toast": {
+      "success": "Successfully send email",
+      "failed": "Failed to send message.",
+      "unexpectedError": "An unexpected error occurred."
+    }
+  },
+  "GuestbookPage": {
+    "title": "Guestbook",
+    "description": "Leave a message. I'd love to hear from you.",
+    "loadError": "Failed to load comments.",
+    "noComments": "No comments yet. Be the first!",
+    "inputPlaceholder": "Type your message...",
+    "signInPrompt": "Sign in to leave a message.",
+    "signInGoogle": "Sign in with Google",
+    "signedInAs": "Signed in as @{name}",
+    "signOut": "Sign out",
+    "delete": "Delete",
+    "toast": {
+      "invalidInput": "Invalid Input",
+      "commentSent": "Comment sent!",
+      "sendFailed": "Failed to send message",
+      "deleted": "Deleted",
+      "error": "Something went wrong"
+    }
+  },
+  "AchievementsPage": {
+    "title": "Achievements",
+    "description": "Certificates and badges from my academic and professional journey.",
+    "addAchievement": "Add Achievement",
+    "loading": "Loading...",
+    "inputTitle": "Title",
+    "inputUrl": "Url",
+    "inputIssuedOn": "Issued on",
+    "inputPublisher": "Publisher",
+    "add": "Add",
+    "issued": "Issued {date}",
+    "certificateAlt": "Certificate",
+    "toast": {
+      "loginFirst": "Please login first",
+      "success": "Successfully add Achievement",
+      "failed": "Failed to add Achievement"
     }
   },
   "DashboardPage": {
-    "Header": {
-      "title": "Dashboard",
-      "description": "Real-time insights into my development activity and contributions."
-    },
+    "title": "Dashboard",
+    "description": "Real-time insights into my development activity and contributions.",
     "GithubStats": {
       "title": "GitHub Activity",
-      "description": "Open source contributions, repositories, and coding activity over the past year.",
       "publicRepos": "Public Repositories",
       "followers": "Followers",
       "following": "Following",
-      "username": "@akmal",
-      "tooltip": "activities on {date}"
+      "tooltip": "{count} activities on {date}"
     },
     "UmamiStats": {
       "title": "Umami",
-      "description": "Track real-time visitor metrics and user engagement",
       "error": "Failed to load analytics. Please disable your AdBlocker or Brave Shields."
     }
+  },
+  "Header": {
+    "work": "Work",
+    "about": "About",
+    "contact": "Contact",
+    "more": "More",
+    "achievements": "Achievements",
+    "guestbook": "Guestbook",
+    "dashboard": "Dashboard"
   }
 }
