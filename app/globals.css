@@ -17,7 +17,7 @@
   --background: #000000;
   --surface: #1a1a1a;
   --foreground: #ffffff;
-  --foreground-secondary: #888888;
+  --foreground-secondary: #a1a1a1;
   --border: rgba(255, 255, 255, 0.16);
   --accent: #ffffff;
   --rgb-foreground: 255, 255, 255;
@@ -33,10 +33,6 @@
   --radius: var(--radius);
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-heading: var(--font-inter-tight), ui-sans-serif, system-ui, sans-serif;
-}
-
-* {
-  border-color: var(--border);
 }
 
 body {

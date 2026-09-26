@@ -32,7 +32,7 @@ function Section({
         {asideLabel && asideHref && (
           <Link
             href={asideHref}
-            className='group inline-flex shrink-0 items-center gap-1.5 text-sm text-foreground-secondary transition-colors duration-200 hover:text-foreground'
+            className='group hidden sm:inline-flex shrink-0 items-center gap-1.5 text-sm text-foreground-secondary transition-colors duration-200 hover:text-foreground border-b border-foreground-secondary'
           >
             {asideLabel}
             <LuArrowRight
@@ -43,6 +43,18 @@ function Section({
         )}
       </div>
       {children}
+      {asideLabel && asideHref && (
+        <Link
+          href={asideHref}
+          className='group sm:hidden mt-12 inline-flex shrink-0 items-center gap-1.5 text-sm text-foreground-secondary transition-colors duration-200 hover:text-foreground border-b border-foreground-secondary'
+        >
+          {asideLabel}
+          <LuArrowRight
+            size={14}
+            className='transition-transform duration-200 group-hover:translate-x-1'
+          />
+        </Link>
+      )}
     </section>
   );
 }
