@@ -1,30 +1,53 @@
 {
   "HomePage": {
     "Hero": {
-      "heading": "Building High Performance\nDigital Systems.",
-      "role": "Full-Stack Developer",
+      "eyebrow": "Full-Stack Developer",
+      "heading": "Building high-performance\ndigital systems.",
+      "subheading": "I design and ship reliable products end to end — from database schema to the last pixel of the interface. Currently building with Next.js, TypeScript and PostgreSQL.",
       "location": "Based in Indonesia",
       "available": "Available for projects",
       "viewWork": "View Work",
       "getInTouch": "Get in Touch"
     },
-    "Skills": {
+    "About": {
+      "title": "About",
+      "subtitle": "A short introduction",
+      "readMore": "Read the full story"
+    },
+    "Projects": {
+      "title": "Selected Work",
+      "subtitle": "Recent projects I've built and contributed to",
+      "viewAll": "View all projects",
+      "empty": "No projects published yet."
+    },
+    "Stack": {
       "title": "Stack",
-      "subtitle": "Technologies I work with",
+      "subtitle": "Technologies I work with daily",
       "frontend": "Frontend",
       "backend": "Backend",
       "database": "Database",
-      "tools": "Tools"
+      "tools": "Tools",
+      "statsTitle": "GitHub",
+      "statsSubtitle": "@Onlyadmirer",
+      "viewActivity": "Full activity"
     },
-    "Featured": {
-      "title": "Explore",
-      "subtitle": "Quick links to key sections",
-      "projects": "Projects",
-      "projectsDesc": "Explore my work",
-      "achievements": "Achievements",
-      "achievementsDesc": "Certifications & milestones",
-      "dashboard": "Dashboard",
-      "dashboardDesc": "GitHub stats & analytics"
+    "Achievements": {
+      "title": "Achievements",
+      "subtitle": "Latest certifications and milestones",
+      "viewAll": "View all achievements",
+      "empty": "No achievements yet."
+    },
+    "Education": {
+      "title": "Education",
+      "subtitle": "Where I studied",
+      "readMore": "More about me"
+    },
+    "Cta": {
+      "title": "Let's build something\nworth shipping.",
+      "subtitle": "Have a project in mind, or just want to talk about an idea? My inbox is open.",
+      "email": "Email me",
+      "github": "See my GitHub",
+      "findMe": "Find me online"
     }
   },
   "AboutPage": {
@@ -121,6 +144,7 @@
     }
   },
   "Header": {
+    "home": "Home",
     "work": "Work",
     "about": "About",
     "contact": "Contact",

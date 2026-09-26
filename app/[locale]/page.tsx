@@ -11,7 +11,7 @@ export async function generateMetadata({ params }: Props) {
 
   return {
     title: "Akmal | Full-Stack Developer",
-    description: t("Hero.role"),
+    description: t("Hero.subheading"),
 
     openGraph: {
       title: "Akmal | Full-Stack Developer",

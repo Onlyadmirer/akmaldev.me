@@ -1,8 +1,9 @@
 import { prisma } from "@/lib/prisma";
+import { OWNER_EMAIL } from "@/common/constants/owner";
 
 export default async function getProjectDetail() {
   const user = await prisma.user.findUnique({
-    where: { email: "akmalrbc6@gmail.com" },
+    where: { email: OWNER_EMAIL },
     include: {
       projects: {
         orderBy: {

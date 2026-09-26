@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { GitHubCalendar } from "react-github-calendar";
 import { FaGithub } from "react-icons/fa";
 import { useTranslations } from "next-intl";
+import { GITHUB_USERNAME } from "@/common/constants/owner";
 
 interface Github {
   public_repos: number;
@@ -25,7 +26,7 @@ function GithubStats() {
 
   useEffect(() => {
     const githubDatas = async () => {
-      const response = await fetch("https://api.github.com/users/Onlyadmirer");
+      const response = await fetch(`https://api.github.com/users/${GITHUB_USERNAME}`);
       const datas = await response.json();
       setGithub(datas);
     };
@@ -52,11 +53,11 @@ function GithubStats() {
           </h2>
         </div>
         <Link
-          href='https://github.com/onlyadmirer'
+          href={`https://github.com/${GITHUB_USERNAME}`}
           target='_blank'
           className='text-xs transition-colors duration-200 text-foreground-secondary hover:text-foreground'
         >
-          @Onlyadmirer
+          @{GITHUB_USERNAME}
         </Link>
       </div>
 
@@ -85,7 +86,7 @@ function GithubStats() {
         </div>
 
         <GitHubCalendar
-          username='onlyadmirer'
+          username={GITHUB_USERNAME}
           colorScheme={`${isDark ? "dark" : "light"}`}
           theme={explicitTheme}
           fontSize={14}

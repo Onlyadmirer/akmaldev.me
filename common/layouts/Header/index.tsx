@@ -1,10 +1,9 @@
 "use client";
 
-import { usePathname, useRouter } from "@/i18n/navigation";
+import { Link, usePathname, useRouter } from "@/i18n/navigation";
 import { useTheme } from "@teispace/next-themes";
 import { AnimatePresence, motion } from "motion/react";
 import { useLocale, useTranslations } from "next-intl";
-import Link from "next/link";
 import { useState } from "react";
 import { LuMenu, LuMoon, LuSun, LuX } from "react-icons/lu";
 
@@ -17,6 +16,7 @@ function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   const primaryLinks = [
+    { label: t("home"), href: "/" },
     { label: t("work"), href: "/projects" },
     { label: t("about"), href: "/about" },
     { label: t("contact"), href: "/contact" },
