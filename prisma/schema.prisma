@@ -67,9 +67,23 @@ model User {
   achievements  Achievements[]
   comments          Comment[]
   projects      Projects[]
+  Blogs   Blogs[]
  
   @@map("users")
 
+}
+
+model Blogs {
+  id String  @id @default(uuid())
+  title String
+  coverImage  String?
+  excerpt     String?  @db.VarChar(500)
+  userId  String
+  slug  String      @unique
+  content     String   @db.Text
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
 }
 
 

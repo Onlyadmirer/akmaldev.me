@@ -143,6 +143,10 @@
       "error": "Failed to load analytics. Please disable your AdBlocker or Brave Shields."
     }
   },
+  "Blog": {
+    "title": "Blog",
+    "description": "Notes, ideas, and thoughts on technology, design, and personal growth."
+  },
   "Header": {
     "home": "Home",
     "work": "Work",
@@ -151,6 +155,7 @@
     "more": "More",
     "achievements": "Achievements",
     "guestbook": "Guestbook",
-    "dashboard": "Dashboard"
+    "dashboard": "Dashboard",
+    "blog": "Blog"
   }
 }

@@ -25,6 +25,7 @@ function Header() {
   const secondaryLinks = [
     { label: t("achievements"), href: "/achievements" },
     { label: t("guestbook"), href: "/guestbook" },
+    { label: t("blog"), href: "/blog" },
     { label: t("dashboard"), href: "/dashboard" },
   ];
 
@@ -86,7 +87,7 @@ function Header() {
                   />
                 </svg>
               </button>
-              <div className='invisible absolute right-0 top-full mt-1 w-40 origin-top-right scale-95 border border-border bg-surface p-1 opacity-0 shadow-sm transition-all duration-200 group-hover:visible group-hover:scale-100 group-hover:opacity-100 rounded-sm'>
+              <div className='invisible absolute right-0 top-full mt-1 w-40 origin-top-right scale-95 border border-border bg-black p-1 opacity-0 shadow-sm transition-all duration-200 group-hover:visible group-hover:scale-100 group-hover:opacity-100 rounded-sm'>
                 {secondaryLinks.map((link) => (
                   <Link
                     key={link.href}

@@ -143,6 +143,10 @@
       "error": "Gagal memuat analytics. Nonaktifkan AdBlocker atau Brave Shields Anda."
     }
   },
+  "Blog": {
+    "title": "Blog",
+    "description": "Catatan, ide, dan pemikiran seputar teknologi, desain, dan pengembangan diri."
+  },
   "Header": {
     "home": "Beranda",
     "work": "Karya",
@@ -151,6 +155,7 @@
     "more": "Lainnya",
     "achievements": "Pencapaian",
     "guestbook": "Buku Tamu",
-    "dashboard": "Dashboard"
+    "dashboard": "Dashboard",
+    "blog": "Blog"
   }
 }
