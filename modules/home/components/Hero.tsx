@@ -31,7 +31,11 @@ async function Hero() {
             </span>
           </div>
 
-          <h1 className='mt-6 font-heading text-[clamp(2.5rem,7vw,4.25rem)] leading-[0.95] font-bold tracking-[-0.04em] whitespace-pre-line text-foreground'>
+          <h2 className='mt-8 font-bold font-heading tracking-tight text-foreground/88 leading-5 text-[clamp(1.8rem,7vw,2.5rem)] font-'>
+            {t("eyebrow")}
+          </h2>
+
+          <h1 className='mt-4 font-heading text-[clamp(2.5rem,7vw,4.25rem)] leading-[0.95] font-bold tracking-[-0.04em] whitespace-pre-line text-foreground'>
             {t("heading")}
           </h1>
 
