@@ -21,16 +21,6 @@ async function Hero() {
 
       <div className='relative grid items-start gap-12 md:grid-cols-[1fr_300px] md:gap-16'>
         <div className='max-w-2xl'>
-          <div className='inline-flex items-center gap-2.5 rounded-full border border-border px-3 py-1.5'>
-            <span className='relative flex h-2 w-2'>
-              <span className='absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400/75' />
-              <span className='relative inline-flex h-2 w-2 rounded-full bg-emerald-400' />
-            </span>
-            <span className='text-xs text-foreground-secondary'>
-              {t("available")}
-            </span>
-          </div>
-
           <h2 className='mt-8 font-bold font-heading tracking-tight text-foreground/88 leading-5 text-[clamp(1.8rem,7vw,2.5rem)] font-'>
             {t("eyebrow")}
           </h2>
